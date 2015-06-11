@@ -5,6 +5,7 @@
 <table class='table'>
   <thead>
     <tr>
+      <th>Foto</th>
       <th>index_card_no</th>
       <th>photo_no</th>
       <th>photographer</th>
@@ -26,6 +27,7 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
+        <td><%= link_to 'See Photo', photo.path %></td>
         <td><%= photo.index_card_no %></td>
         <td><%= photo.photo_no %></td>
         <td><%= photo.photographer %></td>

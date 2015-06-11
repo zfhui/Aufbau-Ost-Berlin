@@ -6,4 +6,8 @@ class Photo < ActiveRecord::Base
     end
   end
 
+  def path
+    "http://zfhui.de/others/Zuschnitte/#{index_card_no}_#{photo_no}.jpg"
+  end
+
 end
