@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'photos#index'
 
-  resources :photos
+  resources :photos do
+    collection { post :import}
+  end
 
   devise_for :users
 

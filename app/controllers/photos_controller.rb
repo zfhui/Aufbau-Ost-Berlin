@@ -62,6 +62,11 @@ class PhotosController < ApplicationController
     end
   end
 
+  def import
+      Photo.import(params[:file])
+      redirect_to root_url, notice: 'Photos imported.'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
