@@ -5,6 +5,7 @@
 <table class='table'>
   <thead>
     <tr>
+      <th>photo_id</th>
       <th>Foto</th>
       <th>index_card_no</th>
       <th>photo_no</th>
@@ -25,8 +26,9 @@
   </thead>
 
   <tbody>
-    <% @photos.each do |photo| %>
+    <% @photos.where.not(photo_no: "0").each do |photo| %>
       <tr>
+        <td><%= photo.id %></td>
         <td><%= link_to 'See Photo', photo.path %></td>
         <td><%= photo.index_card_no %></td>
         <td><%= photo.photo_no %></td>
