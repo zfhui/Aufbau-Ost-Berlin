@@ -1,26 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Cdv</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Berlin Architektur</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+	</head>
+	<body>
 
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
+  <div class="container">
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
 
-  <%= yield %>
+    <div class="navbar navbar-default">
+      <div class="container">
+        <%= link_to 'Berlin Architektur', root_path, class: 'navbar-brand'%>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Photos', photos_path%></li>
+        </ul>
+      </div>
+    </div>
 
-  <% if current_user %>
-    <%= link_to 'Logout', destroy_user_session_path, :method => :delete %> 
-  <% else %>
-    <%= link_to 'Login to Edit', new_user_session_path %>
-  <% end %>
-</body>
+    <%= yield %>
+
+    <footer>
+      <ul>
+        <li>
+          <% if current_user %>
+            <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path %>
+            <% end %>
+        </li>
+        <li>Impressum</li>
+      </ul>
+    </footer>
+
+  </div> <!-- /container -->
+
+  <!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	</body>
 </html>
