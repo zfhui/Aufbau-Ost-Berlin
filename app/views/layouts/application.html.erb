@@ -4,7 +4,6 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Berlin Architektur</title>
-		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -24,27 +23,30 @@
     <% end %>
 
     <div class="navbar navbar-default">
-      <div class="container">
-        <%= link_to 'Berlin Architektur', root_path, class: 'navbar-brand'%>
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'Photos', photos_path%></li>
-        </ul>
+      <div class="container-fluid">
+				<div class="navbar-header">
+	        <%= link_to 'Berlin Architektur', root_path, class: 'navbar-brand'%>
+	        <ul class="nav navbar-nav">
+	          <li><%= link_to 'Photos', photos_path%></li>
+	        </ul>
+				</div>
       </div>
     </div>
 
     <%= yield %>
 
-    <footer>
-      <ul>
-        <li>
+    <footer class="footer">
+      <div class="row">
+        <div class="col-sm-3">
           <% if current_user %>
             <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
           <% else %>
             <%= link_to 'Login', new_user_session_path %>
             <% end %>
-        </li>
-        <li>Impressum</li>
-      </ul>
+        </div>
+        <div class="col-sm-3">Impressum</div>
+        <div class="col-sm-3">Impressum</div>
+      </div>
     </footer>
 
   </div> <!-- /container -->
