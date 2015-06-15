@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'photos#index'
+  root to: 'home#index'
 
   resources :photos do
     collection { post :import}
