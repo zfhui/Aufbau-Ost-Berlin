@@ -13,12 +13,10 @@
       <th>architect</th>
       <th>building_name</th>
       <th>address</th>
-      <th>geolocation</th>
       <th>content</th>
       <th>ownership</th>
       <th>creditline</th>
       <th>flicker_id</th>
-      <th>comment</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -36,12 +34,10 @@
         <td><%= photo.architect %></td>
         <td><%= photo.building_name %></td>
         <td><%= photo.address %></td>
-        <td>(<%= photo.latitude %>, <%= photo.longitude %></td>
         <td><%= photo.content %></td>
         <td><%= photo.ownership %></td>
         <td><%= photo.creditline %></td>
         <td><%= photo.flicker_id %></td>
-        <td><%= photo.comment %></td>
         <% if current_user %>
           <td><%= link_to 'Show', photo %></td>
           <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
