@@ -57,3 +57,5 @@ end
 gem "font-awesome-sass"
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
+
+gem 'gmaps4rails'
