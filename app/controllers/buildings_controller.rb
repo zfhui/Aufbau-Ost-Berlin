@@ -61,12 +61,15 @@ class BuildingsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
 
   def import
       Building.import(params[:file])
       redirect_to buildings_url, notice: 'Buildings imported.'
   end
 
+=======
+>>>>>>> b99882b42fcfa3b0869df21e387ab551b50f5b5c
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_building
