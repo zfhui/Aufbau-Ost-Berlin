@@ -1,6 +1,7 @@
 class CreateBuildings < ActiveRecord::Migration
   def change
     create_table :buildings do |t|
+<<<<<<< HEAD
 
       t.string  :name, null: false
       t.float   :longitude, default: 0.0
