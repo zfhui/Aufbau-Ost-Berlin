@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528143456) do
+ActiveRecord::Schema.define(version: 20150616092448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "buildings", force: :cascade do |t|
+    t.string   "name",                           null: false
+    t.float    "longitude",        default: 0.0
+    t.float    "latitude",         default: 0.0
+    t.integer  "built_from"
+    t.integer  "built_to"
+    t.integer  "built_from_2"
+    t.integer  "built_to_2"
+    t.text     "description",      default: ""
+    t.string   "wiki_url",         default: ""
+    t.string   "wiki_common_url",  default: ""
+    t.string   "denkmalliste_url", default: ""
+    t.string   "grossstadt_url",   default: ""
+    t.text     "other_urls",       default: [],               array: true
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "photos", force: :cascade do |t|
     t.string   "path"

@@ -1,0 +1,50 @@
+<h1>Listing Buildings</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>name</th>
+      <th>geolocation</th>
+      <th>built_years</th>
+      <th>description</th>
+      <th>wiki_url</th>
+      <th>wiki_common_url</th>
+      <th>denkmalliste_url</th>
+      <th>grossstadt_url</th>
+      <th>other_urls</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buildings.each do |building| %>
+      <tr>
+        <td><%= building.id %></td>
+        <td><%= building.name %></td>
+        <td><%= "#{building.latitude}, #{building.longitude}" %></td>
+        <td><%= "#{building.built_from}-#{building.built_to}; #{building.built_from_2}-#{building.built_to_2}" %></td>
+        <td><%= building.description %></td>
+        <td><%= building.wiki_url %></td>
+        <td><%= building.wiki_common_url %></td>
+        <td><%= building.denkmalliste_url %></td>
+        <td><%= building.grossstadt_url %></td>
+        <td><%= building.other_urls.to_s %></td>
+        <td><%= link_to 'Show', building %></td>
+        <td><%= link_to 'Edit', edit_building_path(building) %></td>
+        <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if current_user %>
+<%= link_to 'New Building', new_building_path %>
+  <h3>Import Buildings</h3>
+  <%= form_tag import_buildings_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag 'Import' %>
+  <% end %>
+<% end %>
