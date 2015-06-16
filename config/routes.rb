@@ -6,13 +6,9 @@ Rails.application.routes.draw do
     collection { post :import}
   end
 
-<<<<<<< HEAD
   resources :buildings do
     collection { post :import}
   end
-=======
-  resources :buildings
->>>>>>> b99882b42fcfa3b0869df21e387ab551b50f5b5c
 
   devise_for :users
 
