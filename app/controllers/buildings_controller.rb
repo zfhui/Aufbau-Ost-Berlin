@@ -10,7 +10,6 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
-    @building = Building.find(params[:id])
   end
 
   # GET /buildings/new
@@ -75,6 +74,6 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require.(:building).permit(:name, :latitude, :longitude)
+      params[:building]
     end
 end
