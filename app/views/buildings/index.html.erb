@@ -1,48 +1,40 @@
-<h1>Listing Buildings</h1>
+<h1>Gebäude</h1>
 
 <div style='width: 100%;'>
   <div id="map" style='width: 100%; height: 400px;'></div>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-bordered table-striped table-hover table-condensed">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>name</th>
-        <th>geolocation</th>
-        <th>built_years</th>
-        <th>description</th>
-        <th>wiki_url</th>
-        <th>wiki_common_url</th>
-        <th>denkmalliste_url</th>
-        <th>grossstadt_url</th>
-        <th>other_urls</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @buildings.each do |building| %>
-        <tr>
-          <td><%= building.id %></td>
-          <td><%= building.name %></td>
-          <td><%= "#{building.latitude}, #{building.longitude}" %></td>
-          <td><%= "#{building.built_from}-#{building.built_to}; #{building.built_from_2}-#{building.built_to_2}" %></td>
-          <td><%= building.description %></td>
-          <td><%= building.wiki_url %></td>
-          <td><%= building.wiki_common_url %></td>
-          <td><%= building.denkmalliste_url %></td>
-          <td><%= building.grossstadt_url %></td>
-          <td><%= building.other_urls.to_s %></td>
-          <td><%= link_to 'Show', building %></td>
-          <td><%= link_to 'Edit', edit_building_path(building) %></td>
-          <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<% @buildings.each do |building| %>
+  <h2 class="col-sm-12 col-md-12 col-lg-12">
+    <%= "#{building.id}. #{building.name}" %>
+  </h2>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <%= link_to 'Anzeigen', building %> |
+    <%= link_to 'Bearbeiten', edit_building_path(building) %> |
+    <%= link_to 'Löschen', building, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Geolocation: </strong><%= "#{building.latitude}, #{building.longitude}"%>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Baujahr: </strong><%= "#{building.built_from}-#{building.built_to}; #{building.built_from_2}-#{building.built_to_2}" %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Beschreibung: </strong><%= building.description %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Wikipedia URL: </strong><%= building.wiki_url %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Wikimedia Common URL: </strong><%= building.wiki_common_url %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Denkmalliste URL: </strong><%= building.denkmalliste_url %></p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Großstadt URL: </strong><%= building.grossstadt_url %></p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Andere URL: </strong><%= building.other_urls.to_s %></p>
+<% end %>
 
 <br>
 
