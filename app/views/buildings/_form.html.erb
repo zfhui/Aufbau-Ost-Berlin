@@ -1,4 +1,4 @@
-<%= form_for(@building) do |f| %>
+<%= form_for @building, html: {class: "form-horizontal"} do |f| %>
   <% if @building.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@building.errors.count, "error") %> prohibited this building from being saved:</h2>
@@ -11,7 +11,59 @@
     </div>
   <% end %>
 
+  <div class="form-group">
+    <%= f.label "Name:", class: "col-sm-3 col-md-3 control-label" %>
+    <%= f.text_field :name, class: "col-sm-8 col-md-8" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Geolocation: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :latitude, class: "col-sm-3 col-md-3 col-lg-3", placeholder: "latitude"%>
+    <%= f.text_field :longitude , class: "col-sm-3-offset-1 col-md-3-offset-1 col-lg-3-offset-1", placeholder: "longitude"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Baujahr 1: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :built_from, class: "col-sm-3 col-md-3   col-lg-3", placeholder: "vom"%>
+    <%= f.text_field :built_to, class: "col-sm-3-offset-1 col-md-3-offset-1 col-lg-3-offset-1", placeholder: "bis"%>
+  </div>
+  <div class="form-group">
+    <%= f.label "Baujahr 2: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :built_from_2, class: "col-sm-3 col-md-3 col-lg-3", placeholder: "vom"%>
+    <%= f.text_field :built_to_2, class: "col-sm-3-offset-1 col-md-3-offset-1 col-lg-3-offset-1", placeholder: "bis"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Beschreibung: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_area :description, class: "col-sm-8 col-md-8", style: "height: 200px", placeholder: "Beschreibung"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Wikipedia URL: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :wiki_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Wikimedia URL: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :wiki_common_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Denkmalliste URL: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :denkmalliste_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Großstadt URL: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :grossstadt_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Andre URLs: ", class: "col-sm-3 col-md-3 control-label"%>
+    <%= f.text_field :other_urls, class: "col-sm-8 col-md-8 col-lg-8"%>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Speichern", class: "center-block btn btn-primary"%>
   </div>
 <% end %>

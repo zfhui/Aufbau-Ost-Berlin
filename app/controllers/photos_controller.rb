@@ -20,7 +20,6 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
-    @photo = Photo.find(params[:id])
   end
 
   # POST /photos
