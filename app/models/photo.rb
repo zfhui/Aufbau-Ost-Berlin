@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  belongs_to :building
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
