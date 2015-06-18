@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617193706) do
+ActiveRecord::Schema.define(version: 20150618082226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,14 @@ ActiveRecord::Schema.define(version: 20150617193706) do
     t.string   "wiki_common_url",  default: ""
     t.string   "denkmalliste_url", default: ""
     t.string   "grossstadt_url",   default: ""
-    t.text     "other_urls",       default: [],               array: true
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "architect"
+    t.string   "architect_2"
+    t.string   "architect_3"
+    t.string   "other_url"
+    t.string   "other_url_2"
+    t.text     "comments"
   end
 
   create_table "photos", force: :cascade do |t|

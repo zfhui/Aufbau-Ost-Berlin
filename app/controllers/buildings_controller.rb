@@ -83,6 +83,9 @@ class BuildingsController < ApplicationController
       params.require(:building).permit(:name,
                                        :latitude,
                                        :longitude,
+                                       :architect,
+                                       :architect_2,
+                                       :architect_3,
                                        :built_from,
                                        :built_to,
                                        :built_from_2,
@@ -92,6 +95,8 @@ class BuildingsController < ApplicationController
                                        :wiki_common_url,
                                        :denkmalliste_url,
                                        :grossstadt_url,
-                                       :other_urls)
+                                       :other_url,
+                                       :other_url_2,
+                                       :comments)
     end
 end

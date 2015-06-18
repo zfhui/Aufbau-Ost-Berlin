@@ -12,58 +12,108 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label "Name:", class: "col-sm-3 col-md-3 control-label" %>
-    <%= f.text_field :name, class: "col-sm-8 col-md-8" %>
+    <%= f.label "Name:", class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Geolocation: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :latitude, class: "col-sm-3 col-md-3 col-lg-3", placeholder: "latitude"%>
-    <%= f.text_field :longitude , class: "col-sm-3-offset-1 col-md-3-offset-1 col-lg-3-offset-1", placeholder: "longitude"%>
+    <%= f.label "Geolocation: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-6 col-sm-4">
+      <%= f.text_field :latitude, class: "form-control", placeholder: "latitude"%>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <%= f.text_field :longitude , class: "form-control", placeholder: "longitude"%>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Baujahr 1: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :built_from, class: "col-sm-3 col-md-3   col-lg-3", placeholder: "vom"%>
-    <%= f.text_field :built_to, class: "col-sm-3-offset-1 col-md-3-offset-1 col-lg-3-offset-1", placeholder: "bis"%>
-  </div>
-  <div class="form-group">
-    <%= f.label "Baujahr 2: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :built_from_2, class: "col-sm-3 col-md-3 col-lg-3", placeholder: "vom"%>
-    <%= f.text_field :built_to_2, class: "col-sm-3-offset-1 col-md-3-offset-1 col-lg-3-offset-1", placeholder: "bis"%>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Beschreibung: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_area :description, class: "col-sm-8 col-md-8", style: "height: 200px", placeholder: "Beschreibung"%>
+    <%= f.label "Architekt(en):", class: "col-xs-12 col-sm-2 control-label" %>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :architect, class: "form-control", placeholder: "Architekt 1" %>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <%= f.text_field :architect_2, class: "form-control", placeholder: "Architekt 2" %>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <%= f.text_field :architect_3, class: "form-control", placeholder: "Architekt 3"%>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Wikipedia URL: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :wiki_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+    <%= f.label "Baujahr 1: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-6 col-sm-4">
+      <%= f.text_field :built_from, class: "form-control", placeholder: "vom"%>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <%= f.text_field :built_to, class: "form-control", placeholder: "bis"%>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Wikimedia URL: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :wiki_common_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+    <%= f.label "Baujahr 2: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-6 col-sm-4">
+      <%= f.text_field :built_from_2, class: "form-control", placeholder: "vom"%>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <%= f.text_field :built_to_2, class: "form-control", placeholder: "bis"%>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Denkmalliste URL: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :denkmalliste_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+    <%= f.label "Beschreibung: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_area :description, class: "form-control", style: "height: 200px", placeholder: "Beschreibung"%>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Großstadt URL: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :grossstadt_url, class: "col-sm-8 col-md-8 col-lg-8"%>
+    <%= f.label "Wikipedia URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :wiki_url, class: "form-control"%>
+    </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Andre URLs: ", class: "col-sm-3 col-md-3 control-label"%>
-    <%= f.text_field :other_urls, class: "col-sm-8 col-md-8 col-lg-8"%>
+    <%= f.label "Wikimedia URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :wiki_common_url, class: "form-control"%>
+    </div>
   </div>
 
-  <div class="actions">
+  <div class="form-group">
+    <%= f.label "Denkmalliste URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :denkmalliste_url, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Großstadt URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :grossstadt_url, class: "form-control"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Andre URLs: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :other_url, class: "form-control", placeholder: "URL 1"%>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <%= f.text_field :other_url_2, class: "form-control", placeholder: "URL 2"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_area :comments, class: "form-control", style: "height: 200px", placeholder: "Hier Kommentare eintragen ..."%>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.submit "Speichern", class: "center-block btn btn-primary"%>
   </div>
 <% end %>
