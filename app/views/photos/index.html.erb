@@ -5,7 +5,7 @@
   <% if current_user %>
     <p>
       <%= link_to 'Anzigen', photo %> |
-      <%= link_to 'Bearbeiten', edit_photo_path(photo) %> | 
+      <%= link_to 'Bearbeiten', edit_photo_path(photo) %> |
       <%= link_to 'Löschen', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>
   <% end %>
@@ -13,7 +13,7 @@
   <p><strong>Fotograf: </strong><%= photo.photographer %></p>
   <p><strong>Jahr: </strong><%= photo.year %></p>
   <p><strong>Typ: </strong><%= photo.classification%></p>
-  <p><strong>Gebäude: </strong><%= photo.building_name %></p>
+  <p><strong>Gebäude: </strong><%=photo.building_name %></p>
   <p><strong>Adresse: </strong><%= photo.address %></p>
   <p><strong>Inhalt: </strong><%= photo.content %></p>
   <p><strong>Besitz</strong><%= photo.ownership %></p>

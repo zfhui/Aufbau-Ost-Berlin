@@ -1,4 +1,11 @@
-<h1>Editing Photo</h1>
+<h1>Foto <em><%="#{@photo.index_card_no}_#{@photo.photo_no}.jpg"%></em> bearbeiten</h1>
+
+<div class="text-center">
+  <figure>
+    <img src="<%= @photo.path %>" width="25%">
+    <figcaption><%= @photo.building_name %></figcaption>
+  </figure>
+</div>
 
 <%= render 'form' %>
 
