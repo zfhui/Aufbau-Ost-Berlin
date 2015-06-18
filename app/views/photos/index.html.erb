@@ -1,54 +1,26 @@
-<h1>Photos</h1>
+<h1>Fotos</h1>
 
-<div class="table-responsive">
-  <table class="table table-bordered table-striped table-hover table-condensed">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Foto</th>
-        <th>index_card_no</th>
-        <th>photo_no</th>
-        <th>photographer</th>
-        <th>year</th>
-        <th>type</th>
-        <th>architect</th>
-        <th>building_name</th>
-        <th>address</th>
-        <th>content</th>
-        <th>ownership</th>
-        <th>creditline</th>
-        <th>flicker_id</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @photos.where.not(photo_no: "0").each do |photo| %>
-        <tr>
-          <td><%= photo.id %></td>
-          <td><%= link_to 'See Photo', photo.path %></td>
-          <td><%= photo.index_card_no %></td>
-          <td><%= photo.photo_no %></td>
-          <td><%= photo.photographer %></td>
-          <td><%= photo.year %></td>
-          <td><%= photo.type %></td>
-          <td><%= photo.architect %></td>
-          <td><%= photo.building_name %></td>
-          <td><%= photo.address %></td>
-          <td><%= photo.content %></td>
-          <td><%= photo.ownership %></td>
-          <td><%= photo.creditline %></td>
-          <td><%= photo.flicker_id %></td>
-          <% if current_user %>
-            <td><%= link_to 'Show', photo %></td>
-            <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-            <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<% @photos.where.not(photo_no: "0").each do |photo| %>
+  <h2><%= "#{photo.id}. #{photo.index_card_no}_#{photo.photo_no}.jpg" %></h2>
+  <% if current_user %>
+    <p>
+      <%= link_to 'Anzigen', photo %> |
+      <%= link_to 'Bearbeiten', edit_photo_path(photo) %> | 
+      <%= link_to 'Löschen', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>
+  <p><%= link_to 'See Photo', photo.path %></p>
+  <p><strong>Fotograf: </strong><%= photo.photographer %></p>
+  <p><strong>Jahr: </strong><%= photo.year %></p>
+  <p><strong>Typ: </strong><%= photo.classification%></p>
+  <p><strong>Gebäude: </strong><%= photo.building_name %></p>
+  <p><strong>Adresse: </strong><%= photo.address %></p>
+  <p><strong>Inhalt: </strong><%= photo.content %></p>
+  <p><strong>Besitz</strong><%= photo.ownership %></p>
+  <p><strong>Creditline: </strong><%= photo.creditline %></p>
+  <p><strong>Flickr URL: </strong><%= photo.flickr_url %></p>
+  <p><strong>Kommentare: </strong><em><<%= photo.comments %></em></p>
+<% end %>
 
 <br>
 

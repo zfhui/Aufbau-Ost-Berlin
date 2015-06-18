@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_filter :authenticate_user!, only: [:show, :new, :edit, :create, :update]
+  before_filter :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   # GET /photos
@@ -75,6 +75,17 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:comment)
+      params.require(:photo).permit(:photographer,
+                                    :year,
+                                    :classification,
+                                    :building_name,
+                                    :address,
+                                    :content,
+                                    :ownership,
+                                    :creditline,
+                                    :building_id,
+                                    :flickr_url,
+                                    :comments,
+                                    :keywords)
     end
 end
