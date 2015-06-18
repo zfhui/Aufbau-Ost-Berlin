@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all.order(:id)
+    @photos = Photo.order(:id).page(params[:page]).per(15)
   end
 
   # GET /photos/1
