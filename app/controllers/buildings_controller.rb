@@ -6,7 +6,7 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all.order(:id)
+    @buildings = Building.all.order(:id).page(params[:page]).per(5)
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
       marker.lat building.latitude
       marker.lng building.longitude
