@@ -47,22 +47,28 @@
   </p>
 
   <% if current_user %>
-  <p class="col-xs-12 col-sm-12">
+    <p class="col-xs-12 col-sm-12">
       <strong>Kommentare: </strong><em><%= building.comments %></em>
     </p>
   <% end %>
-<% end %>
 
-<br>
-
-<% if current_user %>
-<%= link_to 'New Building', new_building_path %>
-  <h3>Import Buildings</h3>
-  <%= form_tag import_buildings_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag 'Import' %>
+  <% building.photos.each do |photo| %>
+    <div class="col-xs-12 col-sm-3">
+      <img src="<%= photo.path %>" class="img-responsive">
+    </div>
   <% end %>
 <% end %>
+
+<div class="col-xs-12">
+  <% if current_user %>
+  <%= link_to 'New Building', new_building_path %>
+    <h3>Import Buildings</h3>
+    <%= form_tag import_buildings_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag 'Import' %>
+    <% end %>
+  <% end %>
+</div>
 
 <script type="text/javascript">
   buildMap(<%= raw @hash.to_json %>);
