@@ -1,5 +1,6 @@
 class BuildingsController < ApplicationController
   include Gmaps4rails
+  before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy, :import]
   before_action :set_building, only: [:show, :edit, :update, :destroy]
 
   # GET /buildings

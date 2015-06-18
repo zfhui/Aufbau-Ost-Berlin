@@ -8,11 +8,13 @@
   <h2 class="col-sm-12 col-md-12 col-lg-12">
     <%= "#{building.id}. #{building.name}" %>
   </h2>
-  <p class="col-sm-12 col-md-12 col-lg-12">
-    <%= link_to 'Anzeigen', building %> |
-    <%= link_to 'Bearbeiten', edit_building_path(building) %> |
-    <%= link_to 'Löschen', building, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </p>
+  <% if current_user %>
+    <p class="col-sm-12 col-md-12 col-lg-12">
+      <%= link_to 'Anzeigen', building %> |
+      <%= link_to 'Bearbeiten', edit_building_path(building) %> |
+      <%= link_to 'Löschen', building, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+  <% end %>
   <p class="col-sm-12 col-md-12 col-lg-12">
     <strong>Geolocation: </strong><%= "#{building.latitude}, #{building.longitude}"%>
   </p>
