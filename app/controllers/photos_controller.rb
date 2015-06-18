@@ -64,6 +64,7 @@ class PhotosController < ApplicationController
 
   def import
       Photo.import(params[:file])
+
       redirect_to root_url, notice: 'Photos imported.'
   end
 
