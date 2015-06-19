@@ -1,5 +1,5 @@
 html, body{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 100%;
     background-color: #FFC30F;
 }
@@ -126,6 +126,12 @@ nav a#pull {
 .footer{
   margin-top: 0.5em;
   background-color: #FFF;
+}
+
+/*--- coding davinci ----*/
+body a.codingdavinci:link,
+body a.codingdavinci:visited {
+  font-family: 'Archive' !important;
 }
 
 /*Styles for screen 600px and lower*/
