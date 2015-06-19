@@ -1,6 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
 	<head>
+		<title>Wiederaufbau Ost-Berlin</title>
+
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>Wiederaufbau Ost-Berlin</title>
@@ -11,48 +19,98 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+		<link rel="shortcut icon" href='<%=image_url("favcon.png")%>' />
+
+		<!-- webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700' rel='stylesheet' type='text/css'>
 	</head>
+
 	<body>
+		<div id="main-container" class="container">
+			<!-- notices and warnings -->
+			<% if notice %>
+				<p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+				<p class="alert alert-danger"><%= alert %></p>
+			<% end %>
 
-  <div class="container">
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-
-    <div class="navbar navbar-default">
-      <div class="container-fluid">
-				<div class="navbar-header">
-	        <%= link_to 'Wiederaufbau Ost-Berlin', root_path, class: 'navbar-brand'%>
-	        <ul class="nav navbar-nav">
-						<li><%= link_to 'Gebäude', buildings_path %></li>
-	          <li><%= link_to 'Photos', photos_path %></li>
-	        </ul>
+			<!-- header-section------>
+			<div class="header-section">
+				<!--- start-header---->
+				<div id="home" class="header">
+					<div class="container">
+						<div class="top-header">
+							<div class="logo">
+								<a href="#"><img src='<%= image_url("icon_yellow.png")%>' title="logo" height="80px"/></a>
+							</div>
+							<!-- start-top-nav---->
+							 <nav class="top-nav">
+								<ul class="top-nav">
+									<li><%= link_to "Home", root_path %></li>
+									<li><%= link_to "Gebäude", buildings_path %></li>
+									<li><%= link_to "Photos", photos_path %></li>
+									<li><a href="#" class="scroll">Touren</a></li>
+									<li><a href="#" class="scroll">Literatur</a></li>
+								</ul>
+								<a href="#" id="pull"></a>
+							</nav>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
 				</div>
-      </div>
-    </div>
+			</div>
+			<!--- //End-header---->
 
-    <%= yield %>
+			<div id="content-container" class="container">
+				<%= yield %>
+			</div>
 
-    <footer class="footer">
-      <div class="row">
-        <div class="col-sm-3">
-          <% if current_user %>
-            <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-          <% else %>
-            <%= link_to 'Login', new_user_session_path %>
-            <% end %>
-        </div>
-        <div class="col-sm-3"><%= link_to "Team", team_path %></div>
-        <div class="col-sm-3"><%= link_to "Impressum", impressum_path %></div>
-      </div>
-    </footer>
+			<!---footer----->
+			<div class="footer">
+				<div class="container">
+					<div class="footer-grids">
+						<div class="col-md-3 footer-grid about-info">
+							<a href="#"><img src='<%=image_url("icon_yellow.png")%>' title="icon" width="80px"/></a>
+							<p>eusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						</div>
 
-  </div> <!-- /container -->
+						<div class="col-md-3 footer-grid explore">
+							<h3>Explore</h3>
+							<ul class="col-md-6">
+								<li>
+									<% if current_user %>
+										<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+									<% else %>
+										<%= link_to 'Login', new_user_session_path %>
+									<% end %>
+								</li>
+								<li><a href="#">Über diese Seite</a></li>
+								<li><%= link_to "Über uns", team_path %></li>
+								<li><a href="#">Impressum</a></li>
+								<li><a href="#">Datenschutz</a></li>
+							</ul>
+							<!-- <ul class="col-md-6">
+								<li><a href="#">Impressum</a></li>
+								<li><a href="#">Datenschutz</a></li>
+							</ul> -->
+							<div class="clearfix"> </div>
+						</div>
+						<div class="col-md-3 footer-grid copy-right">
+							<p>Eusmod tempor incididunt ut labore et dolore magna aliqua. ut labore et dolore magna aliqua. </p>
+							<p class="copy">Template by <a href="http://w3layouts.com/">w3layouts</a></p>
+						</div>
+						<div class="clearfix"> </div>
 
-  <!-- script references -->
+						<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+					</div>
+				</div>
+			</div>
+			<!---//footer----->
+
+		<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
 	</body>
 </html>
