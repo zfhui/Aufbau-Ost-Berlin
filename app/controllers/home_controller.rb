@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
 
-  def team
+  def about
 
   end
 

@@ -659,6 +659,9 @@ span.second{
 .team-member-caption ul li a.t-googleplus span{
 	background-position: -91px 0px;
 }
+.team-member-caption ul li a.t-wordpress span{
+	background-position: -139px 0px;
+}
 /*----*/
 .item p{
 	font-size:1.1em;

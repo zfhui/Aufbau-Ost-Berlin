@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
-  get 'team',      to: 'home#team'
+  get 'about',     to: 'home#about'
   get 'impressum', to: 'home#impressum'
 
   resources :photos do
