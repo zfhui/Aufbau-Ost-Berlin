@@ -843,8 +843,14 @@ p.copy a:hover{
 	text-decoration:none;
 }
 .footer-grids{
-	padding:1em 0;
+	padding: 1em;
 }
+.footer-grids .about-info img{
+  width: 80px;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+}
+
 #toTop {
 	display: none;
 	text-decoration: none;
