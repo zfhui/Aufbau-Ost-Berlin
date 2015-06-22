@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     collection { post :import}
   end
 
+  resources :tours
+
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

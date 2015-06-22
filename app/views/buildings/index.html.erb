@@ -39,6 +39,12 @@
       <strong>Baujahr: </strong><%= "#{building.built_from}-#{building.built_to}; #{building.built_from_2}-#{building.built_to_2}" %>
     </p>
     <p class="col-xs-12 col-sm-12">
+      <strong>Tour: </strong>
+        <% if building.tour %>
+          <%= building.tour.name %>
+        <% end %>
+    </p>
+    <p class="col-xs-12 col-sm-12">
       <strong>Beschreibung: </strong><%= building.description %>
     </p>
     <p class="col-xs-12 col-sm-12">
