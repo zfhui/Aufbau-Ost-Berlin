@@ -98,6 +98,7 @@ class BuildingsController < ApplicationController
                                        :grossstadt_url,
                                        :other_url,
                                        :other_url_2,
-                                       :comments)
+                                       :comments,
+                                       :tour_id)
     end
 end

@@ -52,3 +52,7 @@ $(window).load(function() {
     });
 });
 // End-top-nav-script
+
+$(document).ready( function() {
+  $('.dropdown-toggle').dropdown();
+});
