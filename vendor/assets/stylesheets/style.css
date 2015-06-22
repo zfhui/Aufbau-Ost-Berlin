@@ -28,7 +28,7 @@ body a{
 
 /*----intro----*/
 #intro{
-  background: #7E7C7E url('intro.jpg') right 20%;
+  background: #7E7C7E image-url("intro.jpg") right 20%;
   width: 100%;
   height: 100%;
   color: #FFF;
@@ -179,7 +179,7 @@ body a.codingdavinci:visited {
 	}
 	nav a#pull:after {
 		content:"";
-		background: url('nav-icon.png') no-repeat;
+		background: url("nav-icon.png") no-repeat;
 		width: 30px;
 		height: 30px;
 		display: inline-block;
@@ -868,7 +868,7 @@ p.copy a:hover{
 	height: 40px;
 	border: none;
 	text-indent: 100%;
-	background: url('to-top1.png') no-repeat 0px 0px;
+	background: image-url("to-top1.png") no-repeat 0px 0px;
 	border-radius: 30em;
 }
 #toTopHover {
