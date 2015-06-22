@@ -14,12 +14,11 @@
 <div id="literatures-liste" class="literature-list">
   <div class="container">
     <% @literatures.each do |literature| %>
-      <% if current_user %>
-        <%= link_to 'Anzeigen', literature %> |
-        <%= link_to 'Bearbeiten', edit_literature_path(literature) %> |
-        <%= link_to 'Löschen', literature, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <div class="row">
+        <% if current_user %>
+          <%= link_to 'Anzeigen', literature %> |
+          <%= link_to 'Bearbeiten', edit_literature_path(literature) %> |
+          <%= link_to 'Löschen', literature, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
         <div class="col-xs-12 col-md-2">
           <img src='<%= image_url("bookcovers/#{literature.cover_file}")%>' class="img-responsive">
         </div>
