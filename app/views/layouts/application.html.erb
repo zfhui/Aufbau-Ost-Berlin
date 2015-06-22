@@ -1,0 +1,115 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Wiederaufbau Ost-Berlin</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Wiederaufbau Ost-Berlin</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+		<link rel="shortcut icon" href='<%=image_url("favcon.png")%>' />
+
+		<!-- webfonts---->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+		<div id="main-container" class="container">
+			<!-- notices and warnings -->
+			<% if notice %>
+				<p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+				<p class="alert alert-danger"><%= alert %></p>
+			<% end %>
+
+			<!-- header-section------>
+			<div class="header-section">
+				<!--- start-header---->
+				<div id="home" class="header">
+					<div class="container">
+						<div class="top-header">
+							<div class="logo">
+								<a href="#"><img src='<%= image_url("icon_yellow.png")%>' title="logo" height="80px"/></a>
+							</div>
+							<!-- start-top-nav---->
+							 <nav class="top-nav">
+								<ul class="top-nav">
+									<li><%= link_to "Home", root_path %></li>
+									<li><%= link_to "Gebäude", buildings_path %></li>
+									<li><%= link_to "Photos", photos_path %></li>
+									<li><a href="#" class="scroll">Touren</a></li>
+									<li><a href="#" class="scroll">Literatur</a></li>
+								</ul>
+								<a href="#" id="pull"></a>
+							</nav>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--- //End-header---->
+
+			<div id="content-container" class="container">
+				<%= yield %>
+			</div>
+
+			<!---footer----->
+			<div class="footer">
+				<div class="container">
+					<div class="footer-grids">
+						<div class="col-md-6 footer-grid about-info">
+							<a href="#"><img src='<%=image_url("icon_yellow.png")%>' title="icon" width="80px"/></a>
+							<p>Ein Projekt im Rahmen von {<a href="http://codingdavinci.de/" target="_blank" class="codingdavinci">COD1NG DA V1NC1</a>}. <a href="https://offenedaten.de/dataset/fotoarchiv-ehemaligen-ostberliner-magistratsverwaltung-fur-stadtentwicklung" targe="_blank">Die Daten</a> dieser Seite entstammen aus dem Bestand des <a href="http://www.berlinischegalerie.de/sammlung/architektur/der-sammlungsbereich/archive/ostberliner-fotoarchiv/" target="_blank">Osterberliner Fotoarchives</a> und wurde von der <a href="http://www.berlinischegalerie.de/" target="_blank">Berlinischen Gelerie</a> zur Verfügung gestellt. Lizenz: <a href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank">CC-BY</a>.</p>
+							<p>Die Source-Code zu dieser Website sind unter <a href"https://github.com/zfhui/CodingDaVinci" target="_blank">https://github.com/zfhui/CodingDaVinci</a> verfügbar.</p>
+						</div>
+
+						<div class="col-md-3 footer-grid explore">
+							<h3>Explore</h3>
+							<ul class="col-md-6">
+								<li>
+									<% if current_user %>
+										<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+									<% else %>
+										<%= link_to 'Login', new_user_session_path %>
+									<% end %>
+								</li>
+								<li><%= link_to "Über diese Seite", about_path %></li>
+								<li><a href="#">Impressum</a></li>
+								<li><a href="#">Datenschutz</a></li>
+							</ul>
+							<!-- <ul class="col-md-6">
+								<li><a href="#">Impressum</a></li>
+								<li><a href="#">Datenschutz</a></li>
+							</ul> -->
+							<div class="clearfix"> </div>
+						</div>
+						<div class="col-md-3 footer-grid copy-right">
+							<p>Eusmod tempor incididunt ut labore et dolore magna aliqua. ut labore et dolore magna aliqua. </p>
+						</div>
+						<div class="clearfix"> </div>
+
+						<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+					</div>
+				</div>
+			</div>
+			<!---//footer----->
+
+		<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+	</body>
+</html>
