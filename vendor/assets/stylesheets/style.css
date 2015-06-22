@@ -519,7 +519,7 @@ body a.codingdavinci:visited {
 	display:inline-block;
 	vertical-align:middle;
 }
-span.first{
+span.frist{
 	margin-right:1em;
 }
 span.second{
@@ -615,7 +615,7 @@ span.second{
 	top: 0px;
 	width: 100%;
 	min-height: 255px;
-	background: #F8E72B;
+	background: #FFC30F;
 	padding: 2em 1em;
 }
 .team-member-info:hover label.team-member-caption{
