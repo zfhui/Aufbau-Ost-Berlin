@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @literature.author %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @literature.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @literature.subtitle %>
+</p>
+
+<p>
+  <strong>Published at:</strong>
+  <%= @literature.published_at %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @literature.publisher %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @literature.year %>
+</p>
+
+<p>
+  <strong>Cover file:</strong>
+  <%= @literature.cover_file %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @literature.url %>
+</p>
+
+<%= link_to 'Edit', edit_literature_path(@literature) %> |
+<%= link_to 'Back', literatures_path %>

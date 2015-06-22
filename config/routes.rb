@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :literatures
   root to: 'home#index'
 
   get 'about',     to: 'home#about'

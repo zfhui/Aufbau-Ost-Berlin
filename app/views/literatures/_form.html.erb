@@ -1,0 +1,49 @@
+<%= form_for(@literature) do |f| %>
+  <% if @literature.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@literature.errors.count, "error") %> prohibited this literature from being saved:</h2>
+
+      <ul>
+      <% @literature.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :subtitle %><br>
+    <%= f.text_field :subtitle %>
+  </div>
+  <div class="field">
+    <%= f.label :published_at %><br>
+    <%= f.text_field :published_at %>
+  </div>
+  <div class="field">
+    <%= f.label :publisher %><br>
+    <%= f.text_field :publisher %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :cover_file %><br>
+    <%= f.text_field :cover_file %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
