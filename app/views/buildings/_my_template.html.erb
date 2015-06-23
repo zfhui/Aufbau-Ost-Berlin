@@ -9,7 +9,7 @@
     <tbody>
       <tr>
         <td width="100px">
-          <% if object.photos %>
+          <% if object.photos.first %>
             <img class='marker-infowindow' src="<%= object.photos.first.path_150px %>" width="150px" height="150px">
           <% end %>
         </td>
