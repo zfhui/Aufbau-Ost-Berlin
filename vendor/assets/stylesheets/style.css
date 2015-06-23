@@ -134,6 +134,15 @@ body a.codingdavinci:visited {
   font-family: 'Archive' !important;
 }
 
+/*---- maps ----*/
+#map img {
+  max-width: none;
+}
+
+#map label {
+  width: auto; display:inline;
+}
+
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 768px) {
 	nav {
@@ -1208,7 +1217,7 @@ p.copy a:hover{
 	}
 	.header-section {
 		padding: 0 0 2em 0;
-		background: #F9E514;
+		background: #F8BD0C;
 	}
 	.slide-text ul{
 		display:none;

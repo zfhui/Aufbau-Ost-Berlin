@@ -10,8 +10,12 @@
 </div>
 <!--//about this site---->
 
-<div style='width: 100%;'>
+<div class="container">
   <div id="map" style='width: 100%; height: 450px;'></div>
+</div>
+
+<div class="container">
+  <div id="building" style='width: 100%; height: 450px;'></div>
 </div>
 
 <div class="col-xs-12">
@@ -73,8 +77,6 @@
     <% end %>
   <% end %>
 </div>
-
-<%= paginate @buildings %>
 
 <div class="col-xs-12">
   <% if current_user %>
