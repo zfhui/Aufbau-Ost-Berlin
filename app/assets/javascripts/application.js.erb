@@ -25,34 +25,53 @@
 //= require owl.carousel
 //= require responsiveslides.min
 
-
-// jQuery (necessary for Bootstrap's JavaScript plugins)
-// start-smoth-scrolling
-$(document).ready(function($) {
-  $(".scroll").click(function(event){
-    event.preventDefault();
-    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-  });
-});
-
 // start-top-nav-script
 $(window).load(function() {
   var pull 		= $('#pull');
     menu 		= $('nav ul');
     menuHeight	= menu.height();
-  $(pull).on('click', function(e) {
-    e.preventDefault();
-    menu.slideToggle();
-  });
-  $(window).resize(function(){
-        var w = $(window).width();
-        if(w > 320 && menu.is(':hidden')) {
-          menu.removeAttr('style');
-        }
+    $(pull).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle();
     });
+
+  $(window).resize(function(){
+    var w = $(window).width();
+    if(w > 320 && menu.is(':hidden')) {
+      menu.removeAttr('style');
+    }
+  });
 });
 // End-top-nav-script
 
-$(document).ready( function() {
+// change icon, when window is being resized
+$(document).ready(function(){
+  // smooth scrolling
+  $(".scroll").click(function(event){
+    event.preventDefault();
+    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+  });
+
+  // dropdown menu
   $('.dropdown-toggle').dropdown();
-});
+
+  // logo resize according to windows size
+  function logoResize() {
+    var windos_size = $(window).width();
+    var img = document.createElement("IMG");
+    img.title = 'menu-logo';
+    img.style.height = '90px';
+
+    if (windos_size > '1000') {
+      img.src='<%=image_url("icon_long.png")%>';
+    } else {
+      img.src='<%=image_url("icon_yellow.png")%>';
+    }
+
+    $('#menu-logo a').html(img);
+  }
+
+  logoResize();
+
+  $(window).resize(logoResize);
+})
