@@ -1,0 +1,28 @@
+<div id='<%="building-#{object.id}"%>'>
+  <table class="marker-infowindow">
+    <caption class="marker-infowindow"><%= object.name %></caption>
+    <thead>
+      <tr>
+        <th colspan="2"></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="100px">
+          <img class='marker-infowindow' src="<%= object.photos.first.path_150px %>" width="150px" height="150px">
+        </td>
+        <td width="200px">
+          <p>
+            <strong>Baujahr: </strong><%=object.built_dates_str%>
+          </p>
+          <p>
+            <strong>Architekt(en): </strong><%=object.architects_str%>
+          </p>
+          <p>
+            <strong>Beschreibung: </strong><%=object.description_short%> <a href="#">&raquo;</a>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

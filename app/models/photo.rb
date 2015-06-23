@@ -11,6 +11,11 @@ class Photo < ActiveRecord::Base
   def path
     "http://zfhui.de/others/Zuschnitte/#{index_card_no}_#{photo_no}.jpg"
   end
+
+  def path_150px
+    "http://zfhui.de/others/Zuschnitte/150/#{index_card_no}_#{photo_no}.jpg"
+  end
+
 end
 
   def set_building!
