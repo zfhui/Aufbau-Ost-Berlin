@@ -33,12 +33,11 @@
         </div>
       </div>
     <% end %>
-  <div class="clearfix"> </div>
 </div>
 <!--//about this site---->
 
-<br>
-
-<% if current_user %>
-  <%= link_to 'New Literature', new_literature_path %>
-<% end %>
+<div class="container">
+  <% if current_user %>
+    <%= link_to 'New Literature', new_literature_path %>
+  <% end %>
+</div>
