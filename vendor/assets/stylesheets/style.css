@@ -143,6 +143,23 @@ body a.codingdavinci:visited {
   width: auto; display:inline;
 }
 
+/*---- markers ---- */
+img.marker-infowindow {
+  padding-right: 1em;
+}
+table .marker-infowindow {
+  border-style: none;
+}
+table caption.marker-infowindow{
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+table.marker-infowindow td{
+  vertical-align: top;
+}
+
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 768px) {
 	nav {
