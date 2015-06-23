@@ -19,7 +19,7 @@ body a{
 }
 
 #main-container{
-  background:#F8BD0C;
+  background: #F8BD0C;
 }
 
 #content-container{
@@ -65,7 +65,7 @@ body a{
 }
 .top-nav ul li a{
 	color: #7E7C7E;
-	padding: 0.2em 1.5em;
+	padding: 0.25em 1.5em;
 	font-size: 0.9em;
 	font-weight: 400;
 	text-align: center;
@@ -76,9 +76,8 @@ body a{
 .top-nav ul li.active a{
   color:#000;
 }
-
 .top-nav ul li a:hover{
-	color:#F8BD0C;
+  color: #000;
 }
 .logo a{
 	display:block;
@@ -115,7 +114,8 @@ nav a {
 }
 nav a:hover{
 	text-decoration:none;
-	color:#00A2C1;
+	background: #F8BD0C;
+  display: block;
 }
 nav a#pull {
 	display: none;
