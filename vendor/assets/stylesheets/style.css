@@ -1,7 +1,7 @@
 html, body{
     font-family: 'Helvetica', sans-serif;
     font-size: 100%;
-    background-color: #FFC30F;
+    background-color: #F8BD0C;
 }
 
 body a{
@@ -19,7 +19,7 @@ body a{
 }
 
 #main-container{
-  background:#FFC30F;
+  background:#F8BD0C;
 }
 
 #content-container{
@@ -37,14 +37,14 @@ body a{
 
 /*-----start-header----*/
 .header{
-	background:#FFC30F;
+	background:#F8BD0C;
 }
 .logo{
 	float: left;
 	margin: 0.5em 0.5em 0.5em 1.0em;
 }
 .logo a{
-	color: #FFC30F;
+	color: #F8BD0C;
 	font-weight: 700;
 }
 .logo a:hover{
@@ -78,7 +78,7 @@ body a{
 }
 
 .top-nav ul li a:hover{
-	color:#FFC30F;
+	color:#F8BD0C;
 }
 .logo a{
 	display:block;
@@ -582,7 +582,7 @@ span.second{
 }
 /*-----*/
 .show-reel{
-	background:#FFC30F;
+	background:#F8BD0C;
 	margin:2em 0 0;
 }
 .show-reel h5 span{
@@ -615,7 +615,7 @@ span.second{
 	top: 0px;
 	width: 100%;
 	min-height: 255px;
-	background: #FFC30F;
+	background: #F8BD0C;
 	padding: 2em 1em;
 }
 .team-member-info:hover label.team-member-caption{
@@ -704,7 +704,7 @@ span.second{
 /*--- //team ---*/
 /*---- featured -----*/
 .featured{
-	background:#FFC30F;
+	background:#F8BD0C;
 	padding:2em 0 10em;
 }
 .featured h3{
@@ -786,7 +786,7 @@ span.second{
 	background-position: 0px -171px;
 }
 .getintouch {
-	border-bottom: 10px solid #FFC30F;
+	border-bottom: 10px solid #F8BD0C;
 	padding: 2em 0 0 0;
 }
 /*--- //getintouch -----*/
