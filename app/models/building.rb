@@ -19,6 +19,8 @@ class Building < ActiveRecord::Base
     end
   end
 
+  # quik and dirty helpers
+
   def built_dates_str
     first = "#{built_from}-#{built_to}"
 
@@ -33,14 +35,19 @@ class Building < ActiveRecord::Base
     first = architect
 
     if architect_2
-      second =  "#{first}; #{architect_2}"
+      if !architect_2.empty?
+        second =  "#{first}; #{architect_2}"
 
-      if architect_3
-        third = "#{second}; #{architect_3}"
-        return third
+        if architect_3
+          if !architect_3.empty?
+            third = "#{second}; #{architect_3}"
+            return third
+          end
+        end
+
       end
 
-      return
+      return second
     end
 
     first
