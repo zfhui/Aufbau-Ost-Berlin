@@ -10,10 +10,8 @@
 <% @literatures.each do |literature| %>
   <div class="container section-container">
     <div class="section-head">
-      <h4><%= literature.title %></h4>
-      <p style="padding: 5px">
-        <%= literature.subtitle %>
-      </p>
+      <h4><%= literature.title %></h4></br>
+      <h5><%= literature.subtitle %></h5>
     </div>
 
     <% if current_user %>
