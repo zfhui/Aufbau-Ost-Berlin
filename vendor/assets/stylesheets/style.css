@@ -177,6 +177,13 @@ div.importer {
   background: #E6E6E6;
 }
 
+/*---- buildings ----*/
+div.building-shortinfo {
+  border: 1px #000 solid;
+  margin-top: 0.5em;
+  padding: 1.0em;
+}
+
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 768px) {
 	nav {

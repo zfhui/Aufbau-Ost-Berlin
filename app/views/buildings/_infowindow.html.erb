@@ -21,7 +21,7 @@
             <strong>Architekt(en): </strong><%=object.architects_str%>
           </p>
           <p>
-            <strong>Beschreibung: </strong><%=object.description_short%> <a href="#">&raquo;</a>
+            <strong>Beschreibung: </strong><%=object.description_short%> <%= link_to "&raquo;".html_safe, building_path(object) %>
           </p>
         </td>
       </tr>
