@@ -1,3 +1,7 @@
+<div class="container">
+  <div id="building-map" style='width: 100%; height: 450px;'></div>
+</div>
+
 <div id="building-info" class="col-xs-12">
   <div class="col-xs-12 container-title"><%= @building.name %></div>
 
@@ -57,3 +61,21 @@
     <%= link_to "Zur Liste der Gebäuden", buildings_path %>
   </div>
 </div>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'building-map'}}, function(){
+      markers = handler.addMarkers([
+        {
+          "lat": "<%= @building.latitude %>",
+          "lng": "<%= @building.longitude %>",
+          "infowindow": "<%= @building.name %>"
+        }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(14);
+    });
+  </script>
+<% end %>
