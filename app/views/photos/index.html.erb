@@ -1,41 +1,58 @@
-<h1>Fotos</h1>
-<% if current_user %>
-  <%= link_to 'New Photo', new_photo_path %>
-<% end %>
-
-<% @photos.each do |photo| %>
-  <h2><%= "#{photo.id}. #{photo.index_card_no}_#{photo.photo_no}.jpg" %></h2>
-  <% if current_user %>
-    <p>
-      <%= link_to 'Anzigen', photo %> |
-      <%= link_to 'Bearbeiten', edit_photo_path(photo) %> |
-      <%= link_to 'Löschen', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
-  <% end %>
-  <div class="col-xs-12 col-sm-4">
-    <img src="<%=photo.path%>", class="img-responsive">
+<!-- about this site -->
+<div id="building-title" class="site">
+  <div class="container">
+    <div class="section-head text-center">
+      <h3><span class="first"> </span>FOTOS<span class="second"></span></h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
+    </div>
   </div>
-  <div class="col-xs-12 col-sm-8">
-    <p><strong>Fotograf: </strong><%= photo.photographer %></p>
-    <p><strong>Jahr: </strong><%= photo.year %></p>
-    <p><strong>Typ: </strong><%= photo.classification%></p>
-    <p><strong>Gebäude: </strong><%=photo.building_name %></p>
-    <p><strong>Gebäude ID: </strong><%=photo.building_id %></p>
-    <p><strong>Adresse: </strong><%= photo.address %></p>
-    <p><strong>Inhalt: </strong><%= photo.content %></p>
-    <p><strong>Besitz: </strong><%= photo.ownership %></p>
-    <p><strong>Creditline: </strong><%= photo.creditline %></p>
-    <p><strong>Flickr URL: </strong><%= photo.flickr_url %></p>
-    <p><strong>Kommentare: </strong><em><%= photo.comments %></em></p>
-  </div>
-<% end %>
+  <div class="clearfix"> </div>
+</div>
+<!--//about this site---->
 
-<%= paginate @photos %>
+<div class="container-text">
+  <% @photos.each do |photo| %>
+    <h2><%= "#{photo.id}. #{photo.index_card_no}_#{photo.photo_no}.jpg" %></h2>
+    <% if current_user %>
+      <p>
+        <%= link_to 'Anzigen', photo %> |
+        <%= link_to 'Bearbeiten', edit_photo_path(photo) %> |
+        <%= link_to 'Löschen', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    <% end %>
+    <div class="col-xs-12 col-sm-4">
+      <img src="<%=photo.path%>", class="img-responsive">
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <p><strong>Fotograf: </strong><%= photo.photographer %></p>
+      <p><strong>Jahr: </strong><%= photo.year %></p>
+      <p><strong>Typ: </strong><%= photo.classification%></p>
+      <p><strong>Gebäude: </strong><%=photo.building_name %></p>
+      <p><strong>Gebäude ID: </strong><%=photo.building_id %></p>
+      <p><strong>Adresse: </strong><%= photo.address %></p>
+      <p><strong>Inhalt: </strong><%= photo.content %></p>
+      <p><strong>Besitz: </strong><%= photo.ownership %></p>
+      <p><strong>Creditline: </strong><%= photo.creditline %></p>
+      <p><strong>Flickr URL: </strong><%= photo.flickr_url %></p>
+      <p><strong>Kommentare: </strong><em><%= photo.comments %></em></p>
+    </div>
+  <% end %>
+
+  <%= paginate @photos %>
+</div>
 
 <% if current_user %>
-  <h3>Import Photos</h3>
-  <%= form_tag import_photos_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag 'Import' %>
-  <% end %>
+  <div id="photoster" class="importer">
+    <div class="container-text">
+      <div><%= link_to 'New Photo', new_photo_path %></div>
+      <div class="container-title">Import Photos</div>
+      <div>
+        <%= form_tag import_photos_path, multipart: true do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag 'Import'%>
+        <% end %>
+      </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
 <% end %>
