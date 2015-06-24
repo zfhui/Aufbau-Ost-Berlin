@@ -1,49 +1,59 @@
-<h2 class="col-sm-12 col-md-12 col-lg-12">
-  <%= "#{@building.id}. #{@building.name}" %>
-</h2>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <%= link_to 'Anzeigen', @building %> |
-  <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
-  <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Are you sure?' } %>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Geolocation: </strong><%= "#{@building.latitude}, #{@building.longitude}"%>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Architekt(en): </strong><%= "#{@building.architect}, #{@building.architect_2}, #{@building.architect_3}"%>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Baujahr: </strong><%= "#{@building.built_from}-#{@building.built_to}; #{@building.built_from_2}-#{@building.built_to_2}" %>
-</p>
-<p class="col-xs-12 col-sm-12">
-  <strong>Tour: </strong>
-    <% if @building.tour %>
-      <%= @building.tour.name %>
-    <% end %>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Beschreibung: </strong><%= @building.description %>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Wikipedia URL: </strong><%= @building.wiki_url %>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Wikimedia Common URL: </strong><%= @building.wiki_common_url %>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Denkmalliste URL: </strong><%= @building.denkmalliste_url %>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Großstadt URL: </strong><%= @building.grossstadt_url %>
-</p>
-<p class="col-sm-12 col-md-12 col-lg-12">
-  <strong>Andere URLs: </strong><%= "#{@building.other_url}, #{@building.other_url_2}"%>
-</p>
-
-<% if current_user %>
+<div class="container-text">
+  <h2 class="col-sm-12 col-md-12 col-lg-12">
+    <%= "#{@building.id}. #{@building.name}" %>
+  </h2>
   <p class="col-sm-12 col-md-12 col-lg-12">
-    <strong>Kommentare: </strong><em><%= @building.comments %></em>
+    <%= link_to 'Anzeigen', @building %> |
+    <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
+    <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Are you sure?' } %>
   </p>
-<% end %>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Geolocation: </strong><%= "#{@building.latitude}, #{@building.longitude}"%>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Architekt(en): </strong><%= "#{@building.architect}, #{@building.architect_2}, #{@building.architect_3}"%>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Baujahr: </strong><%= "#{@building.built_from}-#{@building.built_to}; #{@building.built_from_2}-#{@building.built_to_2}" %>
+  </p>
+  <p class="col-xs-12 col-sm-12">
+    <strong>Tour: </strong>
+      <% if @building.tour %>
+        <%= @building.tour.name %>
+      <% end %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Beschreibung: </strong><%= @building.description %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Wikipedia URL: </strong><%= @building.wiki_url %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Wikimedia Common URL: </strong><%= @building.wiki_common_url %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Denkmalliste URL: </strong><%= @building.denkmalliste_url %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Großstadt URL: </strong><%= @building.grossstadt_url %>
+  </p>
+  <p class="col-sm-12 col-md-12 col-lg-12">
+    <strong>Andere URLs: </strong><%= "#{@building.other_url}, #{@building.other_url_2}"%>
+  </p>
 
-<%= link_to "Zur Liste der Gebäuden", buildings_path %>
+  <% if current_user %>
+    <p class="col-sm-12 col-md-12 col-lg-12">
+      <strong>Kommentare: </strong><em><%= @building.comments %></em>
+    </p>
+  <% end %>
+
+  <% @building.photos.each do |p| %>
+    <div class="col-xs-12 col-sm-3" %>
+      <img src='<%= p.path %>' class="img-responsive">
+    </div>
+  <% end %>
+
+  <div class="col-xs-12">
+    <%= link_to "Zur Liste der Gebäuden", buildings_path %>
+  </div>
+</div>
