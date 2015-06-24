@@ -101,10 +101,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="#">Impressum</a></li>
 								<li><a href="#">Datenschutz</a></li>
 							</ul>
-							<!-- <ul class="col-md-6">
-								<li><a href="#">Impressum</a></li>
-								<li><a href="#">Datenschutz</a></li>
-							</ul> -->
+							<% if current_user %>
+								<ul class="col-md-6">
+									<li><%= link_to "Photos", photos_path %></li>
+								</ul>
+							<% end %>
 							<div class="clearfix"> </div>
 						</div>
 						<div class="col-md-3 footer-grid copy-right">
