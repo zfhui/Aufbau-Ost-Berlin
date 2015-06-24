@@ -1,11 +1,11 @@
 class PhotosController < ApplicationController
-  before_filter :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
+  before_filter :authenticate_user!, only: [:index, :show, :new, :edit, :create, :update, :destroy]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all.order(:id).page(params[:page]).per(15)
+    @photos = Photo.all.order(:id)
   end
 
   # GET /photos/1

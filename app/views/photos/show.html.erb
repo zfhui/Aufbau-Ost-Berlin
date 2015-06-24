@@ -1,20 +1,27 @@
-<h2><%= "#{@photo.id}. #{@photo.index_card_no}_#{@photo.photo_no}.jpg" %></h2>
+<div class="container section-container-first">
+  <div class="section-head">
+    <h3><%= "#{@photo.id}. #{@photo.index_card_no}_#{@photo.photo_no}.jpg" %></h3>
+  </div>
 
-<div class="text-center">
-  <figure>
-    <img src="<%= @photo.path %>" width="25%">
-    <figcaption><%= @photo.building_name %></figcaption>
-  </figure>
+  <div class="section-text-last text-center">
+    <figure>
+      <img src="<%= @photo.path %>" width="30%">
+      <figcaption><%= @photo.building_name %></figcaption>
+    </figure>
+  </div>
+
+  <div class="section-text-last">
+    <p><strong>Fotograf: </strong><%= @photo.photographer %></p>
+    <p><strong>Jahr: </strong><%= @photo.year %></p>
+    <p><strong>Typ: </strong><%= @photo.classification%></p>
+    <p><strong>Gebäude: </strong><%=@photo.building_name %></p>
+    <p><strong>Gebäude ID: </strong><%=@photo.building_id %></p>
+    <p><strong>Adresse: </strong><%= @photo.address %></p>
+    <p><strong>Inhalt: </strong><%= @photo.content %></p>
+    <p><strong>Besitz</strong><%= @photo.ownership %></p>
+    <p><strong>Creditline: </strong><%= @photo.creditline %></p>
+    <p><strong>Flickr URL: </strong><%= @photo.flickr_url %></p>
+    <p><strong>Kommentare: </strong><em><<%= @photo.comments %></em></p>
+  </div>
+
 </div>
-
-<p><strong>Fotograf: </strong><%= @photo.photographer %></p>
-<p><strong>Jahr: </strong><%= @photo.year %></p>
-<p><strong>Typ: </strong><%= @photo.classification%></p>
-<p><strong>Gebäude: </strong><%=@photo.building_name %></p>
-<p><strong>Gebäude ID: </strong><%=@photo.building_id %></p>
-<p><strong>Adresse: </strong><%= @photo.address %></p>
-<p><strong>Inhalt: </strong><%= @photo.content %></p>
-<p><strong>Besitz</strong><%= @photo.ownership %></p>
-<p><strong>Creditline: </strong><%= @photo.creditline %></p>
-<p><strong>Flickr URL: </strong><%= @photo.flickr_url %></p>
-<p><strong>Kommentare: </strong><em><<%= @photo.comments %></em></p>

@@ -1,7 +1,11 @@
-<h1>Gebäude Bearbeiten</h1>
+<div class="container section-container-first">
+  <div class="section-head">
+    <h3>Gebäude Bearbeiten</h3>
+  </div>
+  <div class="section-text-last">
+    <%= render 'form' %>
 
-<%= render 'form' %>
-
-
-<%= link_to 'Anzeigen', @building%> |
-<%= link_to 'Zurück', buildings_path %>
+    <%= link_to 'Anzeigen', @building%> |
+    <%= link_to 'Zurück', buildings_path %>
+  </div>
+</div>

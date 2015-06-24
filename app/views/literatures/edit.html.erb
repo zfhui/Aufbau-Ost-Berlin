@@ -1,6 +1,11 @@
-<h1>Literatur bearbeiten</h1>
+<div class="container section-container-first">
+  <div class="section-head">
+    <h3>Literatur bearbeiten</h3>
+  </div>
+  <div class="section-text">
+    <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @literature %> |
-<%= link_to 'Back', literatures_path %>
+    <%= link_to 'Anzeigen', @literature %> |
+    <%= link_to 'Zurück', literatures_path %>
+  </div>
+</div>
