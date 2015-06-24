@@ -69,6 +69,7 @@ GEM
     execjs (2.5.2)
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
+    geocoder (1.2.9)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
@@ -185,6 +186,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   font-awesome-sass
+  geocoder
   gmaps4rails
   hirb
   jbuilder (~> 2.0)
