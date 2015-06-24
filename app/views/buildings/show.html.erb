@@ -12,21 +12,18 @@
       <p>
         <%= link_to 'Anzeigen', @building %> |
         <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
-        <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
       </p>
     </div>
   <% end %>
 
   <div class="section-text-last">
-    <p><%= @building.description %></p>
-    <p>
-      <strong>Tour: </strong>
-        <% if @building.tour %>
-          <%= @building.tour.name %>
-        <% end %>
-    </p>
     <p><strong>Architekt(en): </strong><%= @building.architects_str %></p>
     <p><strong>Baujahr: </strong><%= @building.built_dates_str %></p>
+    <p><%= @building.description %></p>
+    <% if @building.tour %>
+      <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour) %>.</p>
+    <% end %>
     <p><strong>Externe Links: </strong>
       <%= url_html(@building.wiki_url, "Wikipedia") %>
       <%= url_html(@building.wiki_common_url, "Wikimedia Common") %>
