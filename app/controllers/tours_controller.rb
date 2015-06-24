@@ -11,6 +11,12 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
+    @buildings = @tour.buildings.order(:name)
+    @hash = Gmaps4rails.build_markers @buildings do |building, marker|
+      marker.lat building.latitude
+      marker.lng building.longitude
+      marker.infowindow render_to_string(partial: "/buildings/infowindow", locals: {object: building})
+    end
   end
 
   # GET /tours/new
@@ -70,6 +76,7 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:name)
+      params.require(:tour).permit(:name,
+                                   :description)
     end
 end
