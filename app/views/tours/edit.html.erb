@@ -1,6 +1,11 @@
-<h1>Editing Tour</h1>
+<div class="container section-container-first">
+  <div class="section-head">
+    <h3>Tour bearbeiten</h3>
+  </div>
+  <div class="section-text">
+    <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @tour %> |
-<%= link_to 'Back', tours_path %>
+    <%= link_to 'Anzeigen', @tour %> |
+    <%= link_to 'Zurück', tours_path %>
+  </div>
+</div>

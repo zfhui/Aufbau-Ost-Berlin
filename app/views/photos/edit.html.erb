@@ -1,13 +1,19 @@
-<h1>Foto <em><%="#{@photo.index_card_no}_#{@photo.photo_no}.jpg"%></em> bearbeiten</h1>
+<div class="container section-container-first">
+  <div class="section-head">
+    <h3>Foto <em><%="#{@photo.index_card_no}_#{@photo.photo_no}.jpg"%></em> bearbeiten</h3>
+  </div>
 
-<div class="text-center">
-  <figure>
-    <img src="<%= @photo.path %>" width="25%">
-    <figcaption><%= @photo.building_name %></figcaption>
-  </figure>
+  <div class="section-text-last text-center">
+    <figure>
+      <img src="<%= @photo.path %>" width="33%">
+      <figcaption><%= @photo.building_name %></figcaption>
+    </figure>
+  </div>
+
+  <div class="section-text-last">
+    <%= render 'form' %>
+
+    <%= link_to 'Anzeigen', @photo %> |
+    <%= link_to 'Zurück', photos_path %>
+  </div>
 </div>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @photo %> |
-<%= link_to 'Back', photos_path %>

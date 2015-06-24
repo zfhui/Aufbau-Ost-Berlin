@@ -1,9 +1,16 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tour.name %>
-</p>
+<div class="container section-container-first">
+  <div class="section-head">
+    <h3><%= @tour.name %></h3>
+  </div>
 
-<%= link_to 'Edit', edit_tour_path(@tour) %> |
-<%= link_to 'Back', tours_path %>
+  <div class="section-text-last">
+    <p> Lorem Ipsum ... </p>
+  </div>
+
+
+  <div class="section-text-last">
+    <%= link_to 'Bearbeiten', edit_tour_path(@tour) %> |
+    <%= link_to 'Zurück', tours_path %>
+  </div>
+</div>

@@ -12,14 +12,14 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label "Name:", class: "col-xs-12 col-sm-2 control-label" %>
+    <%= f.label "Name:", class: "col-xs-12 col-sm-3 control-label" %>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :name, class: "form-control" %>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Geolocation: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Geolocation: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-6 col-sm-4">
       <%= f.text_field :latitude, class: "form-control", placeholder: "latitude"%>
     </div>
@@ -29,20 +29,20 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "Architekt(en):", class: "col-xs-12 col-sm-2 control-label" %>
+    <%= f.label "Architekt(en):", class: "col-xs-12 col-sm-3 control-label" %>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :architect, class: "form-control", placeholder: "Architekt 1" %>
     </div>
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-3">
       <%= f.text_field :architect_2, class: "form-control", placeholder: "Architekt 2" %>
     </div>
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-3">
       <%= f.text_field :architect_3, class: "form-control", placeholder: "Architekt 3"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Baujahr 1: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Baujahr 1: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-6 col-sm-4">
       <%= f.text_field :built_from, class: "form-control", placeholder: "vom"%>
     </div>
@@ -52,7 +52,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "Baujahr 2: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Baujahr 2: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-6 col-sm-4">
       <%= f.text_field :built_from_2, class: "form-control", placeholder: "vom"%>
     </div>
@@ -62,59 +62,59 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "Tour:", class: "col-xs-12 col-sm-2 control-label" %>
+    <%= f.label "Tour:", class: "col-xs-12 col-sm-3 control-label" %>
     <div class="col-xs-12 col-sm-8">
       <%= f.collection_select :tour_id, Tour.order(:name), :id, :name, include_blank: true, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Beschreibung: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Beschreibung: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_area :description, class: "form-control", style: "height: 200px", placeholder: "Beschreibung"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Wikipedia URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Wikipedia URL: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :wiki_url, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Wikimedia URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Wikimedia URL: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :wiki_common_url, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Denkmalliste URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Denkmalliste URL: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :denkmalliste_url, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Großstadt URL: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Großstadt URL: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :grossstadt_url, class: "form-control"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Andre URLs: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Andre URLs: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :other_url, class: "form-control", placeholder: "URL 1"%>
     </div>
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-3">
       <%= f.text_field :other_url_2, class: "form-control", placeholder: "URL 2"%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-2 control-label"%>
+    <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_area :comments, class: "form-control", style: "height: 200px", placeholder: "Hier Kommentare eintragen ..."%>
     </div>

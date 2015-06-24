@@ -37,13 +37,13 @@ class Building < ActiveRecord::Base
 
       if architect_3
         third = "#{second}; #{architect_3}"
-        return third.truncate(30, seperator: /\w/)
+        return third
       end
 
-      return second.truncate(30, seperator: /\w/)
+      return
     end
 
-    first.truncate(30, seperator: /\w/)
+    first
   end
 
   def description_short

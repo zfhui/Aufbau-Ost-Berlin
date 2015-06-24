@@ -1,44 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container section-container-first">
+  <div class="section-head">
+    <h3><%= @literature.title %></h3>
+  </div>
+  <div class="section-text-last">
+    <p>
+      <strong>Subtitle:</strong>
+      <%= @literature.subtitle %>
+    </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @literature.author %>
-</p>
+    <p>
+      <strong>Author:</strong>
+      <%= @literature.author %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @literature.title %>
-</p>
+    <p>
+      <strong>Published at:</strong>
+      <%= @literature.published_at %>
+    </p>
 
-<p>
-  <strong>Subtitle:</strong>
-  <%= @literature.subtitle %>
-</p>
+    <p>
+      <strong>Publisher:</strong>
+      <%= @literature.publisher %>
+    </p>
 
-<p>
-  <strong>Published at:</strong>
-  <%= @literature.published_at %>
-</p>
+    <p>
+      <strong>Year:</strong>
+      <%= @literature.year %>
+    </p>
 
-<p>
-  <strong>Publisher:</strong>
-  <%= @literature.publisher %>
-</p>
+    <p>
+      <strong>Cover file:</strong>
+      <%= @literature.cover_file %>
+    </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @literature.year %>
-</p>
+    <p>
+      <strong>Url:</strong>
+      <%= @literature.url %>
+    </p>
 
-<p>
-  <strong>Cover file:</strong>
-  <%= @literature.cover_file %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @literature.url %>
-</p>
-
-<%= link_to 'Edit', edit_literature_path(@literature) %> |
-<%= link_to 'Back', literatures_path %>
+    <%= link_to 'Bearbeiten', edit_literature_path(@literature) %> |
+    <%= link_to 'Zurück', literatures_path %>
+  </div>
+</div>
