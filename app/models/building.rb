@@ -38,5 +38,4 @@ class Building < ActiveRecord::Base
   def description_short
     description.truncate(90, seperator: /\w/)
   end
-
 end

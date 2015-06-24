@@ -14,80 +14,26 @@
   <div id="map" style='width: 100%; height: 450px;'></div>
 </div>
 
-<div class="container">
-  <div id="building" style='width: 100%; height: 450px;'></div>
+<div class="container-text">
+  <div id="building" style='width: 100%; height: 450px;'>
+    <%= render partial: 'building' %>
+  </div>
 </div>
 
 <% if current_user %>
-  <div class="col-xs-12">
-    <% @buildings.each do |building| %>
-      <h2 class="col-sm-12 col-md-12 col-lg-12">
-        <%= "#{building.id}. #{building.name}" %>
-      </h2>
-      <% if current_user %>
-        <p class="col-sm-12 col-md-12 col-lg-12">
-          <%= link_to 'Anzeigen', building %> |
-          <%= link_to 'Bearbeiten', edit_building_path(building) %> |
-          <%= link_to 'Löschen', building, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </p>
+<div id="buildings-importer" class="importer">
+  <div class="container-text">
+    <div><%= link_to 'New Building', new_building_path %></div>
+    <div class="container-title">Import Buildings</div>
+    <div>
+      <%= form_tag import_buildings_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag 'Import'%>
       <% end %>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Geolocation: </strong><%= "#{building.latitude}, #{building.longitude}"%>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Architekt(en): </strong><%= "#{building.architect}, #{building.architect_2}, #{building.architect_3}"%>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Baujahr: </strong><%= "#{building.built_from}-#{building.built_to}; #{building.built_from_2}-#{building.built_to_2}" %>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Tour: </strong>
-          <% if building.tour %>
-            <%= building.tour.name %>
-          <% end %>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Beschreibung: </strong><%= building.description %>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Wikipedia URL: </strong><%= building.wiki_url %>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Wikimedia Common URL: </strong><%= building.wiki_common_url %>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Denkmalliste URL: </strong><%= building.denkmalliste_url %>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Großstadt URL: </strong><%= building.grossstadt_url %>
-      </p>
-      <p class="col-xs-12 col-sm-12">
-        <strong>Andere URLs: </strong><%= "#{building.other_url}, #{building.other_url_2}"%>
-      </p>
-
-      <% if current_user %>
-        <p class="col-xs-12 col-sm-12">
-          <strong>Kommentare: </strong><em><%= building.comments %></em>
-        </p>
-      <% end %>
-
-      <% building.photos.each do |photo| %>
-        <div class="col-xs-12 col-sm-3">
-          <img src="<%= photo.path %>" class="img-responsive">
-        </div>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-
-  <div class="col-xs-12">
-    <%= link_to 'New Building', new_building_path %>
-    <h3>Import Buildings</h3>
-    <%= form_tag import_buildings_path, multipart: true do %>
-      <%= file_field_tag :file %>
-      <%= submit_tag 'Import' %>
-    <% end %>
-  </div>
-
+  <div class="clearfix"> </div>
+</div>
 <% end %>
 
 <% content_for :javascript do %>
