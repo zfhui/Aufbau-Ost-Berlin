@@ -72,6 +72,7 @@ nav.navbar-static-top{
   display: inline-block;
   text-align: center;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -92,7 +93,8 @@ nav.navbar-static-top{
 }
 
 .dropdown-menu>li>a{
-
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .dropdown-menu>li>a:hover,
@@ -127,11 +129,21 @@ body a.codingdavinci:visited {
   background-color: #F8BD0C;
   padding: 10px;
   display: inline;
+  text-transform: uppercase;
 }
 
 .section-head h4{
   color: #000;
   font-weight: bold;
+  background-color: #F8BD0C;
+  padding: 5px;
+  display: inline;
+}
+
+.section-head h5{
+  color: #000;
+  font-weight: bold;
+  font-style: italic;
   background-color: #F8BD0C;
   padding: 5px;
   display: inline;
