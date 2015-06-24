@@ -15,6 +15,7 @@
     <% if p = building.photos.first %>
       <img src='<%=p.path%>' class="img-responsive">
     <% end %>
+    <p><small>Fotografiert von <%= p.photographer %></small></p>
   </div>
 
   <div class="col-sx-12 col-sm-8">
