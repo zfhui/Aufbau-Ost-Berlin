@@ -87,39 +87,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!---footer----->
 			<footer class="footer">
 				<div class="container">
-					<!-- footer icon with short info -->
-					<div class="col-xs-12 col-sm-6">
-						<a class="footer-brand" href="<%=root_path%>"><img src='<%=image_url("icon_yellow.png")%>' title="Wiederaufbau Ost-Berlin" width="80px"/></a>
-						<p>Ein Projekt im Rahmen von {<a href="http://codingdavinci.de/" target="_blank" class="codingdavinci">COD1NG DA V1NC1</a>}. <a href="https://offenedaten.de/dataset/fotoarchiv-ehemaligen-ostberliner-magistratsverwaltung-fur-stadtentwicklung" target="_blank">Die Daten</a> dieser Seite entstammen aus dem Bestand des <a href="http://www.berlinischegalerie.de/sammlung/architektur/der-sammlungsbereich/archive/ostberliner-fotoarchiv/" target="_blank">Osterberliner Fotoarchives</a> und wurde von der <a href="http://www.berlinischegalerie.de/" target="_blank">Berlinischen Galerie</a> zur Verfügung gestellt. Lizenz: <a href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank">CC-BY</a>.</p>
-						<p>Die Source-Code zu dieser Website sind bei <a href="https://github.com/zfhui/CodingDaVinci" target="_blank">GitHub</a> verfügbar.</p>
-					</div>
+					<div class="row">
+						<!-- footer icon with short info -->
+						<div class="col-xs-12 col-sm-6">
+							<a class="footer-brand" href="<%=root_path%>"><img src='<%=image_url("icon_yellow.png")%>' title="Wiederaufbau Ost-Berlin" width="80px"/></a>
+							<p>Ein Projekt im Rahmen von {<a href="http://codingdavinci.de/" target="_blank" class="codingdavinci">COD1NG DA V1NC1</a>}. <a href="https://offenedaten.de/dataset/fotoarchiv-ehemaligen-ostberliner-magistratsverwaltung-fur-stadtentwicklung" target="_blank">Die Daten</a> dieser Seite entstammen aus dem Bestand des <a href="http://www.berlinischegalerie.de/sammlung/architektur/der-sammlungsbereich/archive/ostberliner-fotoarchiv/" target="_blank">Osterberliner Fotoarchives</a> und wurde von der <a href="http://www.berlinischegalerie.de/" target="_blank">Berlinischen Galerie</a> zur Verfügung gestellt. Lizenz: <a href="https://creativecommons.org/licenses/by/3.0/de/" target="_blank">CC-BY</a>.</p>
+							<p>Die Source-Code zu dieser Website sind bei <a href="https://github.com/zfhui/CodingDaVinci" target="_blank">GitHub</a> verfügbar.</p>
+						</div>
 
-					<!-- Explore the site -->
-					<div class="col-xs-12 col-sm-3">
-						<h3>Explore</h3>
-						<ul class="col-md-6">
-							<li>
-								<% if current_user %>
-									<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-								<% else %>
-									<%= link_to 'Login', new_user_session_path %>
-								<% end %>
-							</li>
-							<li><%= link_to "Über diese Seite", about_path %></li>
-							<li><%= link_to "Impressum", impressum_path %></li>
-							<li><a href="#">Datenschutz</a></li>
-						</ul>
-						<% if current_user %>
+						<!-- Explore the site -->
+						<div class="col-xs-12 col-sm-6">
+							<h3>Explore</h3>
 							<ul class="col-md-6">
-								<li><%= link_to "Fotos", photos_path %></li>
-								<li><%= link_to "Touren", tours_path %></li>
+								<li>
+									<% if current_user %>
+										<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+									<% else %>
+										<%= link_to 'Login', new_user_session_path %>
+									<% end %>
+								</li>
+								<li><%= link_to "Über diese Seite", about_path %></li>
+								<li><%= link_to "Impressum", impressum_path %></li>
+								<li><a href="#">Datenschutz</a></li>
 							</ul>
-						<% end %>
-					</div>
-
-					<!-- other info -->
-					<div class="col-xs-12 col-sm-3">
-						<p>Eusmod tempor incididunt ut labore et dolore magna aliqua. ut labore et dolore magna aliqua. </p>
+							<% if current_user %>
+								<ul class="col-md-6">
+									<li><%= link_to "Fotos", photos_path %></li>
+									<li><%= link_to "Touren", tours_path %></li>
+								</ul>
+							<% end %>
+						</div>
 					</div>
 				</div>
 			</footer>
