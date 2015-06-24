@@ -35,6 +35,18 @@ body a{
   padding: 2em 30% 2em 3em;
 }
 
+.container-title{
+  text-align: left;
+  color:#282528;
+	font-weight:800;
+	font-size:1.6em;
+  display: block;
+}
+
+.container-text{
+  padding: 2em 1em 2em 1em;
+}
+
 /*-----start-header----*/
 .header{
 	background:#F8BD0C;
@@ -158,6 +170,11 @@ table caption.marker-infowindow{
 
 table.marker-infowindow td{
   vertical-align: top;
+}
+
+/*---- importer ---- */
+div.importer {
+  background: #E6E6E6;
 }
 
 /*Styles for screen 600px and lower*/
