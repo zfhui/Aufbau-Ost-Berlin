@@ -10,7 +10,7 @@ class BuildingsController < ApplicationController
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
       marker.lat building.latitude
       marker.lng building.longitude
-      marker.infowindow render_to_string(partial: "/buildings/my_template", locals: {object: building})
+      marker.infowindow render_to_string(partial: "/buildings/infowindow", locals: {object: building})
     end
   end
 
@@ -72,7 +72,7 @@ class BuildingsController < ApplicationController
       Building.import(params[:file])
       redirect_to buildings_url, notice: 'Buildings imported.'
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_building
