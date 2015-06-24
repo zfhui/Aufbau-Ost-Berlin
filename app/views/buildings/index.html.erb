@@ -48,9 +48,3 @@
     </div>
   </div>
 <% end %>
-
-<% content_for :javascript do %>
-  <script type="text/javascript">
-    buildMap(<%= raw @hash.to_json %>);
-  </script>
-<% end %>
