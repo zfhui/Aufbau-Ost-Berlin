@@ -99,6 +99,7 @@ class BuildingsController < ApplicationController
                                        :other_url,
                                        :other_url_2,
                                        :comments,
-                                       :tour_id)
+                                       :tour_id,
+                                       :video_url)
     end
 end
