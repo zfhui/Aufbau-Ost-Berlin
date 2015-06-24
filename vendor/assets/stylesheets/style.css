@@ -38,13 +38,22 @@ body a{
 .container-title{
   text-align: left;
   color:#282528;
+  display: block;
+}
+
+.container-maintitle{
 	font-weight:800;
 	font-size:1.6em;
-  display: block;
+}
+
+.container-subtitle{
+	font-weight:500;
+	font-size:1.2em;
 }
 
 .container-text{
   padding: 2em 1em 2em 1em;
+  display: block;
 }
 
 /*-----start-header----*/
