@@ -91,6 +91,18 @@ nav.navbar-static-top{
   display: block;
 }
 
+.dropdown-menu>li>a{
+
+}
+
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus{
+  color: #000;
+  text-decoration: none;
+  background: #F8BD0C;
+  display: block;
+}
+
 /*---- footer bar ----*/
 
 footer ul {
