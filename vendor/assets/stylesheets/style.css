@@ -49,11 +49,11 @@ footer > .container{
 }
 
 /*---- navigation bar ----*/
-nav.navbar-static-top{
-  background: #FFF;
+nav.navbar-default{
   margin-top: 5em;
-  height: 100px;
   margin-bottom: 0.5em;
+  border-radius: 0px;
+  background: #FFF;
 }
 
 /* styles for the icon */
@@ -92,17 +92,21 @@ nav.navbar-static-top{
   display: block;
 }
 
-.dropdown-menu>li>a{
+.dropdown-menu > li > a{
   text-transform: uppercase;
   font-weight: bold;
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus{
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus{
   color: #000;
   text-decoration: none;
   background: #F8BD0C;
   display: block;
+}
+
+.navbar-toggle{
+  margin: 25px 50px 25px 25px;
 }
 
 /*---- footer bar ----*/
