@@ -67,10 +67,13 @@ nav.navbar-default{
   margin: 25px;
 }
 
+.navbar-default .navbar-nav > li{
+  text-align: center;
+}
+
 .navbar-default .navbar-nav > li > a{
   color: #000;
   display: inline-block;
-  text-align: center;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -97,8 +100,8 @@ nav.navbar-default{
   font-weight: bold;
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus{
+.navbar-default .dropdown-menu > li > a:hover,
+.navbar-default .dropdown-menu > li > a:focus{
   color: #000;
   text-decoration: none;
   background: #F8BD0C;
@@ -109,6 +112,17 @@ nav.navbar-default{
   margin: 25px 50px 25px 25px;
 }
 
+.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #000;
+  background: #F8BD0C;
+}
 /*---- footer bar ----*/
 
 footer ul {
