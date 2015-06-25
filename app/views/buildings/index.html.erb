@@ -22,9 +22,11 @@
         <% @buildings.each do |b| %>
         <tr>
             <td>
-              <p><strong><%= b.name %></strong></p>
-              <p><%= "#{b.street_name} #{b.house_no}," %>
-              <%= "#{b.zipcode} #{b.city}" %></p>
+              <address>
+                <strong><%= b.name %></strong></br>
+                <%= "#{b.street_name} #{b.house_no}" %></br>
+                <%= "#{b.zipcode} #{b.city}" %>
+              </address>
               <p><%= link_to "Details", building_path(b) %></p>
             </td>
         </tr>
