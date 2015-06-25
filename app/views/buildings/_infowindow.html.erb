@@ -3,7 +3,7 @@
     <caption><%= object.name %></caption>
     <tbody>
       <tr>
-        <td width="100px">
+        <td width="150px">
           <% if object.photos.first %>
             <img src="<%= object.photos.first.path_150px %>" width="150px" height="150px">
           <% end %>
@@ -16,7 +16,10 @@
             <strong>Architekt(en): </strong><%="#{object.architects_str}".truncate(30, seperator: /\w/)%>
           </p>
           <p>
-            <strong>Beschreibung: </strong><%=object.description_short%> <%= link_to "&raquo;".html_safe, building_path(object) %>
+            <strong>Beschreibung: </strong><%=object.description_short%>
+            <%= link_to building_path(object) do %>
+              <span class="glyphicon glyphicon-link"></span> Details
+            <% end %>
           </p>
         </td>
       </tr>
