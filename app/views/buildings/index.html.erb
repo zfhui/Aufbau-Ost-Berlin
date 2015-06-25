@@ -1,5 +1,5 @@
 <div class="container">
-  <div id="map" style='width: 100%; height: 450px;'></div>
+  <div id="buildings_map" style='width: 100%; height: 450px;'></div>
 </div>
 
 <!-- about this site -->
@@ -7,7 +7,7 @@
   <div class="section-head">
     <h3><%= @buildings.count %> Gebäude</h3>
   </div>
-  <div class="section-text-last">
+  <div class="section-text">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </div>
 </div>
@@ -17,24 +17,25 @@
 <div class="container section-container">
   <div class="section-text-last">
     <p>Klick auf den Gebäudenamen, um es auf der Karte anzuzeigen.</p>
-    <table class="table table-striped">
-      <tbody>
-        <% @buildings.each do |b| %>
-        <tr>
-            <td>
-              <address>
-                <strong><%= b.name %></strong></br>
-                <%= "#{b.street_name} #{b.house_no}" %></br>
-                <%= "#{b.zipcode} #{b.city}" %>
-              </address>
-              <p><%= link_to "Details", building_path(b) %></p>
-            </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <ul id="buildings_list">
+    </ul>
   </div>
 </div>
+
+<!--             <% @buildings.each do |b| %>
+                  <address id='<%="address-#{b.id}"%>'>
+                    <a href="#">
+                      <strong><%= b.name %></strong></br>
+                    </a>
+                    <%= "#{b.street_name} #{b.house_no}" %></br>
+                    <%= "#{b.zipcode} #{b.city}" %></br>
+                    <%= link_to building_path(b) do %>
+                      <span class="glyphicon glyphicon-link"></span> Details
+                    <% end %>
+                  </address>
+                </end>
+            <% end %>
+ -->
 
 <% if current_user %>
   <div class="container section-container importer-container">
@@ -53,6 +54,6 @@
 
 <% content_for :javascript do %>
   <script type="text/javascript">
-    buildMap(<%= raw @hash.to_json %>);
+    buildingsMap(<%= raw @hash.to_json %>);
   </script>
 <% end %>
