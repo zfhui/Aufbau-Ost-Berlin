@@ -10,7 +10,6 @@
   <% if current_user %>
     <div class="section-text-last">
       <p>
-        <%= link_to 'Anzeigen', @building %> |
         <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
         <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
       </p>
