@@ -1,5 +1,6 @@
 function createSidebarLi(json){
-  return ("<li><address><a href='#'>" + json.name + "</a>, "
+  return ("<li><address><a href='#'><span class='glyphicon glyphicon-map-marker'></span> "
+          + json.name + "</a>, "
           + json.street_name + " " + json.house_no + ", "
           + json.zipcode + " " + json.city + "</address></li>");
 };

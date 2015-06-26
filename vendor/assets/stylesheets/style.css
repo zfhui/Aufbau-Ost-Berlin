@@ -264,3 +264,8 @@ div.marker-infowindow table caption{
 div.marker-infowindow table td{
   vertical-align: top;
 }
+
+#buildings_list {
+  list-style:none;
+  padding: 0px;
+}
