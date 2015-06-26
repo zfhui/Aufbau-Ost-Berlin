@@ -4,31 +4,33 @@
     <h3><%= @photos.count %> Fotos</h3>
   </div>
   <div class="chapter-text">
-    <p>Diese Seite ist nur zur internen Nutzung</p>
+    <p>Diese Seite ist nur zur internen Nutzung.</p>
   </div>
   <!--//about this site---->
 
   <% @photos.each do |photo| %>
     <div class="section-container">
-      <div class="section-head">
-        <h4><%= "#{photo.id}. #{photo.index_card_no}_#{photo.photo_no}.jpg" %></h4>
-        <% if current_user %>
-          <p>
-            <%= link_to 'Anzigen', photo %> |
-            <%= link_to 'Bearbeiten', edit_photo_path(photo) %> |
-            <%= link_to 'Löschen', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>
-        <% end %>
-      </div>
-
-      <div class="section-text">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
+      <div class="row">
+        <!-- book cover -->
+        <div class="col-xs-12 col-sm-4">
+          <div class="section-image">
             <img src="<%=photo.path%>", class="img-responsive">
+            <p class="byline">Foto: <%= photo.photographer %>, <%= photo.year %></p>
           </div>
-          <div class="col-xs-12 col-sm-8">
-            <p><strong>Fotograf: </strong><%= photo.photographer %></p>
-            <p><strong>Jahr: </strong><%= photo.year %></p>
+        </div>
+        <!-- book info -->
+        <div class="col-xs-12 col-sm-8">
+          <div class="section-head">
+            <h4><%= "#{photo.id}. #{photo.index_card_no}_#{photo.photo_no}.jpg" %></h4>
+            <% if current_user %>
+              <p>
+                <%= link_to 'Anzigen', photo %> |
+                <%= link_to 'Bearbeiten', edit_photo_path(photo) %> |
+                <%= link_to 'Löschen', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </p>
+            <% end %>
+          </div>
+          <div class="section-text">
             <p><strong>Typ: </strong><%= photo.classification%></p>
             <p><strong>Gebäude: </strong><%=photo.building_name %></p>
             <p><strong>Gebäude ID: </strong><%=photo.building_id %></p>

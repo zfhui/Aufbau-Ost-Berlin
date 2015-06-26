@@ -14,26 +14,33 @@
   </div>
 
   <div class="chapter-text">
-    <p><strong>Architekt(en): </strong><%= @building.architects_str %></p>
-    <p><strong>Baujahr: </strong><%= @building.built_dates_str %></p>
+    <p class="section-subtext">
+      <strong>Architekt(en): </strong><%= @building.architects_str %> |
+      <strong>Baujahr: </strong><%= @building.built_dates_str %>
+    </p>
     <p><%= @building.description %></p>
     <% if @building.tour %>
       <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour) %>.</p>
     <% end %>
-    <p><strong>Externe Links: </strong>
-      <%= url_html(@building.wiki_url, "Wikipedia") %>
-      <%= url_html(@building.wiki_common_url, "Wikimedia Common") %>
-      <%= url_html(@building.denkmalliste_url, "Denkmalliste") %>
-      <%= url_html(@building.grossstadt_url, "Großstadt") %>
-      <%= url_html(@building.other_url, "Link 1") %>
-      <%= url_html(@building.other_url_2, "Link 2") %>
-      <%= url_html(@building.video_url, "Video") %>
-    </p>
-    <% if current_user %>
-      <p>
-        <strong>Kommentare: </strong><em><%= @building.comments %></em>
+  </div>
+
+  <div class="section-container">
+    <div class="section-text">
+      <p><strong>Externe Links: </strong>
+        <%= url_html(@building.wiki_url, "Wikipedia") %>
+        <%= url_html(@building.wiki_common_url, "Wikimedia Common") %>
+        <%= url_html(@building.denkmalliste_url, "Denkmalliste") %>
+        <%= url_html(@building.grossstadt_url, "Großstadt") %>
+        <%= url_html(@building.other_url, "Link 1") %>
+        <%= url_html(@building.other_url_2, "Link 2") %>
+        <%= url_html(@building.video_url, "Video") %>
       </p>
-    <% end %>
+      <% if current_user %>
+        <p>
+          <strong>Kommentare: </strong><em><%= @building.comments %></em>
+        </p>
+      <% end %>
+    </div>
   </div>
 
   <div class="section-container">
@@ -42,7 +49,7 @@
         <% @building.photos.each do |p| %>
           <div class="col-xs-12 col-sm-4 col-md-3" %>
             <img src='<%= p.path %>' class="img-responsive">
-            <p><small>Fotografiert von <%= p.photographer %></small></p>
+            <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
           </div>
         <% end %>
       </div>
