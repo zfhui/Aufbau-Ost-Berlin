@@ -229,8 +229,14 @@ body a.codingdavinci:visited {
 }
 
 .section-image{
-
+  margin-bottom: 0.5em;
 }
+
+.section-image img{
+  margin-left:auto;
+  margin-right: auto;
+}
+
 /*---- team member ----*/
 .team-member-info{
 	position:relative;
