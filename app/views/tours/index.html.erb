@@ -1,47 +1,42 @@
 <!-- about this site -->
-<div class="container section-container-first">
-  <div class="section-head">
+<div class="container chapter-container">
+  <div class="chapter-head">
     <h3>Touren</h3>
   </div>
-  <div class="section-text">
+  <div class="chapter-text">
     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
   </div>
+  <!--//about this site---->
+
+  <% @tours.each do |tour| %>
+    <div class="section-container">
+      <div class="section-head">
+        <h4><%= tour.name %></h4>
+        <% if current_user %>
+            <p>
+              <%= link_to 'Anzeigen', tour %> |
+              <%= link_to 'Bearbeiten', edit_tour_path(tour) %> |
+              <%= link_to 'Löschen', tour, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </p>
+        <% end %>
+      </div>
+
+      <div class="section-text">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <img src="<%=tour.image_path%>" class="img-responsive" alt='<%="#{tour.name}-Tour-Cover"%>'>
+          </div>
+          <div class="col-xs-12 col-sm-8">
+            <p><%= tour.description.truncate(250) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-<!--//about this site---->
-
-<% @tours.each do |tour| %>
-  <div class="container section-container">
-    <div class="section-head">
-      <h4><%= tour.name %></h4>
-    </div>
-
-    <% if current_user %>
-      <div class="section-text-last">
-        <p>
-          <%= link_to 'Anzeigen', tour %> |
-          <%= link_to 'Bearbeiten', edit_tour_path(tour) %> |
-          <%= link_to 'Löschen', tour, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </p>
-      </div>
-    <% end %>
-
-    <div class="section-text">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <img src="<%=tour.image_path%>" class="img-responsive" alt='<%="#{tour.name}-Tour-Cover"%>'>
-        </div>
-        <div class="col-xs-12 col-sm-8">
-          <p><%= tour.description.truncate(250) %></p>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
 
 <% if current_user %>
-  <div class="container section-container importer-container">
-    <div class="section-container-last">
-      <p><%= link_to 'Neue Tour', new_tour_path %></p>
-    </div>
+  <div class="container importer-container">
+    <p><%= link_to 'Neue Tour', new_tour_path %></p>
   </div>
 <% end %>

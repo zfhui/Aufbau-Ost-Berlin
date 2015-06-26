@@ -1,7 +1,15 @@
 html, body{
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'Crimson Text', 'Century', Garamond, 'Open Serif', serif !important;
     font-size: 100%;
     background-color: #F8BD0C;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+p {
+  font-size: 18px;
 }
 
 /*----containers----*/
@@ -36,15 +44,8 @@ footer > .container{
   padding: 2em 30% 2em 25px;
 }
 
-.container.section-container{
-  padding: 20px 25px 20px 25px;
-}
-
-.container.section-container-first{
-  padding: 40px 25px 20px 25px;
-}
-
-.container.section-container.importer-container{
+.container.importer-container{
+  padding: 25px;
   background: #E6E6E6;
 }
 
@@ -68,6 +69,7 @@ nav.navbar-default{
 }
 
 .navbar-default .navbar-nav > li{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   text-align: center;
 }
 
@@ -136,59 +138,73 @@ body a.codingdavinci:visited {
   font-family: 'Archive' !important;
 }
 
-/*---- section styles -----*/
-.section-head{
-  margin-bottom: 1.5em;
+/*---- chapter styles -----*/
+.chapter-container{
+  padding: 2.5em 25px 2.0em 25px;
 }
 
-.section-head h3{
+.chapter-container h1,
+.chapter-container h2,
+.chapter-container h3,
+.chapter-container h4,
+.chapter-container h5,
+.chapter-container h6{
   color: #000;
   font-weight: bold;
   background-color: #F8BD0C;
-  padding: 10px;
   display: inline;
+}
+
+.chapter-container h1,
+.chapter-container h2,
+.chapter-container h3{
   text-transform: uppercase;
+  padding: 10px;
   line-height: 50px;
 }
 
-.section-head h4{
-  color: #000;
-  font-weight: bold;
-  background-color: #F8BD0C;
+.chapter-container h3{
+  padding: 10px;
+  line-height: 50px;
+}
+
+.chapter-container h4{
   padding: 5px;
   display: inline;
   line-height: 35px;
 }
 
-.section-head h5{
-  color: #000;
-  font-weight: bold;
-  font-style: italic;
-  background-color: #F8BD0C;
+.chapter-container h5{
   padding: 5px;
   display: inline;
+  font-style: italic;
+}
+
+.chapter-head,
+.chapter-text{
+  margin-bottom: 1.5em;
+  display: block;
+}
+
+/*---- section styles ----*/
+
+.section-container {
+  padding-top: 1.0em;
+}
+
+.section-head{
+  margin-bottom: 1.0em;
+  display: block;
 }
 
 .section-text{
-  border-bottom: 1px solid #000;
-  padding-bottom: 10px;
-  display: block;
-}
-
-.section-text-last{
-  border-bottom: none;
-  padding-bottom: 10px;
-  display: block;
-}
-
-.section-text p,
-.section-test-last p{
-  padding: 10px auto 10px auto;
+  padding-bottom: 1.0em;
 }
 
 /*---- team member ----*/
 .team-member-info{
 	position:relative;
+  text-align: center;
 }
 .team-member-info label{
 	display: none;
@@ -202,7 +218,7 @@ body a.codingdavinci:visited {
 .team-member-info:hover label.team-member-caption{
 	display:block;
 }
-.team-member-info img.member-pic{
+.team-member-info img.team-member-pic{
 	width:100%;
 }
 .team-member-info h5{
@@ -213,10 +229,11 @@ body a.codingdavinci:visited {
 	color: #A2A4A7;
 	font-size: 0.875em;
 }
-.team-member-info h5 a{
+.team-member-info.team-member-name a{
 	color:#282528;
 	font-size:1.4em;
 	font-weight:600;
+  display: block;
 }
 .team-member-caption p{
 	font-size:0.875em;

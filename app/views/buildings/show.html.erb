@@ -2,21 +2,18 @@
   <div id="building-map" style='width: 100%; height: 450px;'></div>
 </div>
 
-<div class="container section-container-first">
-  <div class="section-head">
+<div class="container chapter-container">
+  <div class="chapter-head">
     <h3><%= @building.name %></h3>
-  </div>
-
-  <% if current_user %>
-    <div class="section-text-last">
+    <% if current_user %>
       <p>
         <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
         <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
       </p>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 
-  <div class="section-text-last">
+  <div class="chapter-text">
     <p><strong>Architekt(en): </strong><%= @building.architects_str %></p>
     <p><strong>Baujahr: </strong><%= @building.built_dates_str %></p>
     <p><%= @building.description %></p>
@@ -39,19 +36,23 @@
     <% end %>
   </div>
 
-  <div class="section-text-last">
-    <div class="row">
-      <% @building.photos.each do |p| %>
-        <div class="col-xs-12 col-sm-4 col-md-3" %>
-          <img src='<%= p.path %>' class="img-responsive">
-          <p><small>Fotografiert von <%= p.photographer %></small></p>
-        </div>
-      <% end %>
+  <div class="section-container">
+    <div class="section-text">
+      <div class="row">
+        <% @building.photos.each do |p| %>
+          <div class="col-xs-12 col-sm-4 col-md-3" %>
+            <img src='<%= p.path %>' class="img-responsive">
+            <p><small>Fotografiert von <%= p.photographer %></small></p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div class="section-text-last">
-    <%= link_to "Zurück zur Liste der Gebäuden", buildings_path %>
+  <div class="section-container">
+    <div class="section-text">
+      <%= link_to "Zurück zur Liste der Gebäuden", buildings_path %>
+    </div>
   </div>
 </div>
 
