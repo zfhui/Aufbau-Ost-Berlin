@@ -26,7 +26,14 @@
     <% end %>
 
     <div class="section-text">
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.</p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <img src="<%=tour.image_path%>" class="img-responsive" alt='<%="#{tour.name}-Tour-Cover"%>'>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+          <p><%= tour.description.truncate(250) %></p>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>
@@ -34,7 +41,7 @@
 <% if current_user %>
   <div class="container section-container importer-container">
     <div class="section-container-last">
-      <p><%= link_to 'New Tour', new_tour_path %></p>
+      <p><%= link_to 'Neue Tour', new_tour_path %></p>
     </div>
   </div>
 <% end %>
