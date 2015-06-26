@@ -5,7 +5,7 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @tours = Tour.all.order(:name)
   end
 
   # GET /tours/1
@@ -77,6 +77,7 @@ class ToursController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
       params.require(:tour).permit(:name,
-                                   :description)
+                                   :description,
+                                   :image_path)
     end
 end
