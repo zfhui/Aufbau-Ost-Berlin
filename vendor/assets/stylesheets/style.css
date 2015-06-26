@@ -148,6 +148,7 @@ body a.codingdavinci:visited {
   padding: 10px;
   display: inline;
   text-transform: uppercase;
+  line-height: 50px;
 }
 
 .section-head h4{
@@ -156,6 +157,7 @@ body a.codingdavinci:visited {
   background-color: #F8BD0C;
   padding: 5px;
   display: inline;
+  line-height: 35px;
 }
 
 .section-head h5{
