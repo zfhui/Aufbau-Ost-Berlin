@@ -181,7 +181,8 @@ body a.codingdavinci:visited {
   display: block;
 }
 
-.section-text p{
+.section-text p,
+.section-test-last p{
   padding: 10px auto 10px auto;
 }
 
