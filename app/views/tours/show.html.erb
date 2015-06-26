@@ -7,6 +7,15 @@
     <h3>Tour <%= @tour.name %></h3>
   </div>
 
+<% if current_user %>
+  <div class="section-text-last">
+    <p>
+      <%= link_to 'Bearbeiten', edit_tour_path(@tour) %> |
+      <%= link_to 'Löschen', @tour, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
+    </p>
+  </div>
+<% end %>
+
   <div class="section-text">
     <p><%= @tour.description %></p>
   </div>
@@ -26,8 +35,7 @@
 
 <div class="container section-container">
   <div class="section-text-last">
-    <%= link_to 'Bearbeiten', edit_tour_path(@tour) %> |
-    <%= link_to 'Zurück', tours_path %>
+    <%= link_to 'Zurück zur Liste der Touren', tours_path %>
   </div>
 </div>
 

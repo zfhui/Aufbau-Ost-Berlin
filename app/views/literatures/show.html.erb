@@ -2,6 +2,16 @@
   <div class="section-head">
     <h3><%= @literature.title %></h3>
   </div>
+
+  <% if current_user %>
+    <div class="section-text-last">
+      <p>
+        <%= link_to 'Bearbeiten', edit_literature_path(@literature) %> |
+        <%= link_to 'Löschen', @literature, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
+      </p>
+    </div>
+  <% end %>
+
   <div class="section-text-last">
     <p>
       <strong>Subtitle:</strong>
@@ -37,8 +47,11 @@
       <strong>Url:</strong>
       <%= @literature.url %>
     </p>
+  </div>
+</div>
 
-    <%= link_to 'Bearbeiten', edit_literature_path(@literature) %> |
-    <%= link_to 'Zurück', literatures_path %>
+<div class="container section-container">
+  <div class="section-text-last">
+    <%= link_to 'Zurück zur Liste der Literaturen', literatures_path %>
   </div>
 </div>
