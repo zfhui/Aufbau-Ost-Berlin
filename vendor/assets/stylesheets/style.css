@@ -4,7 +4,7 @@ html, body{
     background-color: #F8BD0C;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, .byline{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
@@ -15,9 +15,17 @@ h5, p{
 h6{
   font-size: 14px;
 }
+
 .byline{
   color: #666;
-  font-size: 12px;
+  font-size: 10px;
+  text-align: right;
+}
+
+body a,
+body a:hover,
+body a:focus{
+  color: #003B86;
 }
 
 /*----containers----*/
@@ -34,13 +42,6 @@ h6{
 /* container for the content */
 .container.content-container{
   background: #FFF;
-}
-
-/* container for the footer */
-footer > .container{
-  background: #FFF;
-  margin-top: 0.5em;
-  padding: 10px 20px 10px 20px;
 }
 
 .container.intro-container{
@@ -133,12 +134,27 @@ nav.navbar-default{
   color: #000;
   background: #F8BD0C;
 }
-/*---- footer bar ----*/
+/*---- footer ----*/
+
+/* container for the footer */
+footer > .container{
+  background: #FFF;
+  margin-top: 0.5em;
+  padding: 10px 20px 10px 20px;
+}
+
+
+footer p,
+footer ul{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  padding-top: 1.0em;
+  font-size: 14px;
+  color: #666;
+}
 
 footer ul {
   list-style-type: none;
 }
-
 
 /*---- coding davinci ----*/
 body a.codingdavinci:link,
