@@ -17,25 +17,10 @@
 <div class="container section-container">
   <div class="section-text-last">
     <p>Klick auf den Gebäudenamen, um es auf der Karte anzuzeigen.</p>
-    <ol id="buildings_list">
-    </ol>
+    <ul id="buildings_list">
+    </ul>
   </div>
 </div>
-
-<!--             <% @buildings.each do |b| %>
-                  <address id='<%="address-#{b.id}"%>'>
-                    <a href="#">
-                      <strong><%= b.name %></strong></br>
-                    </a>
-                    <%= "#{b.street_name} #{b.house_no}" %></br>
-                    <%= "#{b.zipcode} #{b.city}" %></br>
-                    <%= link_to building_path(b) do %>
-                      <span class="glyphicon glyphicon-link"></span> Details
-                    <% end %>
-                  </address>
-                </end>
-            <% end %>
- -->
 
 <% if current_user %>
   <div class="container section-container importer-container">
