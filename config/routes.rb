@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'about',     to: 'home#about'
   get 'impressum', to: 'home#impressum'
+  get 'haftung',   to: 'home#haftung'
 
   resources :photos do
     collection { post :import}
