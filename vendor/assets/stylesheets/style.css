@@ -8,8 +8,11 @@ h1, h2, h3, h4, h5, h6{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-p {
+p{
   font-size: 18px;
+}
+
+.byline{
 }
 
 /*----containers----*/
@@ -147,8 +150,7 @@ body a.codingdavinci:visited {
 .chapter-container h2,
 .chapter-container h3,
 .chapter-container h4,
-.chapter-container h5,
-.chapter-container h6{
+.chapter-container h5{
   color: #000;
   font-weight: bold;
   background-color: #F8BD0C;
@@ -281,8 +283,9 @@ div.marker-infowindow table caption{
   font-weight: bold;
 }
 
-div.marker-infowindow table td{
+div.marker-infowindow table td p{
   vertical-align: top;
+  font-size: 13px;
 }
 
 #buildings_list {
