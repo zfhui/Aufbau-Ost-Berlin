@@ -27,7 +27,7 @@
             <img src="<%=tour.image_path%>" class="img-responsive" alt='<%="#{tour.name}-Tour-Cover"%>'>
           </div>
           <div class="col-xs-12 col-sm-8">
-            <p><%= tour.description.truncate(250) %></p>
+            <p><%= tour.description.truncate(250, seperator: /\w/).html_safe %></p>
           </div>
         </div>
       </div>

@@ -8,29 +8,39 @@
 
   <% @literatures.each do |literature| %>
     <div class="section-container">
-      <div class="section-head">
-        <h4><%= literature.title %></br>
-        <h5><%= literature.subtitle %></h5>
-        <% if current_user %>
-          <p>
-            <%= link_to 'Anzeigen', literature %> |
-            <%= link_to 'Bearbeiten', edit_literature_path(literature) %> |
-            <%= link_to 'Löschen', literature, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>
-        <% end %>
-      </div>
-
-      <div class="section-text">
-        <div class="row">
-          <div class="col-xs-12 col-sm-3">
+      <div class="row">
+        <!-- book cover -->
+        <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+          <div class="section-image">
             <img src='<%= image_url("bookcovers/#{literature.cover_file}")%>' class="img-responsive">
           </div>
-          <div class="col-xs-12 col-sm-9">
-            <p><strong>Autor(ren): </strong><%= literature.author %></p>
-            <p><strong>Verlag: </strong><%= literature.publisher %></p>
-            <p><strong>Erscheinungsjahr: </strong><%= literature.year %></p>
-            <p><strong>Verlagsort: </strong><%= literature.published_at %></p>
-            <p><%= link_to "Buch kaufen", literature.url%></p>
+        </div>
+        <!-- book info -->
+        <div class="col-xs-12 col-sm-7">
+          <div class="section-head">
+            <h4><%= literature.title %></h4></br>
+            <h5><%= literature.subtitle %></h5>
+            <% if current_user %>
+              <p>
+                <%= link_to 'Anzeigen', literature %> |
+                <%= link_to 'Bearbeiten', edit_literature_path(literature) %> |
+                <%= link_to 'Löschen', literature, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </p>
+            <% end %>
+          </div>
+
+          <div class="section-text">
+            <p class="section-subtext">
+              Von <%= literature.author %>.
+              <%= literature.published_at %> <%= literature.year %>,
+              Verlag <%= literature.publisher %>.
+            </p>
+            <p class="text-right">
+              <%= link_to literature.url, target: "_blank" do%>
+                <span class="glyphicon glyphicon-link"></span>
+                Zum Buchshop
+              <% end %>
+            </p>
           </div>
         </div>
       </div>
