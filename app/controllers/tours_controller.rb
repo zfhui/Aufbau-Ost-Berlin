@@ -11,7 +11,7 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
-    @buildings = @tour.buildings.order(:name)
+    @buildings = @tour.buildings.order(:tour_position)
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
       marker.lat building.latitude
       marker.lng building.longitude
