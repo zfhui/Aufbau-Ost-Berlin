@@ -4,19 +4,30 @@
 
 <div class="container chapter-container">
   <div class="chapter-head">
-    <%= link_to building_path(prev_building(@building.id)), title: " Zum vorherigen Gebäude" do%>
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    <% end %>
-    <h3><%= @building.name %></h3>
-    <%= link_to building_path(next_building(@building.id)), title: "Zum nächsten Gebäude" do %>
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    <% end %>
-    <% if current_user %>
-      <p>
-        <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
-        <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
-      </p>
-    <% end %>
+    <div class="col-xs-1">
+      <%= link_to building_path(prev_building(@building.id)), title: " Zum vorherigen Gebäude" do%>
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      <% end %>
+    </div>
+    
+    <div class="col-xs-10">
+      <h3><%= @building.name %></h3>
+    </div>
+    
+    <div class="col-xs-1">
+      <%= link_to building_path(next_building(@building.id)), title: "Zum nächsten Gebäude" do %>
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      <% end %>
+    </div>
+
+    <div class="col-xs-12">
+      <% if current_user %>
+        <p>
+          <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
+          <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
+        </p>
+      <% end %>
+    </div>
   </div>
 
   <div class="chapter-text">
