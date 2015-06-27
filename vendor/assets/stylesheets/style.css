@@ -212,6 +212,11 @@ body a.codingdavinci:visited {
 .chapter-head{
   text-align: center;
 }
+
+.chapter-prev,
+.chapter-next{
+  padding-top: 15px;
+}
 /*---- section styles ----*/
 
 .section-container {
