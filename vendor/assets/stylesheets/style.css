@@ -52,6 +52,11 @@ body a:focus{
   text-shadow: 1px 1px 1px #000 !important;
   padding: 2em 25px 2em 25px;
   }
+  
+.container.intro-container p{
+  font-size: 18px;
+}
+
 
 .container.importer-container{
   padding: 25px;
