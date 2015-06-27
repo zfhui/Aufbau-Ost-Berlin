@@ -13,7 +13,7 @@ class ToursController < ApplicationController
   def show
     @buildings = @tour.buildings.order(:tour_position)
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
-      marker.json ({id: building.id, name: building.name, street_name: building.street_name, house_no: building.house_no, zipcode: building.zipcode, city: building.city, tour_position: tour_position})
+      marker.json ({id: building.id, name: building.name, street_name: building.street_name, house_no: building.house_no, zipcode: building.zipcode, city: building.city, tour_position: building.tour_position})
       marker.lat building.latitude
       marker.lng building.longitude
       marker.infowindow render_to_string(partial: "/buildings/infowindow", locals: {object: building})
