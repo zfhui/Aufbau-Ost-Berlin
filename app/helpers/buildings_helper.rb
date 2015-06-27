@@ -6,4 +6,13 @@ module BuildingsHelper
       end
     end
   end
+
+  def next_building(id)
+    Building.where("id > ?", id).order("name ASC").first || Building.first
+  end
+
+  def prev_building(id)
+    Building.where("id < ?", id).order("name DESC").first || Building.last
+  end
+
 end
