@@ -4,7 +4,13 @@
 
 <div class="container chapter-container">
   <div class="chapter-head">
+    <%= link_to building_path(prev_building(@building.id)), title: " Zum vorherigen Gebäude" do%>
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    <% end %>
     <h3><%= @building.name %></h3>
+    <%= link_to building_path(next_building(@building.id)), title: "Zum nächsten Gebäude" do %>
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    <% end %>
     <% if current_user %>
       <p>
         <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
