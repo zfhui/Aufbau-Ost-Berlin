@@ -209,6 +209,9 @@ body a.codingdavinci:visited {
   display: block;
 }
 
+.chapter-head{
+  text-align: center;
+}
 /*---- section styles ----*/
 
 .section-container {
