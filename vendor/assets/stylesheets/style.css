@@ -17,7 +17,11 @@ h6{
 }
 
 .byline{
+<<<<<<< Updated upstream
   color: #666;
+=======
+  /*color: #666;*/
+>>>>>>> Stashed changes
   font-size: 10px;
   text-align: right;
 }
@@ -55,8 +59,17 @@ body a:focus{
 
 .container.importer-container{
   padding: 25px;
-  background: #E6E6E6;
+  background: #D4D4D4;
 }
+
+.container.photo-container{
+  padding: 2em 25px 1.0em 25px;
+  background: #D4D4D4;
+}
+
+/*.container.photo-container img{
+  border: solid 1px #333333;
+}*/
 
 /*---- navigation bar ----*/
 nav.navbar-default{
@@ -211,6 +224,11 @@ body a.codingdavinci:visited {
 
 .chapter-head{
   text-align: center;
+}
+
+.chapter-prev,
+.chapter-next{
+  padding-top: 15px;
 }
 /*---- section styles ----*/
 

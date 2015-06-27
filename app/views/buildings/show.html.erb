@@ -3,29 +3,31 @@
 </div>
 
 <div class="container chapter-container">
-  <div class="chapter-head">
-    <div class="col-xs-1">
+  <div class="row">
+    <div class="col-xs-1 text-left">
       <%= link_to building_path(prev_building(@building.id)), title: " Zum vorherigen Gebäude" do%>
-        <span class="glyphicon glyphicon-chevron-left"></span>
-      <% end %>
-    </div>
-    
-    <div class="col-xs-10">
-      <h3><%= @building.name %></h3>
-    </div>
-    
-    <div class="col-xs-1">
-      <%= link_to building_path(next_building(@building.id)), title: "Zum nächsten Gebäude" do %>
-        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="glyphicon glyphicon-chevron-left chapter-prev"></span>
       <% end %>
     </div>
 
-    <div class="col-xs-12">
-      <% if current_user %>
-        <p>
-          <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
-          <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
-        </p>
+    <div class="col-xs-10">
+      <div class="chapter-head">
+        <h3><%= @building.name %></h3>
+
+        <div class="col-xs-12">
+          <% if current_user %>
+            <p>
+              <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
+              <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-1 text-right">
+      <%= link_to building_path(next_building(@building.id)), title: "Zum nächsten Gebäude" do %>
+        <span class="glyphicon glyphicon-chevron-right chapter-next"></span>
       <% end %>
     </div>
   </div>
@@ -59,24 +61,26 @@
       <% end %>
     </div>
   </div>
+</div>
 
-  <div class="section-container">
-    <div class="section-text">
-      <div class="row">
-        <% @building.photos.each do |p| %>
-          <div class="col-xs-12 col-sm-4 col-md-3" %>
-            <img src='<%= p.path %>' class="img-responsive">
-            <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
-          </div>
-        <% end %>
+<div class="container photo-container">
+  <div class="row">
+    <% @building.photos.each do |p| %>
+      <div class="col-xs-12 col-sm-4 col-md-3" %>
+        <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
+          <img src='<%= p.path %>' class='img-responsive'>
+        </a>
+        <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
       </div>
-    </div>
+    <% end %>
   </div>
+</div>
 
+<div class="chapter-container">
   <div class="section-container">
     <div class="section-text">
       <%= link_to buildings_path do %>
-        <span class="glyphicon glyphicon-th-list"></span> Zurück zu Gebäudelisten
+        <span class="glyphicon glyphicon-th-list"></span> Zur Liste der Gebäude
       <% end %>
     </div>
   </div>
