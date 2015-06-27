@@ -105,6 +105,7 @@ class BuildingsController < ApplicationController
                                        :street_name,
                                        :house_no,
                                        :zipcode,
-                                       :city)
+                                       :city,
+                                       :tour_position)
     end
 end
