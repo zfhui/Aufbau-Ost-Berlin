@@ -64,7 +64,9 @@
 
   <div class="section-container">
     <div class="section-text">
-      <%= link_to "Zurück zur Liste der Gebäuden", buildings_path %>
+      <%= link_to buildings_path do %>
+        <span class="glyphicon glyphicon-th-list"></span> Zurück zu Gebäudelisten
+      <% end %>
     </div>
   </div>
 </div>
