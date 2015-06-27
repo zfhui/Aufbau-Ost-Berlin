@@ -61,22 +61,22 @@
       <% end %>
     </div>
   </div>
+</div>
 
-  <div class="section-container">
-    <div class="section-text">
-      <div class="row">
-        <% @building.photos.each do |p| %>
-          <div class="col-xs-12 col-sm-4 col-md-3" %>
-            <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
-              <img src='<%= p.path %>' class='img-responsive'>
-            </a>
-            <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
-          </div>
-        <% end %>
+<div class="container photo-container">
+  <div class="row">
+    <% @building.photos.each do |p| %>
+      <div class="col-xs-12 col-sm-4 col-md-3" %>
+        <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
+          <img src='<%= p.path %>' class='img-responsive'>
+        </a>
+        <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
       </div>
-    </div>
+    <% end %>
   </div>
+</div>
 
+<div class="chapter-container">
   <div class="section-container">
     <div class="section-text">
       <%= link_to buildings_path do %>
