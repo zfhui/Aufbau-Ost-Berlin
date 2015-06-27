@@ -68,7 +68,7 @@
     <% @building.photos.each do |p| %>
       <div class="col-xs-12 col-sm-4 col-md-3" %>
         <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
-          <img src='<%= p.path %>' class='img-responsive'>
+          <img src='<%= p.path_250px %>' class='img-responsive'>
         </a>
         <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
       </div>
