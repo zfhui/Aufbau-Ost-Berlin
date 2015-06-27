@@ -37,7 +37,7 @@
       <strong>Architekt(en): </strong><%= @building.architects_str %> |
       <strong>Baujahr: </strong><%= @building.built_dates_str %>
     </p>
-    <p><%= @building.description %></p>
+    <p><%= @building.description.html_safe %></p>
     <% if @building.tour %>
       <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour) %>.</p>
     <% end %>
