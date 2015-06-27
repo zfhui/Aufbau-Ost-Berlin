@@ -213,10 +213,12 @@ body a.codingdavinci:visited {
   text-align: center;
 }
 
-.chapter-prev,
-.chapter-next{
-  padding-top: 15px;
+span.chapter-prev,
+span.chapter-next{
+  padding-top: 5px;
+  font-size: xx-large;
 }
+
 /*---- section styles ----*/
 
 .section-container {
