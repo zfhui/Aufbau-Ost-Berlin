@@ -81,5 +81,45 @@ function buildMap (markers) {
   });
 }
 
+function createSidebarLi(json){
+  return ("<li><address><a href='#'><span class='glyphicon glyphicon-map-marker'></span> "
+          + json.name + "</a>, "
+          + json.street_name + " " + json.house_no + ", "
+          + json.zipcode + " " + json.city + "</address></li>");
+};
+
+function bindLiToMarker($address, marker){
+  $address.on('click', function(){
+    handler.getMap().setZoom(14);
+    marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  })
+};
+
+function createSidebar(json_array){
+  _.each(json_array, function(json){
+    var $address = $( createSidebarLi(json) );
+    $("#buildings_list").append($address);
+    bindLiToMarker($address, json.marker);
+  });
+};
+
+function buildingsMap(json_array){
+  handler = Gmaps.build('Google');
+  handler.buildMap({ internal: {id: 'buildings_map'}}, function(){
+
+    var markers = handler.addMarkers(json_array);
+
+    _.each(json_array, function(json, index){
+      json.marker = markers[index];
+    });
+
+    createSidebar(json_array);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+}
+
 // swipebox function
 $( '.swipebox' ).swipebox();
