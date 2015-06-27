@@ -1,0 +1,38 @@
+<%= form_for @tour, html: {class: "form-horizontal"} do |f| %>
+  <% if @tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tour.errors.count, "error") %> prohibited this tour from being saved:</h2>
+
+      <ul>
+      <% @tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label "Bildpfad", class: "col-xs-12 col-sm-3 control-label" %>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :image_path, class: "form-control", placeholder: "Bitte die volle Adresse eingeben: http://..." %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Name", class: "col-xs-12 col-sm-3 control-label" %>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Beschreibung: ", class: "col-xs-12 col-sm-3 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_area :description, class: "form-control", style: "height: 400px", placeholder: "Hier können Html-Code verwendet werden!"%>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Speichern", class: "center-block btn btn-primary" %>
+  </div>
+<% end %>

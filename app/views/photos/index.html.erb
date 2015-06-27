@@ -1,0 +1,63 @@
+<!-- about this site -->
+<div class="container chapter-container">
+  <div class="chapter-head">
+    <h3><%= @photos.count %> Fotos</h3>
+  </div>
+  <div class="chapter-text">
+    <p>Diese Seite ist nur zur internen Nutzung.</p>
+  </div>
+  <!--//about this site---->
+
+  <% @photos.each do |photo| %>
+    <div class="section-container">
+      <div class="row">
+        <!-- book cover -->
+        <div class="col-xs-12 col-sm-4">
+          <div class="section-image">
+            <img src="<%=photo.path%>", class="img-responsive">
+            <p class="byline">Foto: <%= photo.photographer %>, <%= photo.year %></p>
+          </div>
+        </div>
+        <!-- book info -->
+        <div class="col-xs-12 col-sm-8">
+          <div class="section-head">
+            <h4><%= "#{photo.id}. #{photo.index_card_no}_#{photo.photo_no}.jpg" %></h4>
+            <% if current_user %>
+              <p>
+                <%= link_to 'Anzigen', photo %> |
+                <%= link_to 'Bearbeiten', edit_photo_path(photo) %> |
+                <%= link_to 'Löschen', photo, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </p>
+            <% end %>
+          </div>
+          <div class="section-text">
+            <p><strong>Typ: </strong><%= photo.classification%></p>
+            <p><strong>Gebäude: </strong><%=photo.building_name %></p>
+            <p><strong>Gebäude ID: </strong><%=photo.building_id %></p>
+            <p><strong>Adresse: </strong><%= photo.address %></p>
+            <p><strong>Inhalt: </strong><%= photo.content %></p>
+            <p><strong>Besitz: </strong><%= photo.ownership %></p>
+            <p><strong>Creditline: </strong><%= photo.creditline %></p>
+            <p><strong>Flickr URL: </strong><%= photo.flickr_url %></p>
+            <% if current_user %>
+              <p><strong>Kommentare: </strong><em><%= photo.comments %></em></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if current_user %>
+  <div class="container importer-container">
+    <p><%= link_to 'Neues Foto', new_photo_path %></p>
+    <p>Import Photos</p>
+    <p>
+      <%= form_tag import_photos_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag 'Import'%>
+      <% end %>
+    </p>
+  </div>
+<% end %>

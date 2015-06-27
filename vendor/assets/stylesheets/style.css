@@ -1,0 +1,323 @@
+html, body{
+    font-family: 'Crimson Text', 'Century', Garamond, 'Open Serif', serif !important;
+    font-size: 100%;
+    background-color: #F8BD0C;
+}
+
+h1, h2, h3, h4, h5, h6, .byline{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+h5, p{
+  font-size: 16px;
+}
+
+h6{
+  font-size: 14px;
+}
+
+/* Byline text */
+.byline{
+  color: #666;
+  font-size: 10px;
+  text-align: right;
+}
+
+body a,
+body a:hover,
+body a:focus{
+  color: #003B86;
+}
+
+/*----containers----*/
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* container for the whole page */
+.container.main-container{
+  background: #F8BD0C;
+}
+
+/* container for the content */
+.container.content-container{
+  background: #FFF;
+}
+
+.container.intro-container{
+  background: #7E7C7E image-url("intro.png") right 20%;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  text-shadow: 1px 1px 1px #000 !important;
+  padding: 2em 30% 2em 25px;
+}
+
+.container.importer-container{
+  padding: 25px;
+  background: #E6E6E6;
+}
+
+/*---- navigation bar ----*/
+nav.navbar-default{
+  margin-top: 5em;
+  margin-bottom: 0.5em;
+  border-radius: 0px;
+  background: #FFF;
+}
+
+/* styles for the icon */
+.navbar > .container .navbar-brand{
+  margin: 0;
+  padding: 10px 10px 10px 25px;
+  height: 100px;
+}
+
+.navbar-right{
+  margin: 25px;
+}
+
+.navbar-default .navbar-nav > li{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  text-align: center;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #000;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus{
+  color: #000;
+  text-decoration: none;
+  background: #F8BD0C;
+  display: block;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus{
+  color: #000;
+  text-decoration: none;
+  background: #F8BD0C;
+  display: block;
+}
+
+.dropdown-menu > li > a{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navbar-default .dropdown-menu > li > a:hover,
+.navbar-default .dropdown-menu > li > a:focus{
+  color: #000;
+  text-decoration: none;
+  background: #F8BD0C;
+  display: block;
+}
+
+.navbar-toggle{
+  margin: 25px 50px 25px 25px;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+  color: #000;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+  color: #000;
+  background: #F8BD0C;
+}
+/*---- footer ----*/
+
+/* container for the footer */
+footer > .container{
+  background: #FFF;
+  margin-top: 0.5em;
+  padding: 10px 20px 10px 20px;
+}
+
+
+footer p,
+footer ul{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  padding-top: 1.0em;
+  font-size: 14px;
+  color: #666;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+/*---- coding davinci ----*/
+body a.codingdavinci:link,
+body a.codingdavinci:visited {
+  font-family: 'Archive' !important;
+}
+
+/*---- chapter styles -----*/
+.chapter-container{
+  padding: 2.5em 25px 2.0em 25px;
+}
+
+.chapter-container h1,
+.chapter-container h2,
+.chapter-container h3,
+.chapter-container h4,
+.chapter-container h5{
+  color: #000;
+  font-weight: bold;
+  background-color: #F8BD0C;
+  display: inline;
+}
+
+.chapter-container h1,
+.chapter-container h2,
+.chapter-container h3{
+  text-transform: uppercase;
+  padding: 10px;
+  line-height: 50px;
+}
+
+.chapter-container h3{
+  padding: 10px;
+  line-height: 50px;
+}
+
+.chapter-container h4{
+  padding: 5px;
+  display: inline;
+  line-height: 35px;
+}
+
+.chapter-container h5{
+  padding: 5px;
+  display: inline;
+  font-style: italic;
+}
+
+.chapter-head,
+.chapter-text{
+  margin-bottom: 1.5em;
+  display: block;
+}
+
+/*---- section styles ----*/
+
+.section-container {
+  padding-top: 1.0em;
+}
+
+.section-head{
+  margin-bottom: 1.0em;
+  display: block;
+}
+
+.section-text{
+  padding-bottom: 1.0em;
+}
+
+.section-subtext{
+  color: #666;
+}
+
+.section-image{
+
+}
+/*---- team member ----*/
+.team-member-info{
+	position:relative;
+  text-align: center;
+}
+.team-member-info label{
+	display: none;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	min-height: 260px;
+	background: #F8BD0C;
+	padding: 2em 1em;
+}
+.team-member-info:hover label.team-member-caption{
+	display:block;
+}
+.team-member-info img.team-member-pic{
+	width:100%;
+}
+.team-member-info h5{
+	margin:0.8em 0 0;
+	padding:0;
+}
+.team-member-info span{
+	color: #A2A4A7;
+	font-size: 0.875em;
+}
+.team-member-info.team-member-name a{
+	color:#282528;
+	font-size:1.4em;
+	font-weight:600;
+  display: block;
+}
+.team-member-caption p{
+	font-size:0.875em;
+	text-align:center;
+	color:#444144;
+}
+/*----team-member-caption----*/
+.team-member-caption ul li{
+	display:inline-block;
+}
+.team-member-caption ul li a span{
+	width:40px;
+	height:40px;
+	display:inline-block;
+	background:url("team-social.png") no-repeat 0px 0px;
+}
+.team-member-caption ul{
+	margin:2em 0 0 0;
+	padding:0;
+}
+.team-member-caption ul li a.t-twitter span{
+	background-position:0px 0px;
+}
+.team-member-caption ul li a.t-facebook span{
+	background-position: -48px 0px;
+}
+.team-member-caption ul li a.t-googleplus span{
+	background-position: -91px 0px;
+}
+.team-member-caption ul li a.t-wordpress span{
+	background-position: -139px 0px;
+}
+.team-member-caption ul li a.t-github span{
+	background-position: -187px 0px;
+}
+
+/*---- markers ---- */
+div.marker-infowindow img{
+  padding-right: 1em;
+}
+
+div.marker-infowindow table caption{
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+div.marker-infowindow table td p{
+  vertical-align: top;
+  font-size: 13px;
+}
+
+#buildings_list {
+  list-style:none;
+  padding: 0px;
+}

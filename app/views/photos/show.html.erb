@@ -1,0 +1,42 @@
+<div class="container chapter-container">
+  <div class="chapter-head">
+    <h3><%= "#{@photo.id}. #{@photo.index_card_no}_#{@photo.photo_no}.jpg" %></h3>
+    <% if current_user %>
+      <p>
+        <%= link_to 'Bearbeiten', edit_photo_path(@photo) %> |
+        <%= link_to 'Löschen', @photo, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="section-container">
+    <div class="section-text text-center">
+      <figure>
+        <img src="<%= @photo.path %>" width="30%">
+        <figcaption><%= @photo.building_name %></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="section-container">
+    <div class="chapter-text">
+      <p><strong>Fotograf: </strong><%= @photo.photographer %></p>
+      <p><strong>Jahr: </strong><%= @photo.year %></p>
+      <p><strong>Typ: </strong><%= @photo.classification%></p>
+      <p><strong>Gebäude: </strong><%=@photo.building_name %></p>
+      <p><strong>Gebäude ID: </strong><%=@photo.building_id %></p>
+      <p><strong>Adresse: </strong><%= @photo.address %></p>
+      <p><strong>Inhalt: </strong><%= @photo.content %></p>
+      <p><strong>Besitz</strong><%= @photo.ownership %></p>
+      <p><strong>Creditline: </strong><%= @photo.creditline %></p>
+      <p><strong>Flickr URL: </strong><%= @photo.flickr_url %></p>
+      <p><strong>Kommentare: </strong><em><<%= @photo.comments %></em></p>
+    </div>
+  </div>
+
+  <div class="section-container">
+    <div class="chapter-text">
+      <%= link_to 'Zurück zur Liste der Fotos', photos_path %>
+    </div>
+  </div>
+</div>
