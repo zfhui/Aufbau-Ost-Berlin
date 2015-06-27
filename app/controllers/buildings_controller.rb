@@ -101,6 +101,10 @@ class BuildingsController < ApplicationController
                                        :other_url_2,
                                        :comments,
                                        :tour_id,
-                                       :video_url)
+                                       :video_url,
+                                       :street_name,
+                                       :house_no,
+                                       :zipcode,
+                                       :city)
     end
 end
