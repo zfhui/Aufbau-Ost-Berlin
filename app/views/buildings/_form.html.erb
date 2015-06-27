@@ -29,6 +29,23 @@
   </div>
 
   <div class="form-group">
+    <%= f.label "Adresse: ", class: "col-xs-12 col-sm-3 control-label"%>
+    <div class="col-xs-6 col-sm-6">
+      <%= f.text_field :street_name, class: "form-control", placeholder: "Straße"%>
+    </div>
+    <div class="col-xs-6 col-sm-2">
+      <%= f.text_field :house_no , class: "form-control", placeholder: "Nr."%>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-sm-offset-3">
+      <%= f.text_field :zipcode, class: "form-control", placeholder: "PLZ"%>
+    </div>
+    <div class="col-xs-6 col-sm-4">
+      <%= f.text_field :city, class: "form-control", placeholder: "Stadt"%>
+    </div>
+  </div>
+
+
+  <div class="form-group">
     <%= f.label "Architekt(en):", class: "col-xs-12 col-sm-3 control-label" %>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :architect, class: "form-control", placeholder: "Architekt 1" %>

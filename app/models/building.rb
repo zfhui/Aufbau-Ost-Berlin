@@ -22,10 +22,20 @@ class Building < ActiveRecord::Base
   # quik and dirty helpers
 
   def built_dates_str
-    first = "#{built_from}-#{built_to}"
+    first = "#{built_from}"
+
+    if built_to
+      first = "#{first}-#{built_to}"
+    end
 
     if built_from_2
-      return "#{first}; #{built_from_2}-#{built_to_2}"
+      second = "#{first}; #{built_from_2}"
+
+      if built_to_2
+        second = "#{second}-#{built_to_2}"
+      end
+
+      return second
     end
 
     first
@@ -44,10 +54,8 @@ class Building < ActiveRecord::Base
             return third
           end
         end
-
+        return second
       end
-
-      return second
     end
 
     first

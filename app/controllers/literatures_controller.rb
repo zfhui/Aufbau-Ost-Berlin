@@ -1,5 +1,5 @@
 class LiteraturesController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
+  before_filter :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
   before_action :set_literature, only: [:show, :edit, :update, :destroy]
 
   # GET /literatures
