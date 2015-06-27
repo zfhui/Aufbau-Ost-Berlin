@@ -17,11 +17,7 @@ h6{
 }
 
 .byline{
-<<<<<<< Updated upstream
   color: #666;
-=======
-  /*color: #666;*/
->>>>>>> Stashed changes
   font-size: 10px;
   text-align: right;
 }
@@ -54,8 +50,13 @@ body a:focus{
   height: 100%;
   color: #FFF;
   text-shadow: 1px 1px 1px #000 !important;
-  padding: 2em 30% 2em 25px;
+  padding: 2em 25px 2em 25px;
+  }
+
+.container.intro-container p{
+  font-size: 18px;
 }
+
 
 .container.importer-container{
   padding: 25px;
@@ -226,10 +227,12 @@ body a.codingdavinci:visited {
   text-align: center;
 }
 
-.chapter-prev,
-.chapter-next{
-  padding-top: 15px;
+span.chapter-prev,
+span.chapter-next{
+  padding-top: 5px;
+  font-size: xx-large;
 }
+
 /*---- section styles ----*/
 
 .section-container {
