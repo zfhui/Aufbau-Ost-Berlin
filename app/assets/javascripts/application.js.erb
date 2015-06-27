@@ -19,7 +19,7 @@
 //= require turbolinks
 //= require underscore-min
 //= require gmaps/google
-//= require jquery.swipebox.min
+//= require swipebox
 
 // start-top-nav-script
 $(window).load(function() {
@@ -80,3 +80,6 @@ function buildMap (markers) {
     handler.fitMapToBounds();
   });
 }
+
+// swipebox function
+$( '.swipebox' ).swipebox();
