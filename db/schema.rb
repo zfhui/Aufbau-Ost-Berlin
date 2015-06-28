@@ -11,26 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628150432) do
+ActiveRecord::Schema.define(version: 20150628152536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "buildings", force: :cascade do |t|
-    t.string   "name",                           null: false
-    t.float    "longitude",        default: 0.0
-    t.float    "latitude",         default: 0.0
+    t.string   "name",                            null: false
+    t.float    "longitude",         default: 0.0
+    t.float    "latitude",          default: 0.0
     t.integer  "built_from"
     t.integer  "built_to"
     t.integer  "built_from_2"
     t.integer  "built_to_2"
-    t.text     "description",      default: ""
-    t.string   "wiki_url",         default: ""
-    t.string   "wiki_common_url",  default: ""
-    t.string   "denkmalliste_url", default: ""
-    t.string   "grossstadt_url",   default: ""
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.text     "description",       default: ""
+    t.string   "wiki_url",          default: ""
+    t.string   "wiki_common_url",   default: ""
+    t.string   "denkmalliste_url",  default: ""
+    t.string   "grossstadt_url",    default: ""
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "architect"
     t.string   "architect_2"
     t.string   "architect_3"
@@ -38,13 +38,14 @@ ActiveRecord::Schema.define(version: 20150628150432) do
     t.string   "other_url_2"
     t.text     "comments"
     t.integer  "tour_id"
-    t.string   "street_name",      default: ""
-    t.string   "house_no",         default: ""
-    t.string   "zipcode",          default: ""
-    t.string   "city",             default: ""
-    t.string   "country",          default: ""
-    t.string   "video_url",        default: ""
+    t.string   "street_name",       default: ""
+    t.string   "house_no",          default: ""
+    t.string   "zipcode",           default: ""
+    t.string   "city",              default: ""
+    t.string   "country",           default: ""
+    t.string   "video_url",         default: ""
     t.integer  "tour_position"
+    t.text     "video_description", default: ""
   end
 
   create_table "literatures", force: :cascade do |t|

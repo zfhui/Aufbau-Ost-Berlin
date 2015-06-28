@@ -145,6 +145,13 @@
   </div>
 
   <div class="form-group">
+    <%= f.label "Video Beschreibung: ", class: "col-xs-12 col-sm-3 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_area :video_description, class: "form-control", style: "height: 200px", placeholder: "Hier Beschreibungen zum Video eintragen ..."%>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_area :comments, class: "form-control", style: "height: 200px", placeholder: "Hier Kommentare eintragen ..."%>

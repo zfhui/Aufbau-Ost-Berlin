@@ -18,6 +18,7 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
+    @photos = @building.photos.order(:year)
   end
 
   # GET /buildings/new
@@ -106,6 +107,7 @@ class BuildingsController < ApplicationController
                                        :house_no,
                                        :zipcode,
                                        :city,
-                                       :tour_position)
+                                       :tour_position,
+                                       :video_description)
     end
 end

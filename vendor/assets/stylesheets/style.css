@@ -16,6 +16,36 @@ h6{
   font-size: 14px;
 }
 
+h1, h2, h3, h4, h5{
+  color: #000;
+  font-weight: bold;
+  background-color: #F8BD0C;
+  display: inline;
+}
+
+h1, h2, h3{
+  text-transform: uppercase;
+  padding: 10px;
+  line-height: 50px;
+}
+
+h3{
+  padding: 10px;
+  line-height: 50px;
+}
+
+h4{
+  padding: 5px;
+  display: inline;
+  line-height: 35px;
+}
+
+h5{
+  padding: 5px;
+  display: inline;
+  font-style: italic;
+}
+
 .byline{
   color: #666;
   font-size: 10px;
@@ -53,10 +83,18 @@ body a:focus{
   padding: 2em 25px 2em 25px;
 }
 
+.container.intro-container h1{
+  color: #FFF;
+  background: transparent;
+  display: block;
+  padding: 0;
+  text-transform: none;
+  font-weight: normal;
+}
+
 .container.intro-container p{
   font-size: 19px;
 }
-
 
 .container.importer-container{
   padding: 25px;
@@ -179,42 +217,6 @@ body a.codingdavinci:visited {
 /*---- chapter styles -----*/
 .chapter-container{
   padding: 2.5em 25px 2.0em 25px;
-}
-
-.chapter-container h1,
-.chapter-container h2,
-.chapter-container h3,
-.chapter-container h4,
-.chapter-container h5{
-  color: #000;
-  font-weight: bold;
-  background-color: #F8BD0C;
-  display: inline;
-}
-
-.chapter-container h1,
-.chapter-container h2,
-.chapter-container h3{
-  text-transform: uppercase;
-  padding: 10px;
-  line-height: 50px;
-}
-
-.chapter-container h3{
-  padding: 10px;
-  line-height: 50px;
-}
-
-.chapter-container h4{
-  padding: 5px;
-  display: inline;
-  line-height: 35px;
-}
-
-.chapter-container h5{
-  padding: 5px;
-  display: inline;
-  font-style: italic;
 }
 
 .chapter-head,

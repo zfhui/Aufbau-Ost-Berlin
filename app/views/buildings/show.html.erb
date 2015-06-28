@@ -46,7 +46,7 @@
 
 <div class="container photo-container">
   <div class="row">
-    <% @building.photos.each do |p| %>
+    <% @photos.each do |p| %>
       <div class="col-xs-12 col-sm-4 col-md-3" %>
         <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
           <img src='<%= p.path_250px %>' class='img-responsive' alt='<%="#{p.index_card_no}+#{p.photo_no}"%>'>
@@ -58,6 +58,17 @@
 </div>
 
 <div class="container chapter-container">
+  <% if !@building.video_url.empty? %>
+    <div class="section-text">
+      <p><%=@building.video_description%></p>
+    </div>
+    <div class="video-container">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embeded-responsive-item" src="<%=@building.video_url%>" allowfullscreen></iframe>
+      </div>
+    </div>
+  <% end %>
+
   <div class="section-container">
     <div class="section-text">
       <p><strong>Externe Links: </strong>
@@ -76,14 +87,6 @@
     </div>
   </div>
 </div>
-
-<% if !@building.video_url.empty? %>
-  <div class="container video-container">
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embeded-responsive-item" src="<%=@building.video_url%>" allowfullscreen></iframe>
-    </div>
-  </div>
-<% end %>
 
 <div class="chapter-container">
   <div class="section-container">
