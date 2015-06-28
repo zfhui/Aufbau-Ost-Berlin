@@ -83,13 +83,19 @@ body a:focus{
   padding: 2em 25px 2em 25px;
 }
 
-.container.intro-container h1{
+.container.intro-container h1,
+.footer h4{
   color: #FFF;
   background: transparent;
   display: block;
   padding: 0;
   text-transform: none;
   font-weight: normal;
+}
+
+.footer h4{
+  color: #000;
+  font-weight: bold;
 }
 
 .container.intro-container p{
