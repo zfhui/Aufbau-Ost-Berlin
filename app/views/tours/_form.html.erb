@@ -33,6 +33,13 @@
   </div>
 
   <div class="form-group">
+    <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-3 control-label"%>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_area :comments, class: "form-control", style: "height: 400px", placeholder: "Hier können Html-Code verwendet werden!"%>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.submit "Speichern", class: "center-block btn btn-primary" %>
   </div>
 <% end %>
