@@ -354,7 +354,11 @@ div.marker-infowindow table td p{
   font-size: 13px;
 }
 
-#buildings_list {
-  list-style:none;
-  padding: 0px;
+#buildings-grid{
+  padding: 0;
+  margin: 0;
+}
+
+.grid-item {
+  padding: 1em;
 }

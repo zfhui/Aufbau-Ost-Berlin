@@ -92,8 +92,26 @@ function bindLiToMarker($address, marker){
 }
 
 function createSidebarLi(json){
-  return ("<div class='grid-item'><a href='#map-anchor'><span class='glyphicon glyphicon-map-marker'></span> "
-          + json.name + "</a></div>");
+  var bgColor;
+
+  switch(json.tour_id) {
+    case 1: bgColor = '#00A0B0';
+            break;
+    case 2: bgColor = '#CC333F';
+            break;
+    case 3: bgColor = '#EB6841';
+            break;
+    default:
+      bgColor = '#D4D4D4';
+  }
+
+  var div = document.createElement('div');
+  div.setAttribute('class', 'grid-item');
+  div.style.background = bgColor;
+
+  div.innerHTML = "<a href='#map-anchor'><span class='glyphicon glyphicon-map-marker'></span> " + json.name + "</a>";
+
+  return div;
 }
 
 function createSidebar(json_array){
@@ -105,6 +123,7 @@ function createSidebar(json_array){
   );
   // grid-a-licious funtions
   $('#buildings-grid').gridalicious({
+    gutter: 20,
     width: 250,
     selector: '.grid-item'
   });
