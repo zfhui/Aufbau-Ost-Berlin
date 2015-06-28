@@ -2,7 +2,7 @@ module BuildingsHelper
   def url_html (link, name)
     if link
       if !link.empty?
-        "<a href='#{link}' target='_blank'>#{name}</a> |".html_safe
+        content_tag(:a, "#{name}", href: "#{link}", target: "_blank", class: "external_links")
       end
     end
   end
