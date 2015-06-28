@@ -63,9 +63,13 @@ body a:focus{
   background: #D4D4D4;
 }
 
+.container.photo-container,
+.container.video-container{
+  background: #D4D4D4;  
+}
+
 .container.photo-container{
   padding: 2em 25px 1.0em 25px;
-  background: #D4D4D4;
 }
 
 /*.container.photo-container img{

@@ -42,7 +42,22 @@
       <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour) %>.</p>
     <% end %>
   </div>
+</div>
 
+<div class="container photo-container">
+  <div class="row">
+    <% @building.photos.each do |p| %>
+      <div class="col-xs-12 col-sm-4 col-md-3" %>
+        <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
+          <img src='<%= p.path_250px %>' class='img-responsive' alt='<%="#{p.index_card_no}+#{p.photo_no}"%>'>
+        </a>
+        <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="container chapter-container">
   <div class="section-container">
     <div class="section-text">
       <p><strong>Externe Links: </strong>
@@ -52,7 +67,6 @@
         <%= url_html(@building.grossstadt_url, "Großstadt") %>
         <%= url_html(@building.other_url, "Link 1") %>
         <%= url_html(@building.other_url_2, "Link 2") %>
-        <%= url_html(@building.video_url, "Video") %>
       </p>
       <% if current_user %>
         <p>
@@ -63,18 +77,13 @@
   </div>
 </div>
 
-<div class="container photo-container">
-  <div class="row">
-    <% @building.photos.each do |p| %>
-      <div class="col-xs-12 col-sm-4 col-md-3" %>
-        <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
-          <img src='<%= p.path_250px %>' class='img-responsive'>
-        </a>
-        <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
-      </div>
-    <% end %>
+<% if !@building.video_url.empty? %>
+  <div class="container video-container">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embeded-responsive-item" src="<%=@building.video_url%>" allowfullscreen></iframe>
+    </div>
   </div>
-</div>
+<% end %>
 
 <div class="chapter-container">
   <div class="section-container">
