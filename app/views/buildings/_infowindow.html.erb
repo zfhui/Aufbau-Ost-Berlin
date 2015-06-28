@@ -1,6 +1,5 @@
 <div id='<%="building-#{object.id}"%>' class="marker-infowindow">
-  <table class="table table-responsive table-condensed">
-    <caption><%= object.name %></caption>
+  <table>
     <tbody>
       <tr>
         <td width="150px">
@@ -8,17 +7,17 @@
             <img src="<%= object.photos.first.path_150px %>" width="150px" height="150px">
           <% end %>
         </td>
-        <td width="200px">
+        <td width="150px">
+          <p style="font-weight: bold; font-size: 18px; text-transform: uppercase"><%= object.name %></p>
           <p>
-            <strong>Baujahr: </strong><%=object.built_dates_str%>
+            <address>
+              <%= "#{object.street_name} #{object.house_no}" %></br>
+              <%= "#{object.zipcode} #{object.city}" %>
+            </address>
           </p>
-          <p>
-            <strong>Architekt(en): </strong><%="#{object.architects_str}".truncate(30, seperator: /\w/)%>
-          </p>
-          <p>
-            <strong>Beschreibung: </strong><%=object.description_short%>
+          <p class="text-right">
             <%= link_to building_path(object) do %>
-              <span class="glyphicon glyphicon-link"></span> Details
+              <span class="glyphicon glyphicon-link"></span> Zu den Details
             <% end %>
           </p>
         </td>
