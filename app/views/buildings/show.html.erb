@@ -59,9 +59,12 @@
 
 <div class="container chapter-container">
   <% if !@building.video_url.empty? %>
-    <div class="section-text">
-      <p><%=@building.video_description%></p>
-    </div>
+    <% if !@building.video_description.empty? %>
+      <div class="section-text">
+        <p><%=@building.video_description%></p>
+      </div>
+    <% end %>
+
     <div class="video-container">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embeded-responsive-item" src="<%=@building.video_url%>" allowfullscreen></iframe>
