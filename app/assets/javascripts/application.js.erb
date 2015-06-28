@@ -20,7 +20,7 @@
 //= require underscore-min
 //= require gmaps/google
 //= require swipebox
-//= require jquery.matchHeight
+//= require jquery.grid-a-licious.min
 
 // start-top-nav-script
 $(window).load(function() {
@@ -82,13 +82,6 @@ function buildMap (markers) {
   });
 }
 
-function createSidebarLi(json){
-  return ("<li><address><a href='#map-anchor'><span class='glyphicon glyphicon-map-marker'></span> "
-          + json.name + "</a>, "
-          + json.street_name + " " + json.house_no + ", "
-          + json.zipcode + " " + json.city + "</address></li>");
-};
-
 function bindLiToMarker($address, marker){
   $address.on('click', function(){
     handler.getMap().setZoom(14);
@@ -96,15 +89,26 @@ function bindLiToMarker($address, marker){
     marker.panTo();
     google.maps.event.trigger(marker.getServiceObject(), 'click');
   })
-};
+}
+
+function createSidebarLi(json){
+  return ("<div class='grid-item'><a href='#map-anchor'><span class='glyphicon glyphicon-map-marker'></span> "
+          + json.name + "</a></div>");
+}
 
 function createSidebar(json_array){
   _.each(json_array, function(json){
     var $address = $( createSidebarLi(json) );
-    $("#buildings_list").append($address);
+    $("#buildings-grid").append($address);
     bindLiToMarker($address, json.marker);
+  }
+  );
+  // grid-a-licious funtions
+  $('#buildings-grid').gridalicious({
+    width: 250,
+    selector: '.grid-item'
   });
-};
+}
 
 function buildingsMap(json_array){
   handler = Gmaps.build('Google');
@@ -122,5 +126,7 @@ function buildingsMap(json_array){
   });
 }
 
-// swipebox function
-$( '.swipebox' ).swipebox();
+$(document).ready(function(){
+  // swipebox function
+  $( '.swipebox' ).swipebox();
+});
