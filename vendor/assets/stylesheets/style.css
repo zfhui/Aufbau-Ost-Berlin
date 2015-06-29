@@ -359,6 +359,17 @@ div.marker-infowindow table td p{
   margin: 0;
 }
 
-.grid-item {
-  padding: 1em;
+.grid-item a,
+.grid-item a:hover,
+.grid-item a:focus{
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.grid-item a:hover,
+.grid-item a:focus{
+  padding: 9px;
+  border: 1px dotted #333;
 }
