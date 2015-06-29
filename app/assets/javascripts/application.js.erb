@@ -88,6 +88,7 @@ function bindLiToMarker($address, marker){
     marker.setMap(handler.getMap()); //because clusterer removes map property from marker
     marker.panTo();
     google.maps.event.trigger(marker.getServiceObject(), 'click');
+    handler.fitMapToBounds();
   })
 }
 
