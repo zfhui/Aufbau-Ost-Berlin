@@ -4,7 +4,7 @@ html, body{
     background-color: #F8BD0C;
 }
 
-h1, h2, h3, h4, h5, h6, .byline{
+h1, h2, h3, h4, h5, h6, .byline, .info{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
@@ -50,6 +50,15 @@ h5{
   color: #666;
   font-size: 10px;
   text-align: right;
+}
+
+p.info{
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  padding-top: 3px;
+  padding-right: 3px;
 }
 
 body a,
