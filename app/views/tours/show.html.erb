@@ -30,20 +30,18 @@
       </div>
     </div>
   </div>
-</div>
 
-<% if current_user %>
-  <div class="container chapter-container">
+  <% if current_user %>
     <div class="section-text">
       <p><strong>Kommentare: </strong><%= @tour.comments %></p>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
-<div class="container chapter-container">
   <div class="section-container">
     <div class="section-text">
-      <%= link_to 'Zurück zur Liste der Touren', tours_path %>
+      <%= link_to tours_path do %>
+        <span class="glyphicon glyphicon-th-list"></span> Zur Liste der Touren
+      <% end %>
     </div>
   </div>
 </div>
