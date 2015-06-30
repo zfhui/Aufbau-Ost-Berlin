@@ -133,6 +133,11 @@ nav.navbar-default{
   background: #FFF;
 }
 
+.container > .navbar-header{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 /* styles for the icon */
 .navbar > .container .navbar-brand{
   margin: 0;
