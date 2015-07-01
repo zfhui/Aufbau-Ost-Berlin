@@ -32,6 +32,62 @@
     </div>
   </div>
 
+  <div class="section-container">
+    <div class="section-text">
+      <table class="table table-condensed">
+        <tbody>
+          <tr>
+            <td>
+              <span class="info">Adresse:</span>
+            </td>
+            <td>
+              <%= "#{@building.street_name} #{@building.house_no}, #{@building.zipcode} #{@building.city}" %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="info">Architekt(en):</span>
+            </td>
+            <td>
+              <%= @building.architects_str %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="info">Bauzeit: </span>
+            </td>
+            <td>
+              <%= @building.built_dates_str %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span class="info">Externe Links: </span>
+            </td>
+            <td>
+                <%= url_html(@building.wiki_url, "Wikipedia") %>
+                <%= url_html(@building.wiki_common_url, "Wikimedia Common") %>
+                <%= url_html(@building.denkmalliste_url, "Denkmalliste") %>
+                <%= url_html(@building.grossstadt_url, "Großstadt") %>
+                <%= url_html(@building.other_url, "Link 1") %>
+                <%= url_html(@building.other_url_2, "Link 2") %>
+            </td>
+          </tr>
+          <% if current_user %>
+            <tr>
+              <td>
+                <span class="info">Kommentare: </span>
+              </td>
+              <td>
+                <em><%= @building.comments %></em>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <div class="chapter-text">
     <p><%= @building.description.html_safe %></p>
     <% if @building.tour %>
@@ -72,64 +128,6 @@
 <% end %>
 
 <div class="container chapter-container">
-  <div class="section-container">
-    <div class="section-text">
-      <table class="table table-condensed">
-        <tbody>
-          <tr>
-            <td>
-              <p class="info">Adresse:</p>
-            </td>
-            <td>
-              <p><%= "#{@building.street_name} #{@building.house_no}, #{@building.zipcode} #{@building.city}" %></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p class="info">Architekt(en):</p>
-            </td>
-            <td>
-              <p><%= @building.architects_str %></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p class="info">Bauzeit: </p>
-            </td>
-            <td>
-              <p><%= @building.built_dates_str %></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p class="info">Externe Links: </p>
-            </td>
-            <td>
-              <p>
-                <%= url_html(@building.wiki_url, "Wikipedia") %>
-                <%= url_html(@building.wiki_common_url, "Wikimedia Common") %>
-                <%= url_html(@building.denkmalliste_url, "Denkmalliste") %>
-                <%= url_html(@building.grossstadt_url, "Großstadt") %>
-                <%= url_html(@building.other_url, "Link 1") %>
-                <%= url_html(@building.other_url_2, "Link 2") %>
-              </p>
-            </td>
-          </tr>
-          <% if current_user %>
-            <tr>
-              <td>
-                <p class="info">Kommentare: </p>
-              </td>
-              <td>
-                <p><em><%= @building.comments %></em></p>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
   <div class="section-container">
     <div class="section-text">
       <%= link_to buildings_path do %>

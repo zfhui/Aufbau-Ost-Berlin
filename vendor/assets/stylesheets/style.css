@@ -52,10 +52,9 @@ h5{
   text-align: right;
 }
 
-p.info{
+span.info{
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: bold;
   text-align: right;
   padding-top: 3px;
   padding-right: 3px;
@@ -386,4 +385,9 @@ div.marker-infowindow table td p{
 .grid-item a:focus{
   padding: 9px;
   border: 1px solid #111;
+}
+
+/**/
+.table th, .table td{
+  padding-bottom: 0.0em;
 }
