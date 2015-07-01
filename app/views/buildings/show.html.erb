@@ -60,19 +60,17 @@
               <%= @building.built_dates_str %>
             </td>
           </tr>
-          <tr>
-            <td>
-              <span class="info">Externe Links: </span>
-            </td>
-            <td>
-                <%= url_html(@building.wiki_url, "Wikipedia") %>
-                <%= url_html(@building.wiki_common_url, "Wikimedia Common") %>
-                <%= url_html(@building.denkmalliste_url, "Denkmalliste") %>
-                <%= url_html(@building.grossstadt_url, "Großstadt") %>
-                <%= url_html(@building.other_url, "Link 1") %>
-                <%= url_html(@building.other_url_2, "Link 2") %>
-            </td>
-          </tr>
+
+          <% if external_urls_to_str(@building).present? %>
+            <tr>
+              <td>
+                <span class="info">Externe Links: </span>
+              </td>
+              <td>
+                <%= external_urls_to_str(@building) %>
+              </td>
+            </tr>
+          <% end %>
           <% if current_user %>
             <tr>
               <td>
