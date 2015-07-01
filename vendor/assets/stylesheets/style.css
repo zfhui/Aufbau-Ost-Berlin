@@ -1,3 +1,9 @@
+.element {
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}
+
 html, body{
     font-family: 'Crimson Text', 'Century', Garamond, 'Open Serif', serif !important;
     font-size: 100%;
