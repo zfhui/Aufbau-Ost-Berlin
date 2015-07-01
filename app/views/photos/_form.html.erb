@@ -12,6 +12,20 @@
   <% end %>
 
   <div class="form-group">
+    <%= f.label "Indexkarte Nr:", class: "col-xs-12 col-sm-3 control-label" %>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :index_card_no, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Foto Nr:", class: "col-xs-12 col-sm-3 control-label", placeholder: "Bitte auf Großschreibung achten!" %>
+    <div class="col-xs-12 col-sm-8">
+      <%= f.text_field :photo_no, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label "Fotograf:", class: "col-xs-12 col-sm-3 control-label" %>
     <div class="col-xs-12 col-sm-8">
       <%= f.text_field :photographer, class: "form-control" %>
