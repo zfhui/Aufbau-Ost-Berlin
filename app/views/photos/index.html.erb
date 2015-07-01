@@ -21,7 +21,7 @@
         <!-- book info -->
         <div class="col-xs-12 col-sm-8">
           <div class="section-head">
-            <h4><%= "#{photo.id}. #{photo.index_card_no}_#{photo.photo_no}.jpg" %></h4>
+            <h4><%= "#{photo.index_card_no}_#{photo.photo_no}.jpg" %></h4>
             <% if current_user %>
               <p>
                 <%= link_to 'Anzigen', photo %> |
@@ -32,7 +32,13 @@
           </div>
           <div class="section-text">
             <p><strong>Typ: </strong><%= photo.classification%></p>
-            <p><strong>Gebäude: </strong><%=photo.building_name %></p>
+            <p><strong>Gebäude: </strong>
+              <% if photo.building %>
+                <%= photo.building.name %>
+              <%else%>
+                <%= photo.building_name %>
+              <% end %>
+            </p>
             <p><strong>Gebäude ID: </strong><%=photo.building_id %></p>
             <p><strong>Adresse: </strong><%= photo.address %></p>
             <p><strong>Inhalt: </strong><%= photo.content %></p>
