@@ -13,6 +13,7 @@ class BuildingsController < ApplicationController
       marker.lng building.longitude
       marker.infowindow render_to_string(partial: "/buildings/infowindow", locals: {object: building})
     end
+    @tours = Tour.all.order(:id)
   end
 
   # GET /buildings/1

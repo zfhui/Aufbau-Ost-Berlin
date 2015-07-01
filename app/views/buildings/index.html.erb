@@ -24,6 +24,18 @@
       <div id="buildings-grid">
       </div>
     </div>
+    <!-- building list color coding legend -->
+    <div class="section-text">
+      <div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-1 col-lg-offset-2">
+        <span class="glyphicon glyphicon-stop" style="color: #F16745; font-size: xx-large; top: 8px;right: 3px;"></span> Tour: <%= link_to @tours.first.name, tour_path(@tours.first) %>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <span class="glyphicon glyphicon-stop" style="color: #3e8fae; font-size: xx-large; top: 8px;right: 3px;"></span> Tour: <%= link_to @tours.second.name, tour_path(@tours.second) %>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <span class="glyphicon glyphicon-stop" style="color: #8dcd91; font-size: xx-large; top: 8px;right: 3px;"></span> Tour: <%= link_to @tours.third.name, tour_path(@tours.third) %>
+      </div>
+    </div>
   </div>
 </div>
 
