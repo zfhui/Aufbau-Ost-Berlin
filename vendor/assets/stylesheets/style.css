@@ -138,6 +138,12 @@ nav.navbar-default{
   background: #FFF;
 }
 
+@media (max-width: $screen-xs) {
+  nav.navbar-default{
+    margin-top: 0px;
+  }
+}
+
 .container > .navbar-header{
   margin-left: 0px;
   margin-right: 0px;
