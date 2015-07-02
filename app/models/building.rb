@@ -18,46 +18,4 @@ class Building < ActiveRecord::Base
       Building.create! row.to_hash
     end
   end
-
-  # quik and dirty helpers
-
-  def built_dates_str
-    first = "#{built_from}"
-
-    if built_to
-      first = "#{first}-#{built_to}"
-    end
-
-    if built_from_2
-      second = "#{first}; #{built_from_2}"
-
-      if built_to_2
-        second = "#{second}-#{built_to_2}"
-      end
-
-      return second
-    end
-
-    first
-  end
-
-  def architects_str
-    first = architect
-
-    if architect_2
-      if !architect_2.empty?
-        second =  "#{first}; #{architect_2}"
-
-        if architect_3
-          if !architect_3.empty?
-            third = "#{second}; #{architect_3}"
-            return third
-          end
-        end
-        return second
-      end
-    end
-
-    first
-  end
 end

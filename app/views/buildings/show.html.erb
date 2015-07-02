@@ -49,7 +49,7 @@
               <span class="info">Architekt(en):</span>
             </td>
             <td>
-              <%= @building.architects_str %>
+              <%= architects_to_str(@building) %>
             </td>
           </tr>
           <tr>
@@ -57,7 +57,7 @@
               <span class="info">Bauzeit: </span>
             </td>
             <td>
-              <%= @building.built_dates_str %>
+              <%= built_dates_to_str(@building) %>
             </td>
           </tr>
 
