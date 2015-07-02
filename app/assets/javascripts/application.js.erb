@@ -77,17 +77,40 @@ $(document).ready(function(){
 
 })
 
-function bindLiToMarker($address, marker){
-    $($address).on('click', function(){
-      Gmaps.store.handler.getMap().setZoom(14);
-      marker.setMap(Gmaps.store.handler.getMap()); //because clusterer removes map property from marker
-      marker.panTo();
-      google.maps.event.trigger(marker.getServiceObject(), 'click');
-      Gmaps.store.handler.fitMapToBounds();
-    });
+function findMarker(i){
+  console.log(Gmaps.store.markers.length);
+
+  for (var l=0; l<Gmaps.store.markers.length; ++l){
+    marker = Gmaps.store.markers[l];
+    // console.log(marker.getServiceObject().id);
+    if (marker.getServiceObject().id == i ) {
+      // console.log('Found marker!');
+      return marker;
+    }
+  }
+  console.log('Didnt find marker!');
+  return Gmaps.store.markers[0];
 }
 
-function createSidebarLi(json){
+function bindGridItemsToMarker(){
+  $('.grid-item').on('click', function(){
+    // console.log("----------");
+    i = $(this).attr('id');
+    // console.log(i);
+
+    marker = findMarker(i);
+    // console.log(marker.getServiceObject().id);
+
+    Gmaps.store.handler.getMap();
+    marker.setMap(Gmaps.store.handler.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    // console.log('marker.id = ' + marker.getServiceObject().id);
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+    Gmaps.store.handler.fitMapToBounds();
+  });
+}
+
+function buildGridItem(json){
   var bgColor;
 
   switch(json.tour_id) {
@@ -107,15 +130,14 @@ function createSidebarLi(json){
   div.setAttribute('class', 'grid-item');
   div.setAttribute('id', json.id);
   div.style.background = bgColor;
-  div.innerHTML = ("<a id='grid-item-"+ json.id + "' href='#map-anchor'><span class='glyphicon glyphicon-map-marker'></span> " + json.name + "</a>");
+  div.innerHTML = ("<a href='#map-anchor'><span class='glyphicon glyphicon-map-marker'></span> " + json.name + "</a>");
 
   return div;
 }
 
-function createSidebar(json_array){
+function buildBuildingsList(json_array){
   _.each(json_array, function(json){
-    $address = $( createSidebarLi(json) );
-    bindLiToMarker($address, json.marker);
+    $address = $( buildGridItem(json) );
     $("#buildings-grid").append($address);
   });
   // grid-a-licious funtions
@@ -130,7 +152,7 @@ Gmaps.store = {};
 
 function buildingsMap(json_array){
   Gmaps.store.handler = Gmaps.build('Google');
-  Gmaps.store.handler.buildMap({ provider:{}, internal: {id: 'buildings_map'}}, function(){
+  Gmaps.store.handler.buildMap({ provider:{}, internal: {id: 'buildings-map'}}, function(){
 
     Gmaps.store.markers = Gmaps.store.handler.addMarkers(json_array);
 
@@ -140,7 +162,6 @@ function buildingsMap(json_array){
       json.marker = marker;
     });
 
-    createSidebar(json_array);
     Gmaps.store.handler.bounds.extendWith(Gmaps.store.markers);
     Gmaps.store.handler.fitMapToBounds();
   });
