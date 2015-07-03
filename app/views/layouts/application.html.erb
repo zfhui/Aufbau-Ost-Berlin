@@ -88,19 +88,19 @@
 						<div class="col-xs-12 col-sm-6">
 							<h4>Weitere Links</h4>
 							<ul class="col-md-6">
-								<li>
-									<% if current_user %>
-										<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-									<% else %>
-										<%= link_to 'Login', new_user_session_path %>
-									<% end %>
-								</li>
 								<li><%= link_to "Über diese Seite", about_path %></li>
-								<li><%= link_to "Impressum", impressum_path %></li>
-								<li><%= link_to "Haftungsausschluss", haftung_path %></li>
 							</ul>
 							<% if current_user %>
 								<ul class="col-md-6">
+									<li>
+										<% if current_user %>
+											<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+										<% else %>
+											<%= link_to 'Login', new_user_session_path %>
+										<% end %>
+									</li>
+									<li><%= link_to "Impressum", impressum_path %></li>
+									<li><%= link_to "Haftungsausschluss", haftung_path %></li>
 									<li><%= link_to "Fotos", photos_path %></li>
 								</ul>
 							<% end %>
