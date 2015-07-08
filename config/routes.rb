@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :literatures
   root to: 'home#index'
 
   get 'about',     to: 'home#about'
@@ -15,7 +14,12 @@ Rails.application.routes.draw do
     collection { post :import}
   end
 
+  resources :index_cards do
+    collection { post :import}
+  end
+
   resources :tours
+  resources :literatures
 
   devise_for :users,
     skip: :registrations

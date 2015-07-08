@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Index Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Photographer</th>
+      <th>Architect</th>
+      <th>Building name</th>
+      <th>Place</th>
+      <th>Systematic</th>
+      <th>Filename</th>
+      <th>No of photos</th>
+      <th>Inventory date</th>
+      <th>Creditline</th>
+      <th>Content</th>
+      <th>Year taken</th>
+      <th>Original filename</th>
+      <th>Flickr</th>
+      <th>Url t</th>
+      <th>Url s</th>
+      <th>Url sq</th>
+      <th>Url m</th>
+      <th>Url o</th>
+      <th>Pathalias</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @index_cards.each do |index_card| %>
+      <tr>
+        <td><%= index_card.photographer %></td>
+        <td><%= index_card.architect %></td>
+        <td><%= index_card.building_name %></td>
+        <td><%= index_card.place %></td>
+        <td><%= index_card.systematic %></td>
+        <td><%= index_card.ownership %></td>
+        <td><%= index_card.filename %></td>
+        <td><%= index_card.no_of_photos %></td>
+        <td><%= index_card.inventory_date %></td>
+        <td><%= index_card.creditline %></td>
+        <td><%= index_card.content %></td>
+        <td><%= index_card.year_taken %></td>
+        <td><%= index_card.original_filename %></td>
+        <td><%= index_card.flickr_name %></td>
+        <td><%= index_card.url_t %></td>
+        <td><%= index_card.url_s %></td>
+        <td><%= index_card.url_sq %></td>
+        <td><%= index_card.url_m %></td>
+        <td><%= index_card.url_o %></td>
+        <td><%= index_card.pathalias %></td>
+        <td><%= index_card.title %></td>
+        <td><%= link_to 'Show', index_card %></td>
+        <td><%= link_to 'Edit', edit_index_card_path(index_card) %></td>
+        <td><%= link_to 'Destroy', index_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if current_user %>
+  <div class="container importer-container">
+    <p><%= link_to 'Neue Karteikarte', new_index_card_path %></p>
+    <p>Karteikarte importieren</p>
+    <p>
+      <%= form_tag import_index_cards_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag 'Importieren'%>
+      <% end %>
+    </p>
+</div>
+<% end %>

@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  photographer: MyString
+  architect: MyText
+  building_name: MyString
+  place: MyString
+  systematic: MyString
+  filename: MyString
+  no_of_photos: 1
+  inventory_date: 2015-07-08
+  creditline: MyString
+  content: MyText
+  year_taken: 1
+  original_filename: MyString
+  flickr_id: 1
+  url_t: MyString
+  url_s: MyString
+  url_sq: MyString
+  url_m: MyString
+  url_o: MyString
+  pathalias: MyString
+  title: 1
+
+two:
+  photographer: MyString
+  architect: MyText
+  building_name: MyString
+  place: MyString
+  systematic: MyString
+  filename: MyString
+  no_of_photos: 1
+  inventory_date: 2015-07-08
+  creditline: MyString
+  content: MyText
+  year_taken: 1
+  original_filename: MyString
+  flickr_id: 1
+  url_t: MyString
+  url_s: MyString
+  url_sq: MyString
+  url_m: MyString
+  url_o: MyString
+  pathalias: MyString
+  title: 1

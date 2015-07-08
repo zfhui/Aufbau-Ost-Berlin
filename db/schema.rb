@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628152536) do
+ActiveRecord::Schema.define(version: 20150708162305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,32 @@ ActiveRecord::Schema.define(version: 20150628152536) do
     t.string   "video_url",         default: ""
     t.integer  "tour_position"
     t.text     "video_description", default: ""
+  end
+
+  create_table "index_cards", force: :cascade do |t|
+    t.string   "photographer",      default: "", null: false
+    t.text     "architect",         default: "", null: false
+    t.string   "building_name",     default: "", null: false
+    t.string   "place",             default: "", null: false
+    t.string   "systematic",        default: ""
+    t.string   "ownership",         default: ""
+    t.string   "filename",          default: "", null: false
+    t.integer  "no_of_photos",      default: 0
+    t.string   "inventory_date",                 null: false
+    t.string   "creditline",        default: "", null: false
+    t.text     "content",           default: ""
+    t.integer  "year_taken"
+    t.string   "original_filename", default: "", null: false
+    t.string   "flickr_name",                    null: false
+    t.string   "url_t",             default: "", null: false
+    t.string   "url_s",             default: "", null: false
+    t.string   "url_sq",            default: "", null: false
+    t.string   "url_m",             default: "", null: false
+    t.string   "url_o",             default: "", null: false
+    t.string   "pathalias",         default: "", null: false
+    t.integer  "title",                          null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "literatures", force: :cascade do |t|
