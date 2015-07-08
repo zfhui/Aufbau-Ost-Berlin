@@ -5,7 +5,11 @@ class IndexCardsController < ApplicationController
   # GET /index_cards
   # GET /index_cards.json
   def index
-    @index_cards = IndexCard.all
+    @index_cards = IndexCard.all.order('title ASC').page(params[:page]).per(10)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /index_cards/1
