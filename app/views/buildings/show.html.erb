@@ -87,7 +87,7 @@
   </div>
 
   <div class="chapter-text">
-    <p><%= @building.description.html_safe %></p>
+    <p><%= raw @building.description %></p>
     <% if @building.tour %>
       <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour) %>.</p>
     <% end %>

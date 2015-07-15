@@ -32,7 +32,7 @@
 
           <div class="section-text">
             <p>
-              <%= tour.description.truncate(250, seperator: /\w/).html_safe %>
+              <%= raw tour.description.truncate(250, seperator: /\w/) %>
             </p>
             <p class="text-right">
               <%= link_to tour_path(tour) do%>
