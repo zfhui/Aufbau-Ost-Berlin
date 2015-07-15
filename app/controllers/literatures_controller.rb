@@ -5,7 +5,7 @@ class LiteraturesController < ApplicationController
   # GET /literatures
   # GET /literatures.json
   def index
-    @literatures = Literature.all.order(:title)
+    @literatures = Literature.all
   end
 
   # GET /literatures/1

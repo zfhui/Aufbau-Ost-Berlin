@@ -2,6 +2,8 @@ class Photo < ActiveRecord::Base
   belongs_to :building
   before_create :set_building!
 
+  default_scope { order('index_card_no ASC, photo_no ASC') }
+
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Photo.create! row.to_hash

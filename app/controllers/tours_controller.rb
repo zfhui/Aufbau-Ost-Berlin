@@ -5,13 +5,13 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all.order(:name)
+    @tours = Tour.all
   end
 
   # GET /tours/1
   # GET /tours/1.json
   def show
-    @buildings = @tour.buildings.order(:tour_position)
+    @buildings = @tour.buildings.reorder(:tour_position)
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
       marker.json ({id: building.id, name: building.name, tour_position: building.tour_position})
       marker.lat building.latitude

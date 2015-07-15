@@ -6,20 +6,20 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all.order(:id)
+    @buildings = Building.all
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
       marker.json ({id: building.id, name: building.name, tour_id: building.tour_id})
       marker.lat building.latitude
       marker.lng building.longitude
       marker.infowindow render_to_string(partial: "/buildings/infowindow", locals: {object: building})
     end
-    @tours = Tour.all.order(:id)
+    @tours = Tour.all
   end
 
   # GET /buildings/1
   # GET /buildings/1.json
   def show
-    @photos = @building.photos.order(:year)
+    @photos = @building.photos.reorder(:year)
   end
 
   # GET /buildings/new
