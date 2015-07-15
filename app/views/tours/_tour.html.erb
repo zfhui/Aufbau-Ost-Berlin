@@ -1,0 +1,35 @@
+<div class="section-container">
+  <div class="row">
+    <!-- tour cover -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="section-image">
+        <img src="<%=tour.image_path%>" class="img-responsive" alt='<%="#{tour.name}-Tour-Cover"%>'>
+      </div>
+    </div>
+    <!-- tour info -->
+    <div class="col-xs-12 col-sm-8">
+      <div class="section-head">
+        <h4><%= tour.name %></h4>
+        <% if current_user %>
+          <p>
+            <%= link_to 'Anzeigen', tour %> |
+            <%= link_to 'Bearbeiten', edit_tour_path(tour) %> |
+            <%= link_to 'Löschen', tour, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="section-text">
+        <p>
+          <%= raw tour.description.truncate(250, seperator: /\w/) %>
+        </p>
+        <p class="text-right">
+          <%= link_to tour_path(tour) do%>
+            <span class="glyphicon glyphicon-link"></span>
+            Zur Tour
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
