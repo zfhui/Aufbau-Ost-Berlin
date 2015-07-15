@@ -13,11 +13,18 @@ class Building < ActiveRecord::Base
       obj.country = geo.country_code
     end
   end
-  after_validation :reverse_geocode # auto-fetch address
+  
+  after_validation :reverse_geocode, if: :latitude_or_longitude_changed?
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       Building.create! row.to_hash
     end
+  end
+
+  private
+
+  def latitude_or_longitude_changed?
+    :latitude_changed? || :longitude_changed?
   end
 end
