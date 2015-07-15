@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708162305) do
+ActiveRecord::Schema.define(version: 20150715190027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20150708162305) do
     t.integer  "tour_position"
     t.text     "video_description", default: ""
   end
+
+  add_index "buildings", ["tour_id"], name: "index_buildings_on_tour_id", using: :btree
 
   create_table "index_cards", force: :cascade do |t|
     t.string   "photographer",      default: "", null: false
@@ -106,6 +108,8 @@ ActiveRecord::Schema.define(version: 20150708162305) do
     t.text     "comments"
     t.text     "keywords"
   end
+
+  add_index "photos", ["building_id"], name: "index_photos_on_building_id", using: :btree
 
   create_table "tours", force: :cascade do |t|
     t.string   "name"
