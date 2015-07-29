@@ -5,7 +5,12 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    @photos =
+      if params[:tag]
+        Photo.tagged_with(params[:tag])
+      else
+        Photo.all
+      end
   end
 
   # GET /photos/1
@@ -89,6 +94,7 @@ class PhotosController < ApplicationController
                                     :building_id,
                                     :flickr_url,
                                     :comments,
-                                    :keywords)
+                                    :keywords,
+                                    :tag_list)
     end
 end

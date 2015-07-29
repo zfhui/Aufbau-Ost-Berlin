@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'impressum', to: 'home#impressum'
   get 'haftung',   to: 'home#haftung'
 
+  get 'tags/:tag', to: 'photos#index', as: :tag
+
   resources :photos do
     collection { post :import}
   end

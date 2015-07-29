@@ -82,16 +82,16 @@
   </div>
 
   <div class="form-group">
-    <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-3 control-label"%>
+    <%= f.label :tag_list, "Tags (seperated by commas)", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
-      <%= f.text_area :comments, class: "form-control", style: "height: 200px", placeholder: "Hier Kommentare eintragen ..."%>
+      <%= f.text_field :tag_list, class: "form-control", placeholder: "Tag_1, Tag_2, ..."%>
     </div>
   </div>
 
   <div class="form-group">
-    <%= f.label "keywords: ", class: "col-xs-12 col-sm-3 control-label"%>
+    <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
-      <%= f.text_area :keywords, class: "form-control", style: "height: 200px", placeholder: "[Word_1, Word_2, ...]"%>
+      <%= f.text_area :comments, class: "form-control", style: "height: 200px", placeholder: "Hier Kommentare eintragen ..."%>
     </div>
   </div>
 

@@ -2,6 +2,8 @@ class Photo < ActiveRecord::Base
   belongs_to :building
   before_create :set_building!
 
+  acts_as_taggable
+
   default_scope { order('index_card_no ASC, photo_no ASC') }
 
   def self.import(file)

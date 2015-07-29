@@ -13,7 +13,7 @@ class Building < ActiveRecord::Base
       obj.country = geo.country_code
     end
   end
-  
+
   after_validation :reverse_geocode, if: :latitude_or_longitude_changed?
 
   def self.import(file)

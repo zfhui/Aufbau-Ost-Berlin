@@ -63,3 +63,5 @@ gem 'gmaps4rails'
 
 gem 'kaminari'
 gem 'swipebox'
+
+gem 'acts-as-taggable-on'

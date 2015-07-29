@@ -34,6 +34,7 @@
         <p><strong>Besitz: </strong><%= photo.ownership %></p>
         <p><strong>Creditline: </strong><%= photo.creditline %></p>
         <p><strong>Flickr URL: </strong><%= photo.flickr_url %></p>
+        <p><strong>Tags: </strong><%= raw photo.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
         <% if current_user %>
           <p><strong>Kommentare: </strong><em><%= photo.comments %></em></p>
         <% end %>
