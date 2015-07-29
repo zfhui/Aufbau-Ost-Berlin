@@ -84,7 +84,7 @@
   <div class="form-group">
     <%= f.label :tag_list, "Tags (seperated by commas)", class: "col-xs-12 col-sm-3 control-label"%>
     <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :tag_list, class: "form-control", placeholder: "Tag_1, Tag_2, ..."%>
+      <%= f.text_field :tag_list, value: @photo.tag_list.to_s, class: "form-control", placeholder: "Tag_1, Tag_2, ..."%>
     </div>
   </div>
 
