@@ -1,4 +1,4 @@
-<%= form_for @literature, html: {class: "form-horizontal"} do |f| %>
+<%= simple_form_for @literature, html: {class: "form-horizontal"}, wrapper: :horizontal_form do |f| %>
   <% if @literature.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@literature.errors.count, "error") %> prohibited this literature from being saved:</h2>
@@ -11,63 +11,13 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :author, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :author, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :title, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :title, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :subtitle, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :subtitle, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :published_at, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :published_at, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :publisher, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :publisher, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :year, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.number_field :year, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :cover_file, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :cover_file, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :url, class: "col-xs-12 col-sm-3 control-label" %><br>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :url, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit "Speichern", class: "center-block btn btn-primary"%>
-  </div>
+  <%= f.input :author, label: "Autor" %>
+  <%= f.input :title, label: 'Titel' %>
+  <%= f.input :subtitle, label: "Untertitel" %>
+  <%= f.input :published_at, label: "Verlagsort" %>
+  <%= f.input :publisher, label: "Verlag" %>
+  <%= f.input :year, label: "Jahr" %>
+  <%= f.input :cover_file, label: "Titelbild" %>
+  <%= f.input :url, label: "URL" %>
+  <%= f.button :submit, "Speichern", class: "center-block btn btn-primary"%>
 <% end %>

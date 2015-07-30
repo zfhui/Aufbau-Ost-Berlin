@@ -1,4 +1,4 @@
-<%= form_for @photo, html: {class: "form-horizontal"} do |f|%>
+<%= simple_form_for @photo, html: {class: "form-horizontal"}, wrapper: :horizontal_form do |f|%>
   <% if @photo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
@@ -11,91 +11,17 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label "Indexkarte Nr:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :index_card_no, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Foto Nr:", class: "col-xs-12 col-sm-3 control-label", placeholder: "Bitte auf Großschreibung achten!" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :photo_no, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Fotograf:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :photographer, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Jahr:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :year, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Typ:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :classification, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Gebäude:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.collection_select :building_id, Building.order(:name), :id, :name, include_blank: true, class: "form-control"%>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Inhalt: ", class: "col-xs-12 col-sm-3 control-label"%>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_area :content, class: "form-control", style: "height: 200px", placeholder: "Beschreibung"%>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Besitz:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :ownership, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Creditline:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :creditline, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Flickr URL:", class: "col-xs-12 col-sm-3 control-label" %>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :flickr_url, class: "form-control" %>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :tag_list, "Tags (seperated by commas)", class: "col-xs-12 col-sm-3 control-label"%>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_field :tag_list, value: @photo.tag_list.to_s, class: "form-control", placeholder: "Tag_1, Tag_2, ..."%>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.label "Kommentare: ", class: "col-xs-12 col-sm-3 control-label"%>
-    <div class="col-xs-12 col-sm-8">
-      <%= f.text_area :comments, class: "form-control", style: "height: 200px", placeholder: "Hier Kommentare eintragen ..."%>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit "Speichern", class: "center-block btn btn-primary"%>
-  </div>
+  <%= f.input :index_card_no, label: "Indexkarte Nr" %>
+  <%= f.input :photo_no, label: "Foto Nr" %>
+  <%= f.input :photographer, label: "Fotograf" %>
+  <%= f.input :year, label: "Jahr" %>
+  <%= f.input :classification, label: "Typ" %>
+  <%= f.association :building, include_blank: true, label: "Gebäude" %>
+  <%= f.input :content, as: 'text', label: "Inhalt: ", style: "height: 250px", placeholder: "Beschreibung"%>
+  <%= f.input :ownership, label: "Besitz" %>
+  <%= f.input :creditline, label: "Creditline:" %>
+  <%= f.input :flickr_url, label: "Flickr URL:" %>
+  <%= f.input :tag_list, input_html: {value: @photo.tag_list.to_s}, label: "Tags (seperated by commas)", placeholder: "Tag_1, Tag_2, ..."%>
+  <%= f.input :comments, as: 'text', label: "Kommentare", style: "height: 250px", placeholder: "Hier Kommentare eintragen ..."%>
+  <%= f.button :submit, "Speichern", class: "center-block btn btn-primary"%>
 <% end %>
