@@ -54,8 +54,10 @@ group :development, :test do
   gem 'hirb'
 end
 
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
+
 gem "font-awesome-sass"
-gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'geocoder'
