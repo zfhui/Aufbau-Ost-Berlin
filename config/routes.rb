@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   mount Lockup::Engine, at: '/lockup'
 
+  constraints(host: /aufbau-ostberlin.herokuapp.com/) do
+    match "/(*path)", to: redirect { |params, req| "//www.aufbau-ostberlin.de/#{params[:path]}" }, via: [:get, :post]
+  end
+
   root to: 'home#index'
 
   get 'about',     to: 'home#about'
