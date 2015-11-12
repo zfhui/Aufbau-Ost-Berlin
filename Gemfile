@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 gem 'devise'
 
+# generating sitemap
+gem 'sitemap_generator', '~> 5.1'
+
 group :production do
   gem 'puma'
   gem 'rails_12factor' # Heroku gem
@@ -28,6 +31,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'hirb'
+  gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
 end
 
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
