@@ -4,4 +4,4 @@
 # User-agent: *
 # Disallow: /
 
-Sitemap: http://www.aufbau-ostberlin.de/sitemap.xml.gz
+Sitemap: http://aufbau-ostberlin.s3.amazonaws.com/sitemaps/sitemap.xml.gz
