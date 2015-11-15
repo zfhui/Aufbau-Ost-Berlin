@@ -5,9 +5,9 @@ SitemapGenerator::Sitemap.public_path = '/tmp'
 
 SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new
 
-SitemapGenerator::Sitemap.sitemap_host = "http://#{ENV.fetch('FOG_DIRECTORY')}.s3.amazonaws.com/"
+SitemapGenerator::Sitemap.sitemaps_host = "http://#{ENV.fetch('FOG_DIRECTORY')}.s3.amazonaws.com/"
 
-SitemapGenerator::Sitemap.sitemap_path = 'sitemaps/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
