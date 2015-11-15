@@ -1,6 +1,14 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "#{ENV.fetch('HOST_URL')}"
 
+SitemapGenerator::Sitemap.public_path = '/tmp'
+
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new
+
+SitemapGenerator::Sitemap.sitemap_host = "http://#{ENV.fetch('FOG_DIRECTORY')}.s3.amazonaws.com/"
+
+SitemapGenerator::Sitemap.sitemap_path = 'sitemaps/'
+
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
   #
