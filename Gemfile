@@ -18,6 +18,7 @@ gem 'devise'
 
 # generating sitemap
 gem 'sitemap_generator', '~> 5.1'
+gem 'fog-aws', '~> 0.7.6'
 
 group :production do
   gem 'puma'
