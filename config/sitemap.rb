@@ -3,7 +3,10 @@ SitemapGenerator::Sitemap.default_host = "#{ENV.fetch('HOST_URL')}"
 
 SitemapGenerator::Sitemap.public_path = '/tmp'
 
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(
+  fog_provider: 'AWS',
+  fog_region:   'eu-central-1'
+)
 
 SitemapGenerator::Sitemap.sitemaps_host = "http://#{ENV.fetch('FOG_DIRECTORY')}.s3.amazonaws.com/"
 
