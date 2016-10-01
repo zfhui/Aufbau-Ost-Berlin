@@ -235,7 +235,7 @@ DEPENDENCIES
   fog-aws (~> 0.7.6)
   font-awesome-sass
   geocoder
-  gmaps4rails
+  gmaps4rails (~> 2.1)
   hirb
   jbuilder (~> 2.0)
   jquery-rails
@@ -258,4 +258,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
