@@ -42,7 +42,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'geocoder'
-gem 'gmaps4rails'
+gem 'gmaps4rails', '~> 2.1'
 
 gem 'kaminari'
 gem 'swipebox'
