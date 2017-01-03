@@ -68,9 +68,8 @@ class PhotosController < ApplicationController
   end
 
   def import
-      Photo.import(params[:file])
-
-      redirect_to root_url, notice: 'Photos imported.'
+    Photo.import(params[:file])
+    redirect_to root_url, notice: 'Photos imported.'
   end
 
   private
@@ -81,20 +80,24 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:index_card_no,
-                                    :photo_no,
-                                    :photographer,
-                                    :year,
-                                    :classification,
-                                    :building_name,
-                                    :address,
-                                    :content,
-                                    :ownership,
-                                    :creditline,
-                                    :building_id,
-                                    :flickr_url,
-                                    :comments,
-                                    :keywords,
-                                    :tag_list)
+      params
+        .require(:photo)
+        .permit(
+          :index_card_no,
+          :photo_no,
+          :photographer,
+          :year,
+          :classification,
+          :building_name,
+          :address,
+          :content,
+          :ownership,
+          :creditline,
+          :building_id,
+          :flickr_url,
+          :comments,
+          :keywords,
+          :tag_list
+        )
     end
 end

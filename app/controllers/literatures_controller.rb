@@ -70,6 +70,17 @@ class LiteraturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def literature_params
-      params.require(:literature).permit(:author, :title, :subtitle, :published_at, :publisher, :year, :cover_file, :url)
+      params
+        .require(:literature)
+        .permit(
+          :author,
+          :title,
+          :subtitle,
+          :published_at,
+          :publisher,
+          :year,
+          :cover_file,
+          :url
+        )
     end
 end
