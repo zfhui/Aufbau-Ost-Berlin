@@ -72,8 +72,8 @@ class BuildingsController < ApplicationController
   end
 
   def import
-      Building.import(params[:file])
-      redirect_to buildings_url, notice: 'Buildings imported.'
+    Building.import(params[:file])
+    redirect_to buildings_url, notice: 'Buildings imported.'
   end
 
   private
@@ -84,31 +84,35 @@ class BuildingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def building_params
-      params.require(:building).permit(:name,
-                                       :latitude,
-                                       :longitude,
-                                       :architect,
-                                       :architect_2,
-                                       :architect_3,
-                                       :built_from,
-                                       :built_to,
-                                       :built_from_2,
-                                       :built_to_2,
-                                       :description,
-                                       :wiki_url,
-                                       :wiki_common_url,
-                                       :denkmalliste_url,
-                                       :grossstadt_url,
-                                       :other_url,
-                                       :other_url_2,
-                                       :comments,
-                                       :tour_id,
-                                       :video_url,
-                                       :street_name,
-                                       :house_no,
-                                       :zipcode,
-                                       :city,
-                                       :tour_position,
-                                       :video_description)
+      params
+        .require(:building)
+        .permit(
+          :name,
+          :latitude,
+          :longitude,
+          :architect,
+          :architect_2,
+          :architect_3,
+          :built_from,
+          :built_to,
+          :built_from_2,
+          :built_to_2,
+          :description,
+          :wiki_url,
+          :wiki_common_url,
+          :denkmalliste_url,
+          :grossstadt_url,
+          :other_url,
+          :other_url_2,
+          :comments,
+          :tour_id,
+          :video_url,
+          :street_name,
+          :house_no,
+          :zipcode,
+          :city,
+          :tour_position,
+          :video_description
+        )
     end
 end
