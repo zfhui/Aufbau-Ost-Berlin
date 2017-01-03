@@ -77,42 +77,43 @@ class BuildingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_building
-      @building = Building.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def building_params
-      params
-        .require(:building)
-        .permit(
-          :name,
-          :latitude,
-          :longitude,
-          :architect,
-          :architect_2,
-          :architect_3,
-          :built_from,
-          :built_to,
-          :built_from_2,
-          :built_to_2,
-          :description,
-          :wiki_url,
-          :wiki_common_url,
-          :denkmalliste_url,
-          :grossstadt_url,
-          :other_url,
-          :other_url_2,
-          :comments,
-          :tour_id,
-          :video_url,
-          :street_name,
-          :house_no,
-          :zipcode,
-          :city,
-          :tour_position,
-          :video_description
-        )
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_building
+    @building = Building.find(id)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def building_params
+    params
+      .require(:building)
+      .permit(
+        :name,
+        :latitude,
+        :longitude,
+        :architect,
+        :architect_2,
+        :architect_3,
+        :built_from,
+        :built_to,
+        :built_from_2,
+        :built_to_2,
+        :description,
+        :wiki_url,
+        :wiki_common_url,
+        :denkmalliste_url,
+        :grossstadt_url,
+        :other_url,
+        :other_url_2,
+        :comments,
+        :tour_id,
+        :video_url,
+        :street_name,
+        :house_no,
+        :zipcode,
+        :city,
+        :tour_position,
+        :video_description
+      )
+  end
 end
