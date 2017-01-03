@@ -8,10 +8,10 @@ class BuildingsController < ApplicationController
   def index
     @buildings = Building.all
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
-      marker.json ({id: building.id, name: building.name, tour_id: building.tour_id})
+      marker.json ({ id: building.id, name: building.name, tour_id: building.tour_id })
       marker.lat building.latitude
       marker.lng building.longitude
-      marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: {object: building})
+      marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: { object: building })
     end
     @tours = Tour.all
   end
