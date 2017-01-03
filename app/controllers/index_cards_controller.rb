@@ -67,18 +67,43 @@ class IndexCardsController < ApplicationController
   end
 
   def import
-      IndexCard.import(params[:file])
-      redirect_to index_cards_url, notice: 'Karteikarte importiert.'
+    IndexCard.import(params[:file])
+    redirect_to index_cards_url, notice: 'Karteikarte importiert.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_index_card
-      @index_card = IndexCard.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def index_card_params
-      params.require(:index_card).permit(:photographer, :architect, :building_name, :place, :systematic, :ownership, :filename, :no_of_photos, :inventory_date, :creditline, :content, :year_taken, :original_filename, :flickr_id, :url_t, :url_s, :url_sq, :url_m, :url_o, :pathalias, :title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_index_card
+    @index_card = IndexCard.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def index_card_params
+    params
+      .require(:index_card)
+      .permit(
+        :photographer,
+        :architect,
+        :building_name,
+        :place,
+        :systematic,
+        :ownership,
+        :filename,
+        :no_of_photos,
+        :inventory_date,
+        :creditline,
+        :content,
+        :year_taken,
+        :original_filename,
+        :flickr_id,
+        :url_t,
+        :url_s,
+        :url_sq,
+        :url_m,
+        :url_o,
+        :pathalias,
+        :title
+      )
+  end
 end

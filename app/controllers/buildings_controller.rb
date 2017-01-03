@@ -8,10 +8,10 @@ class BuildingsController < ApplicationController
   def index
     @buildings = Building.all
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
-      marker.json ({id: building.id, name: building.name, tour_id: building.tour_id})
+      marker.json ({ id: building.id, name: building.name, tour_id: building.tour_id })
       marker.lat building.latitude
       marker.lng building.longitude
-      marker.infowindow render_to_string(partial: "/buildings/infowindow", locals: {object: building})
+      marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: { object: building })
     end
     @tours = Tour.all
   end
@@ -72,43 +72,48 @@ class BuildingsController < ApplicationController
   end
 
   def import
-      Building.import(params[:file])
-      redirect_to buildings_url, notice: 'Buildings imported.'
+    Building.import(params[:file])
+    redirect_to buildings_url, notice: 'Buildings imported.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_building
-      @building = Building.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def building_params
-      params.require(:building).permit(:name,
-                                       :latitude,
-                                       :longitude,
-                                       :architect,
-                                       :architect_2,
-                                       :architect_3,
-                                       :built_from,
-                                       :built_to,
-                                       :built_from_2,
-                                       :built_to_2,
-                                       :description,
-                                       :wiki_url,
-                                       :wiki_common_url,
-                                       :denkmalliste_url,
-                                       :grossstadt_url,
-                                       :other_url,
-                                       :other_url_2,
-                                       :comments,
-                                       :tour_id,
-                                       :video_url,
-                                       :street_name,
-                                       :house_no,
-                                       :zipcode,
-                                       :city,
-                                       :tour_position,
-                                       :video_description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_building
+    @building = Building.find(id)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def building_params
+    params
+      .require(:building)
+      .permit(
+        :name,
+        :latitude,
+        :longitude,
+        :architect,
+        :architect_2,
+        :architect_3,
+        :built_from,
+        :built_to,
+        :built_from_2,
+        :built_to_2,
+        :description,
+        :wiki_url,
+        :wiki_common_url,
+        :denkmalliste_url,
+        :grossstadt_url,
+        :other_url,
+        :other_url_2,
+        :comments,
+        :tour_id,
+        :video_url,
+        :street_name,
+        :house_no,
+        :zipcode,
+        :city,
+        :tour_position,
+        :video_description
+      )
+  end
 end
