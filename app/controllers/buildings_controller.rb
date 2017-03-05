@@ -80,6 +80,7 @@ class BuildingsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_building
+    id = params[:id]
     @building = Building.find(id)
   end
 
