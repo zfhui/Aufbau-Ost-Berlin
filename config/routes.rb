@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   end
 
   resources :tours
-  resources :literatures
+  get 'literatures', to: 'literatures#index'
 
   devise_for :users,
     skip: :registrations
