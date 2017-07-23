@@ -1,0 +1,41 @@
+{
+  "name": "aufbau_ostberlin",
+  "scripts": {
+  },
+  "env": {
+    "GMAPS_API": {
+      "required": true
+    },
+    "GOOGLE_ANALYTICS": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "LOCKUP_CODEWORD": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
