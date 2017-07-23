@@ -26,6 +26,21 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
+    },
+    "CONTENTFUL_ACCESS_TOKEN": {
+      "required": true
+    },
+    "CONTENTFUL_PREVIEW_ACCESS_TOKEN": {
+      "required": true
+    },
+    "CONTENTFUL_MANAGEMENT_TOKEN": {
+      "required": true
+    },
+    "CONTENTFUL_DEFAULT_LOCALE": {
+      "required": true
+    },
+    "CONTENTFUL_SPACE": {
+      "required": true
     }
   },
   "formation": {
