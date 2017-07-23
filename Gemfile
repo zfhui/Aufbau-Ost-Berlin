@@ -3,35 +3,34 @@ source 'https://rubygems.org'
 ruby '2.4.1'
 
 gem 'rails', '4.2.9' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'pg' # Use postgresql as the database for Active Record
+gem 'pg', '~> 0.21'
 
 # Contentful
 gem 'contentful_rails', github: 'contentful/contentful_rails'
 
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.1.0' # Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
 gem 'jquery-rails' # Use jquery as the JavaScript library
-gem 'jquery-ui-rails'
-gem 'jquery-turbolinks'
-gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
-gem 'devise'
+gem 'jquery-ui-rails', '~> 6.0'
+gem 'jquery-turbolinks', '~> 2.1'
+gem 'turbolinks', '~> 5.0'
+gem 'jbuilder', '~> 2.0'
+gem 'devise', '~> 4.3'
 
 # generating sitemap
-gem 'sitemap_generator', '~> 5.1'
-gem 'fog-aws', '~> 0.7.6'
+gem 'sitemap_generator', '~> 5.3'
+gem 'fog-aws', '~> 1.4'
 
-gem 'lockup'
+gem 'lockup', '~> 1.4'
 
-gem 'simple_form'
+gem 'simple_form', '~> 3.5'
 
-gem "font-awesome-sass"
-gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
+gem "font-awesome-sass", '~> 4.7'
+gem 'bootstrap-sass', '~> 3.3'
+gem 'autoprefixer-rails', '~> 7.1'
 
-gem 'geocoder'
+gem 'geocoder', '~> 1.4'
 gem 'gmaps4rails', '~> 2.1'
 
 gem 'kaminari'
@@ -49,8 +48,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'pry-byebug'
+  gem 'spring'
   gem 'hirb'
   gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
 end
