@@ -13,3 +13,12 @@ Der Quelltext steht unter der [GNU GPL v2.0](LICENSE.txt) Lizenz.
 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Sie sind mit einer Creative Commons Lizenz urheberrechtlich geschützt. Sofern nicht anders angegeben, stehen die Inhalte dieser Seite unter der [CC-BY 4.0](https://creativecommons.org/licenses/by/3.0/de) Lizenz.
 
 [logo]: http://zfhui.de/others/icon_long_80h.png
+
+|Tools     |Codeship|Code Climate|Test Coverage|Gemnasium|
+|----------|--------|------------|-------------|---------|
+|**Status**|[ ![Codeship Status for zfhui/Aufbau-Ost-Berlin](https://app.codeship.com/projects/ce10c240-e68f-0132-36d4-42e03c1e48df/status?branch=master)][codeship-status]|[![Code Climate](https://codeclimate.com/github/zfhui/Aufbau-Ost-Berlin/badges/gpa.svg)][codeclimate-status][![Issue Count](https://codeclimate.com/github/zfhui/Aufbau-Ost-Berlin/badges/issue_count.svg)][codeclimate-status]|[![Test Coverage](https://codeclimate.com/github/zfhui/Aufbau-Ost-Berlin/badges/coverage.svg)][testcoverage-status]|[![Dependency Status](https://gemnasium.com/badges/github.com/zfhui/Aufbau-Ost-Berlin.svg)][gemnasium-status]|
+
+[codeship-status]: https://app.codeship.com/projects/82285
+[codeclimate-status]: https://codeclimate.com/github/zfhui/Aufbau-Ost-Berlin
+[testcoverage-status]: https://codeclimate.com/github/zfhui/Aufbau-Ost-Berlin/coverage
+[gemnasium-status]: https://gemnasium.com/github.com/zfhui/Aufbau-Ost-Berlin
