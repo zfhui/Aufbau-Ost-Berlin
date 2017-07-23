@@ -1,9 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.4.1'
 
-gem 'rails', '4.2.2' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.2.9' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'pg' # Use postgresql as the database for Active Record
+
+# Contentful
+gem 'contentful_rails', github: 'contentful/contentful_rails'
 
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
@@ -20,22 +23,9 @@ gem 'devise'
 gem 'sitemap_generator', '~> 5.1'
 gem 'fog-aws', '~> 0.7.6'
 
-group :production do
-  gem 'puma'
-  gem 'rails_12factor' # Heroku gem
-end
-
 gem 'lockup'
 
-group :development, :test do
-  gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'web-console', '~> 2.0' # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'hirb'
-  gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
-end
-
-gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form', branch: 'master'
+gem 'simple_form'
 
 gem "font-awesome-sass"
 gem 'bootstrap-sass'
@@ -48,3 +38,19 @@ gem 'kaminari'
 gem 'swipebox'
 
 gem 'acts-as-taggable-on'
+
+group :production do
+  gem 'puma', '~> 3.9'
+  gem 'rails_12factor' # Heroku gem
+end
+
+group :development do
+  gem 'web-console', '~> 3.3'
+end
+
+group :development, :test do
+  gem 'byebug' # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'hirb'
+  gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
+end
