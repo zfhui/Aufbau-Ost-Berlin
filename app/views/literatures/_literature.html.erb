@@ -3,31 +3,24 @@
     <!-- book cover -->
     <div class="col-xs-12 col-sm-3 col-sm-offset-1">
       <div class="section-image">
-        <img src='<%= image_url("bookcovers/#{literature.cover_file}")%>' class="img-responsive">
+        <img src='<%= book.cover.image_url %>' class="img-responsive">
       </div>
     </div>
     <!-- book info -->
     <div class="col-xs-12 col-sm-7">
       <div class="section-head">
-        <h4><%= literature.title %></h4></br>
-        <h5><%= literature.subtitle %></h5>
-        <% if current_user %>
-          <p>
-            <%= link_to 'Anzeigen', literature %> |
-            <%= link_to 'Bearbeiten', edit_literature_path(literature) %> |
-            <%= link_to 'Löschen', literature, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </p>
-        <% end %>
+        <h4><%= book.title %></h4></br>
+        <h5><%= book.subtitle %></h5>
       </div>
 
       <div class="section-text">
         <p class="section-subtext">
-          Von <%= literature.author %>.
-          <%= literature.published_at %> <%= literature.year %>,
-          Verlag <%= literature.publisher %>.
+          Von <%= book.authors %>.
+          <%= book.published_at %> <%= book.year %>,
+          Verlag <%= book.publisher %>.
         </p>
         <p class="text-right">
-          <%= link_to literature.url, target: "_blank" do%>
+          <%= link_to book.shop_url, target: "_blank" do%>
             <span class="glyphicon glyphicon-link"></span>
             Zum Buchshop
           <% end %>
