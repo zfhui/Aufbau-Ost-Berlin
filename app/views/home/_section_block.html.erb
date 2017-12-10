@@ -1,0 +1,30 @@
+<div class='section-container'>
+  <div class='section-head'>
+    <h4><%= section_block.title %></h4>
+  </div>
+
+  <% section_block.section_texts.each do |section_text_link| %>
+    <% section_text = Contentful::SectionText.find(section_text_link.id) %>
+    <div class='section-text'>
+      <% if section_text.try(:content).present? %>
+        <%= parse_markdown(section_text.content) %>
+      <% elsif section_text.try(:image).present? %>
+        <div class="row">
+          <div class="col-xs-12">
+            <figure>
+              <img src="<%= section_text.image.file.url %>" class="img-responsive">
+              <figcaption class="byline"><%= section_text.image.description %></figcaption>
+            </figure>
+          </div>
+        </div>
+      <% elsif section_text.try(:contributors).present? %>
+        <div class="row">
+          <% section_text.contributors.each do |contributor_link| %>
+            <% contributor = Contentful::Contributor.find(contributor_link.id) %>
+            <%= render partial: 'contributor', locals: { contributor: contributor } %>
+          <% end %>
+        <div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
