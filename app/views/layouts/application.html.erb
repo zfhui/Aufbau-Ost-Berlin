@@ -46,7 +46,7 @@
 					<!-- Collect the nav links, forms and other content for toggling -->
 					<div class="collapse navbar-collapse" id="navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
-							<li><%= link_to "Home", root_path %></li>
+							<li><%= link_to "Intro", root_path %></li>
 							<li><%= link_to "Gebäude", buildings_path %></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -60,7 +60,7 @@
 									<li><%= link_to "Alle Touren", tours_path %></li>
 								</ul>
 							</li>
-							<li><%= link_to "Quellen", literatures_path%></li>
+							<li><%= link_to "Über Uns", about_path%></li>
 						</ul>
 					</div>
 				</div>
@@ -89,7 +89,7 @@
 						<div class="col-xs-12 col-sm-6">
 							<h4>Weitere Links</h4>
 							<ul class="col-md-6">
-								<li><%= link_to "Über diese Seite", about_path %></li>
+								<li><%= link_to "Quellen", literatures_path %></li>
 								<li>
 									<% if current_user %>
 										<%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
