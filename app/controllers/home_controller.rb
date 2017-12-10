@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def about
-    about  = Contentful::About.first
+    about           = Contentful::About.first
     @title          = about.title
     @section_blocks = about.section_blocks
   end
