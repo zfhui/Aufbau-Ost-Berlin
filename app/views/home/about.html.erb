@@ -1,0 +1,9 @@
+<div class='container chapter-container'>
+  <div class='chapter-head'>
+    <h3><%= @title %></h3>
+  </div>
+
+  <% @section_blocks.each do |section_block| %>
+    <%= render partial: 'section_block', locals: { section_block: section_block } %>
+  <% end %>
+</div>

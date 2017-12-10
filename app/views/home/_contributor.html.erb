@@ -1,0 +1,20 @@
+<div class="col-xs-12 col-sm-6 col-md-3" style="padding-bottom: 0.5em">
+  <div class="team-member-info">
+    <img class="team-member-pic" src='<%= contributor.photo.file.url %>' title="Anne" />
+    <p class="team-member-name"><%= contributor.name %></p>
+    <% contributor.contributions.each do |contribution| %>
+      <span><%= contribution %></span></br>
+    <% end %>
+    <label class="team-member-caption text-center">
+      <%= contributor.about %>
+      <% if contributor.try(:social_media).present? %>
+        <ul>
+          <% contributor.social_media.each do |media_link| %>
+            <% media = Contentful::SocialMedia.find(media_link.id) %>
+            <li><a class='<%= "t-#{media.type.downcase}" %>' href="<%= media.url %>" target="_blank"><span> </span></a></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </label>
+  </div>
+</div>
