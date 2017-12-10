@@ -28,7 +28,7 @@ gem 'simple_form', '~> 3.5'
 
 gem "font-awesome-sass", '~> 4.7'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'autoprefixer-rails', '~> 7.1'
+gem 'autoprefixer-rails', '~> 7.2'
 
 gem 'geocoder', '~> 1.4'
 gem 'gmaps4rails', '~> 2.1'
@@ -39,7 +39,7 @@ gem 'swipebox'
 gem 'acts-as-taggable-on'
 
 group :production do
-  gem 'puma', '~> 3.9'
+  gem 'puma', '~> 3.11'
   gem 'rails_12factor' # Heroku gem
 end
 
