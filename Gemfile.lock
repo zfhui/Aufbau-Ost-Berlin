@@ -115,7 +115,7 @@ GEM
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
     formatador (0.2.5)
-    geocoder (1.4.4)
+    geocoder (1.4.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
