@@ -292,7 +292,7 @@ DEPENDENCIES
   gmaps4rails (~> 2.1)
   hirb
   jbuilder (~> 2.0)
-  jquery-rails
+  jquery-rails (~> 4.3)
   jquery-turbolinks (~> 2.1)
   jquery-ui-rails (~> 6.0)
   kaminari
