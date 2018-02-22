@@ -6,7 +6,9 @@ gem 'rails', '4.2.9' # Bundle edge Rails instead: gem 'rails', github: 'rails/ra
 gem 'pg', '~> 0.21'
 
 # Contentful
-gem 'contentful_rails', github: 'contentful/contentful_rails'
+gem 'contentful_rails', git: 'https://github.com/contentful/contentful_rails.git'
+
+gem 'autoprefixer-rails', '~> 8.0'
 
 gem 'sass-rails', '~> 5.0' # Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
@@ -28,7 +30,6 @@ gem 'simple_form', '~> 3.5'
 
 gem "font-awesome-sass", '~> 4.7'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'autoprefixer-rails', '~> 7.2'
 
 gem 'geocoder', '~> 1.4'
 gem 'gmaps4rails', '~> 2.1'
