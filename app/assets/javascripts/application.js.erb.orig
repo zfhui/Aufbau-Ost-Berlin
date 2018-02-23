@@ -41,7 +41,12 @@ $(window).load(function() {
 // End-top-nav-script
 
 // change icon, when window is being resized
+<<<<<<< HEAD
 var ready = function(){
+=======
+var ready;
+ready = function(){
+>>>>>>> Fix logo and tours vanishing
   // smooth scrolling
   $(".scroll").click(function(event){
     event.preventDefault();
@@ -73,13 +78,9 @@ var ready = function(){
 
   // swipebox function
   $('.swipebox').swipebox();
-<<<<<<< HEAD
 }
 
 $(document).on('turbolinks:load', ready);
-=======
-});
->>>>>>> Fix naming and missing ;
 
 function findMarker(i){
   console.log(Gmaps.store.markers.length);
