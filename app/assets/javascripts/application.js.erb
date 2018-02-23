@@ -42,7 +42,7 @@ $(window).load(function() {
 // End-top-nav-script
 
 // change icon, when window is being resized
-$(document).ready(function(){
+var ready = function(){
   // smooth scrolling
   $(".scroll").click(function(event){
     event.preventDefault();
@@ -73,9 +73,10 @@ $(document).ready(function(){
   $(window).resize(logoResize);
 
   // swipebox function
-  $( '.swipebox' ).swipebox();
+  $('.swipebox').swipebox();
+}
 
-})
+$(document).on('turbolinks:load', ready);
 
 function findMarker(i){
   console.log(Gmaps.store.markers.length);
