@@ -1,7 +1,7 @@
 class BuildingsController < ApplicationController
   include Gmaps4rails
   before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy, :import]
-  before_action :set_building, only: [:show, :edit, :update, :destroy]
+  before_action :find_building, only: [:show, :edit, :update, :destroy]
 
   # GET /buildings
   # GET /buildings.json
@@ -78,13 +78,11 @@ class BuildingsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_building
+  def find_building
     id = params[:id]
     @building = Building.find(id)
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def building_params
     params
       .require(:building)
