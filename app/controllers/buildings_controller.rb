@@ -19,7 +19,7 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
-    @photos = @building.photos.reorder(:year)
+    @photos = @building.gallery.photos
   end
 
   # GET /buildings/new
@@ -80,7 +80,7 @@ class BuildingsController < ApplicationController
 
   def find_building
     id = params[:id]
-    @building = Building.find(id)
+    @building = Contentful::Building.find(id)
   end
 
   def building_params

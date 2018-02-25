@@ -52,4 +52,5 @@ group :development, :test do
   gem 'spring'
   gem 'hirb'
   gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
+  gem 'awesome_print'
 end

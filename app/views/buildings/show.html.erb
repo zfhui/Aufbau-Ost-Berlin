@@ -5,7 +5,7 @@
 <div class="container chapter-container">
   <div class="row">
     <div class="col-xs-1 text-left">
-      <%= link_to building_path(prev_building(@building.id)), title: " Zum vorherigen Gebäude" do%>
+      <%= link_to building_path(prev_building(@building.id).id), title: 'Zum vorherigen Gebäude' do%>
         <span class="glyphicon glyphicon-chevron-left chapter-prev"></span>
       <% end %>
     </div>
@@ -13,20 +13,11 @@
     <div class="col-xs-9 col-sm-10">
       <div class="chapter-head">
         <h3><%= @building.name %></h3>
-
-        <div class="col-xs-12">
-          <% if current_user %>
-            <p>
-              <%= link_to 'Bearbeiten', edit_building_path(@building) %> |
-              <%= link_to 'Löschen', @building, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
-            </p>
-          <% end %>
-        </div>
       </div>
     </div>
 
       <div class="col-xs-1 text-right">
-      <%= link_to building_path(next_building(@building.id)), title: "Zum nächsten Gebäude" do %>
+      <%= link_to building_path(next_building(@building.id).id), title: 'Zum nächsten Gebäude' do %>
         <span class="glyphicon glyphicon-chevron-right chapter-next"></span>
       <% end %>
     </div>
@@ -41,7 +32,7 @@
               <span class="info">Adresse:</span>
             </td>
             <td>
-              <%= "#{@building.street_name} #{@building.house_no}, #{@building.zipcode} #{@building.city}" %>
+              <%= @building.address %>
             </td>
           </tr>
           <tr>
@@ -71,16 +62,6 @@
               </td>
             </tr>
           <% end %>
-          <% if current_user %>
-            <tr>
-              <td>
-                <span class="info">Kommentare: </span>
-              </td>
-              <td>
-                <em><%= @building.comments %></em>
-              </td>
-            </tr>
-          <% end %>
         </tbody>
       </table>
     </div>
@@ -96,29 +77,29 @@
 
 <div class="container photo-container">
   <div class="row">
-    <% @photos.each do |p| %>
+    <% @photos.each do |photo| %>
       <div class="col-xs-12 col-sm-4 col-md-3" %>
-        <a href='<%= p.path %>' class="swipebox" title="<%=@building.name%>">
-          <img src='<%= p.path_250px %>' class='img-responsive' alt='<%="#{p.index_card_no}+#{p.photo_no}"%>'>
+        <a href='<%= photo.file.url %>' class="swipebox" title="<%= @building.name %>">
+          <img src='<%= photo.file.url %>' class='img-responsive' alt='<%= photo.title %>'>
         </a>
-        <p class="byline">Foto: <%= p.photographer %>, <%=p.year%></p>
+        <p class="byline">Foto: <%= photo.description %></p>
       </div>
     <% end %>
   </div>
 </div>
 
-<% if !@building.video_url.empty? %>
+<% if @building.try(:videos) %>
   <div class="container chapter-container">
     <div class="section-container">
-      <% if !@building.video_description.empty? %>
+      <% if @building.try(:videos).try(:description) %>
         <div class="section-text">
-          <p><%=@building.video_description%></p>
+          <p><%=@building.videos.description%></p>
         </div>
       <% end %>
 
       <div class="video-container">
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embeded-responsive-item" src="<%=@building.video_url%>" allowfullscreen></iframe>
+          <iframe class="embeded-responsive-item" src="<%=@building.videos.url%>" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -141,8 +122,8 @@
     handler.buildMap({ provider: {}, internal: {id: 'building-map'}}, function(){
       markers = handler.addMarkers([
         {
-          "lat": "<%= @building.latitude %>",
-          "lng": "<%= @building.longitude %>",
+          "lat": "<%= @building.location['lat'] %>",
+          "lng": "<%= @building.location['lon'] %>",
           "infowindow": "<%= @building.name %>"
         }
       ]);
