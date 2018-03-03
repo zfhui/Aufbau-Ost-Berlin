@@ -1,7 +1,7 @@
 module BuildingsHelper
   def external_urls_to_str (building)
     remap_urls =
-      building.urls.map do |url|
+      building.ur_ls.map do |url|
         content_tag(:a, url.name, href: "#{url.url}", target: '_blank', class: 'external_urls')
       end
 

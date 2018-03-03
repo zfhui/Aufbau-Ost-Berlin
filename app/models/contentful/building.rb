@@ -3,6 +3,6 @@ module Contentful
     self.content_type_id = 'building'
 
     has_many :architects
-    has_many :urls, template: :urls
+    has_many :urls, class_name: 'Contentful::ExternalLink', inverse_of: :buildings
   end
 end
