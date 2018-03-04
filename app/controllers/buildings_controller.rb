@@ -19,7 +19,8 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
-    @photos = @building.gallery.photos
+    @photos = @building.try(:gallery).try(:photos)
+    @videos = @building.try(:videos)
   end
 
   # GET /buildings/new

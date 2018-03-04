@@ -28,38 +28,27 @@
       <table class="table table-condensed">
         <tbody>
           <tr>
-            <td>
-              <span class="info">Adresse:</span>
-            </td>
-            <td>
-              <%= @building.address %>
-            </td>
+            <td><span class="info">Adresse:</span></td>
+            <td><%= @building.address %></td>
           </tr>
           <tr>
-            <td>
-              <span class="info">Architekt(en):</span>
-            </td>
-            <td>
-              <%= architects_to_str(@building) %>
-            </td>
+            <td><span class="info">Architekt(en):</span></td>
+            <td><%= architects_to_str(@building) %></td>
           </tr>
           <tr>
-            <td>
-              <span class="info">Bauzeit: </span>
-            </td>
-            <td>
-              <%= built_dates_to_str(@building) %>
-            </td>
+            <td><span class="info">Bauzeit: </span></td>
+            <td><%= built_dates_to_str(@building) %></td>
           </tr>
-
+          <% if @building.try(:status) %>
+            <tr>
+              <td><span class="info">Status: </span></td>
+              <td><%= @building.status %></td>
+            </tr>
+          <% end %>
           <% if external_urls_to_str(@building).present? %>
             <tr>
-              <td>
-                <span class="info">Externe Links: </span>
-              </td>
-              <td>
-                <%= external_urls_to_str(@building) %>
-              </td>
+              <td><span class="info">Externe Links: </span></td>
+              <td><%= external_urls_to_str(@building) %></td>
             </tr>
           <% end %>
         </tbody>
@@ -68,40 +57,42 @@
   </div>
 
   <div class="chapter-text">
-    <p><%= raw @building.description %></p>
+    <p><%= parse_markdown(@building.description) %></p>
     <% if @building.tour %>
       <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour) %>.</p>
     <% end %>
   </div>
 </div>
 
-<div class="container photo-container">
-  <div class="row">
-    <% @photos.each do |photo| %>
-      <div class="col-xs-12 col-sm-4 col-md-3" %>
-        <a href='<%= photo.file.url %>' class="swipebox" title="<%= @building.name %>">
-          <img src='<%= photo.file.url %>' class='img-responsive' alt='<%= photo.title %>'>
-        </a>
-        <p class="byline">Foto: <%= photo.description %></p>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<% if @building.try(:videos) %>
-  <div class="container chapter-container">
-    <div class="section-container">
-      <% if @building.try(:videos).try(:description) %>
-        <div class="section-text">
-          <p><%=@building.videos.description%></p>
+<% if @photos %>
+  <div class="container photo-container">
+    <div class="row">
+      <% @photos.each do |photo| %>
+        <div class="col-xs-12 col-sm-4 col-md-3" %>
+          <a href='<%= photo.file.url %>' class="swipebox" title="<%= @building.name %>">
+            <img src='<%= photo.file.url %>' class='img-responsive' alt='<%= photo.title %>'>
+          </a>
+          <p class="byline">Foto: <%= photo.description %></p>
         </div>
       <% end %>
+    </div>
+  </div>
+<% end %>
 
-      <div class="video-container">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embeded-responsive-item" src="<%=@building.videos.url%>" allowfullscreen></iframe>
+<% if @videos %>
+  <div class="container chapter-container">
+    <div class="section-container">
+      <% @videos.each do |video| %>
+        <div class="section-text">
+          <p><%= video.description%></p>
         </div>
-      </div>
+
+        <div class="video-container">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embeded-responsive-item" src='video.url' allowfullscreen></iframe>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -1,5 +1,6 @@
 module BuildingsHelper
   def external_urls_to_str (building)
+    return unless building.try(:ur_ls).present?
     remap_urls =
       building.ur_ls.map do |url|
         content_tag(:a, url.name, href: "#{url.url}", target: '_blank', class: 'external_urls')
@@ -9,7 +10,7 @@ module BuildingsHelper
   end
 
   def built_dates_to_str(building)
-    building.construction_period.present? ? building.construction_period.join(', ') : 'N.N.'
+    building.try(:construction_period) ? building.construction_period.join(', ') : 'N.N.'
   end
 
   def architects_to_str(building)
