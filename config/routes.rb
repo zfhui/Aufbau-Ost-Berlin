@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Lockup::Engine, at: '/lockup'
+  mount Lockup::Engine, at: '/lockup' unless Rails.env.development?
 
   mount ContentfulRails::Engine, at: '/contentful'
 
