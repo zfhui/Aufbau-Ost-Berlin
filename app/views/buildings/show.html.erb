@@ -58,7 +58,7 @@
 
   <div class="chapter-text">
     <p><%= parse_markdown(@building.description) %></p>
-    <% if @building.tour %>
+    <% if @building.try(:tour) %>
       <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour) %>.</p>
     <% end %>
   </div>
