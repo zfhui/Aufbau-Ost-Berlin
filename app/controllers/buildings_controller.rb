@@ -1,25 +1,33 @@
 class BuildingsController < ApplicationController
   include Gmaps4rails
   before_filter :authenticate_user!, only: [:new, :edit, :create, :update, :destroy, :import]
-  before_action :set_building, only: [:show, :edit, :update, :destroy]
+  before_action :find_building, only: [:show, :edit, :update, :destroy]
 
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all
+    @buildings = Contentful::Building.all.load.sort_by(&:name)
+    @tours     = Contentful::Tour.all.load.sort_by(&:name)
+
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
-      marker.json ({ id: building.id, name: building.name, tour_id: building.tour_id })
-      marker.lat building.latitude
-      marker.lng building.longitude
-      marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: { object: building })
+      marker.json (
+        {
+          id: building.id,
+          name: building.name,
+          tour_id: @tours.map(&:id).index(building.try(:tour).try(:id))
+        }
+      )
+      marker.lat building.location['lat']
+      marker.lng building.location['lon']
+      marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: { building: building })
     end
-    @tours = Tour.all
   end
 
   # GET /buildings/1
   # GET /buildings/1.json
   def show
-    @photos = @building.photos.reorder(:year)
+    @photos = @building.try(:gallery).try(:photos)
+    @videos = @building.try(:videos)
   end
 
   # GET /buildings/new
@@ -78,13 +86,11 @@ class BuildingsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_building
+  def find_building
     id = params[:id]
-    @building = Building.find(id)
+    @building = Contentful::Building.find(id)
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def building_params
     params
       .require(:building)

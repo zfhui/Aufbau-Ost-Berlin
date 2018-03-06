@@ -1,12 +1,6 @@
 <div class="container chapter-container">
   <div class="chapter-head">
     <h3>Tour <%= @tour.name %></h3>
-    <% if current_user %>
-      <p>
-        <%= link_to 'Bearbeiten', edit_tour_path(@tour) %> |
-        <%= link_to 'Löschen', @tour, method: :delete, data: { confirm: 'Bist du dir sicher?' } %>
-      </p>
-    <% end %>
   </div>
 
   <div class="chapter-text">
@@ -28,20 +22,6 @@
     <div class="section-text">
       <div id="buildings-grid">
       </div>
-    </div>
-  </div>
-
-  <% if current_user %>
-    <div class="section-text">
-      <p><strong>Kommentare: </strong><%= @tour.comments %></p>
-    </div>
-  <% end %>
-
-  <div class="section-container">
-    <div class="section-text">
-      <%= link_to tours_path do %>
-        <span class="glyphicon glyphicon-th-list"></span> Zur Liste der Touren
-      <% end %>
     </div>
   </div>
 </div>

@@ -53,8 +53,8 @@
 									Touren<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu">
-									<% Tour.all.order(:name).each do |tour| %>
-			            	<li><%= link_to tour.name, tour_path(tour)%></li>
+									<% Contentful::Tour.all.load.sort_by(&:name).each do |tour| %>
+			            	<li><%= link_to tour.name, tour_path(tour.id)%></li>
 			          	<% end %>
 									<li role="seperator" class="divider"></li>
 									<li><%= link_to "Alle Touren", tours_path %></li>
