@@ -30,7 +30,7 @@
   buildingsMap( <%= raw @hash.to_json %> );
   buildBuildingsList( <%= raw @hash.to_json %> );
 
-  $(document).ready(function(){
+  $(document).on('turbolinks:load', function(){
     bindGridItemsToMarker();
   });
 
