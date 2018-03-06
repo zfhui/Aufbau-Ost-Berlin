@@ -115,13 +115,13 @@ function buildGridItem(json){
   var bgColor;
 
   switch(json.tour_id) {
-    case 1: bgColor = '#F16745'; // red
+    case 0: bgColor = '#F16745'; // red
+            break;
+    case 1: bgColor = '#8dcd91'; // green
             break;
     case 2: bgColor = '#3e8fae'; // blue
             break;
-    case 3: bgColor = '#8dcd91'; // green
-            break;
-    case 4: bgColor = '#4CC3D9';
+    case 3: bgColor = '#4CC3D9';
             break;
     default:
       bgColor = '#D4D4D4';

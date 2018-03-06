@@ -5,5 +5,11 @@ module Contentful
     has_many :architects
     has_many :urls, class_name: 'Contentful::ExternalLink', inverse_of: :buildings
     has_many :videos
+
+    belongs_to_many :buildings_pages
+
+    def photos
+      self.try(:gallery).try(:photos)
+    end
   end
 end

@@ -6,14 +6,21 @@ class BuildingsController < ApplicationController
   # GET /buildings
   # GET /buildings.json
   def index
-    @buildings = Building.all
+    @buildings = Contentful::Building.all.load.sort_by(&:name)
+    @tours     = Contentful::Tour.all.load.sort_by(&:name)
+
     @hash = Gmaps4rails.build_markers @buildings do |building, marker|
-      marker.json ({ id: building.id, name: building.name, tour_id: building.tour_id })
-      marker.lat building.latitude
-      marker.lng building.longitude
-      marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: { object: building })
+      marker.json (
+        {
+          id: building.id,
+          name: building.name,
+          tour_id: @tours.map(&:id).index(building.try(:tour).try(:id))
+        }
+      )
+      marker.lat building.location['lat']
+      marker.lng building.location['lon']
+      marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: { building: building })
     end
-    @tours = Tour.all
   end
 
   # GET /buildings/1

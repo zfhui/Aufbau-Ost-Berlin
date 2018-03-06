@@ -1,22 +1,19 @@
-<div id='<%="building-#{object.id}"%>' class="marker-infowindow">
+<div id='<%="building-#{building.id}"%>' class="marker-infowindow">
   <table>
     <tbody>
       <tr>
         <td width="150px">
-          <% if object.photos.first %>
-            <img src="<%= object.photos.first.path_150px %>" width="150px" height="150px">
+          <% if building.photos.try(:first) %>
+            <img src="<%= building.photos.first %>" width="150px" height="150px">
           <% end %>
         </td>
         <td width="150px">
-          <p style="font-weight: bold; font-size: 18px; text-transform: uppercase"><%= object.name %></p>
+          <p style="font-weight: bold; font-size: 18px; text-transform: uppercase"><%= building.name %></p>
           <p>
-            <address>
-              <%= "#{object.street_name} #{object.house_no}" %></br>
-              <%= "#{object.zipcode} #{object.city}" %>
-            </address>
+            <address><%= building.address %></br></address>
           </p>
           <p class="text-right">
-            <%= link_to building_path(object) do %>
+            <%= link_to building_path(building) do %>
               <span class="glyphicon glyphicon-link"></span> Zu den Details
             <% end %>
           </p>
