@@ -27,8 +27,8 @@
 </div>
 
 <script type="text/javascript">
-  buildingsMap( <%= raw @hash.to_json %> );
-  buildBuildingsList( <%= raw @hash.to_json %> );
+  buildingsMap(<%= raw @hash.to_json %>);
+  buildBuildingsList(<%= raw @hash.to_json %>);
 
   $(document).on('turbolinks:load', function(){
     bindGridItemsToMarker();
