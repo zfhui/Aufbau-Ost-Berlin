@@ -5,7 +5,10 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @tours_page = Contentful::ToursPage.first
+    @intro      = @tours_page.intro
+    @outro      = @tours_page.outro
+    @tours      = @tours_page.tours
   end
 
   # GET /tours/1

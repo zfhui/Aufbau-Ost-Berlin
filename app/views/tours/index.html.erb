@@ -1,24 +1,18 @@
 <!-- about this site -->
 <div class="container chapter-container">
   <div class="chapter-head">
-    <h3>Touren</h3>
+    <h3><%= @tours_page.title %></h3>
   </div>
   <div class="chapter-text">
-    <p>Anhand der Standorte der in den Fotografien festgehaltenen Objekte sind drei ortsbezogene Touren entstanden. Das Kriterium der Zusammenstellung ist dabei kein zwingend inhaltliches, sondern die zu Fuß gut zu bewältigende Entfernung der Objekte zueinander war ausschlaggebend. Entsprechend haben wir keine verbindliche Reihenfolge festgelegt, sondern verstehen die Touren als Vorschläge. Die einzelnen Beiträge sind unabhängig voneinander erstellt und daher ebenso gut nach persönlichen Vorlieben zusammenstellbar. Jeder Tour ist ein kurzer Einführungstext vorangestellt, der die städtebauliche Dimension der Objekte thematisiert und sie damit in einen größeren Kontext stellt.</p>
+    <p><%= @tintro %></p>
   </div>
   <!--//about this site---->
 
-  <%= render @tours %>
+  <%= render partial: 'tour', locals: { tours: @tours } %>
 
   <div class="section-container">
     <div class="section-text">
-      <p>Wir planen, die bisher verfügbaren <%= link_to "27 Gebäude", buildings_path %> nicht als Ende unserer Arbeit, sondern vielmehr als Grundstock für weitere hinzukommende Objekte anzusehen. Auch weitere Features sind in Vorbereitung, sodass Touren bald nach individuellen Kriterien zusammengestellt werden können. Denkbar ist nicht nur eine Auswahl nach Jahrzehnt der Entstehung (z.B. eine Tour ausschließlich mit Bauten der 60er Jahre), sondern beispielsweise auch nach Architekt, bedeutender Kunst am Bau, verfügbaren Baustellen-Fotos und vielem anderen.</p>
+      <p><%= @outro %></p>
     </div>
   </div>
 </div>
-
-<% if current_user %>
-  <div class="container importer-container">
-    <p><%= link_to 'Neue Tour', new_tour_path %></p>
-  </div>
-<% end %>
