@@ -3,8 +3,8 @@
     <tbody>
       <tr>
         <td width="150px">
-          <% if building.photos.try(:first) %>
-            <img src="<%= building.photos.first %>" width="150px" height="150px">
+          <% if building.image_path %>
+            <img src="<%= building.image_path %>" width="150px" height="150px">
           <% end %>
         </td>
         <td width="150px">
@@ -13,7 +13,7 @@
             <address><%= building.address %></br></address>
           </p>
           <p class="text-right">
-            <%= link_to building_path(building) do %>
+            <%= link_to building_path(building.id) do %>
               <span class="glyphicon glyphicon-link"></span> Zu den Details
             <% end %>
           </p>

@@ -9,5 +9,10 @@ module Contentful
     def photos
       self.try(:gallery).try(:photos)
     end
+
+    def image_path
+      return unless photos
+      photos.first.file.url
+    end
   end
 end
