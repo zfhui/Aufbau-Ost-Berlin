@@ -1,6 +1,6 @@
 class BuildingsController < ApplicationController
   include Gmaps4rails
-  
+
   before_action :find_building, only: :show
 
   def index
@@ -15,8 +15,8 @@ class BuildingsController < ApplicationController
           tour_id: @tours.map(&:id).index(building.try(:tour).try(:id))
         }
       )
-      marker.lat building.location['lat']
-      marker.lng building.location['lon']
+      marker.lat building.latitude
+      marker.lng building.longitude
       marker.infowindow render_to_string(partial: '/buildings/infowindow', locals: { building: building })
     end
   end

@@ -115,8 +115,8 @@
     handler.buildMap({ provider: {}, internal: {id: 'building-map'}}, function(){
       markers = handler.addMarkers([
         {
-          "lat": "<%= @building.location['lat'] %>",
-          "lng": "<%= @building.location['lon'] %>",
+          "lat": "<%= @building.latitude %>",
+          "lng": "<%= @building.longitude %>",
           "infowindow": "<%= @building.name %>"
         }
       ]);

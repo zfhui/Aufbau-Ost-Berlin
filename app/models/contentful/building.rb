@@ -14,5 +14,13 @@ module Contentful
       return unless photos
       photos.first.file.url
     end
+
+    def longitude
+      location['lon']
+    end
+
+    def latitude
+      location['lat']
+    end
   end
 end
