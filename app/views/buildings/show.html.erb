@@ -83,9 +83,11 @@
   <div class="container chapter-container">
     <div class="section-container">
       <% @videos.each do |video| %>
-        <div class="section-text">
-          <p><%= video.description%></p>
-        </div>
+        <% if video.try(:description) %>
+          <div class="section-text">
+            <p><%= video.description %></p>
+          </div>
+        <% end %>
 
         <div class="video-container">
           <div class="embed-responsive embed-responsive-16by9">
@@ -113,8 +115,8 @@
     handler.buildMap({ provider: {}, internal: {id: 'building-map'}}, function(){
       markers = handler.addMarkers([
         {
-          "lat": "<%= @building.location['lat'] %>",
-          "lng": "<%= @building.location['lon'] %>",
+          "lat": "<%= @building.latitude %>",
+          "lng": "<%= @building.longitude %>",
           "infowindow": "<%= @building.name %>"
         }
       ]);

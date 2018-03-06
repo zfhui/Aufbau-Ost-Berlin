@@ -21,15 +21,13 @@ Rails.application.routes.draw do
     collection { post :import}
   end
 
-  resources :buildings do
-    collection { post :import}
-  end
+  resources :buildings, only: [:index, :show]
 
   resources :index_cards do
     collection { post :import}
   end
 
-  resources :tours
+  resources :tours, only: [:index, :show]
   get 'literatures', to: 'literatures#index'
 
   devise_for :users,

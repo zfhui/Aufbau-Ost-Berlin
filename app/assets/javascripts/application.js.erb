@@ -59,9 +59,9 @@ var ready = function(){
     img.style.height =" 80px";
 
     if (windos_size > '1000') {
-      img.src='<%=image_url("icons/icon_long_80h.png")%>';
+      img.src='<%= image_url("icons/icon_long_80h.png") %>';
     } else {
-      img.src='<%=image_url("icons/icon_yellow_80h.png")%>';
+      img.src='<%= image_url("icons/icon_yellow_80h.png") %>';
     }
 
     $('a.navbar-brand').html(img);
@@ -78,8 +78,7 @@ var ready = function(){
 $(document).on('turbolinks:load', ready);
 
 function findMarker(i){
-  console.log(Gmaps.store.markers.length);
-
+  // console.log(Gmaps.store.markers.length);
   for (var l=0; l<Gmaps.store.markers.length; ++l){
     marker = Gmaps.store.markers[l];
     // console.log(marker.getServiceObject().id);
@@ -88,7 +87,7 @@ function findMarker(i){
       return marker;
     }
   }
-  console.log('Didnt find marker!');
+  // console.log('Didnt find marker!');
   return Gmaps.store.markers[0];
 }
 

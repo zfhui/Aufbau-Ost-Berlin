@@ -4,11 +4,13 @@
     <h3><%= @tours_page.title %></h3>
   </div>
   <div class="chapter-text">
-    <p><%= @tintro %></p>
+    <p><%= @intro %></p>
   </div>
   <!--//about this site---->
 
-  <%= render partial: 'tour', locals: { tours: @tours } %>
+  <% @tours.each do |tour| %>
+    <%= render partial: 'tour', locals: { tour: tour } %>
+  <% end %>
 
   <div class="section-container">
     <div class="section-text">

@@ -11,44 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170729194313) do
+ActiveRecord::Schema.define(version: 20180306165104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "buildings", force: :cascade do |t|
-    t.string   "name",                            null: false
-    t.float    "longitude",         default: 0.0
-    t.float    "latitude",          default: 0.0
-    t.integer  "built_from"
-    t.integer  "built_to"
-    t.integer  "built_from_2"
-    t.integer  "built_to_2"
-    t.text     "description",       default: ""
-    t.string   "wiki_url",          default: ""
-    t.string   "wiki_common_url",   default: ""
-    t.string   "denkmalliste_url",  default: ""
-    t.string   "grossstadt_url",    default: ""
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "architect"
-    t.string   "architect_2"
-    t.string   "architect_3"
-    t.string   "other_url"
-    t.string   "other_url_2"
-    t.text     "comments"
-    t.integer  "tour_id"
-    t.string   "street_name",       default: ""
-    t.string   "house_no",          default: ""
-    t.string   "zipcode",           default: ""
-    t.string   "city",              default: ""
-    t.string   "country",           default: ""
-    t.string   "video_url",         default: ""
-    t.integer  "tour_position"
-    t.text     "video_description", default: ""
-  end
-
-  add_index "buildings", ["tour_id"], name: "index_buildings_on_tour_id", using: :btree
 
   create_table "index_cards", force: :cascade do |t|
     t.string   "photographer",      default: "", null: false
@@ -124,15 +90,6 @@ ActiveRecord::Schema.define(version: 20170729194313) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
-
-  create_table "tours", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.text     "description", default: ""
-    t.string   "image_path",  default: ""
-    t.text     "comments",    default: ""
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
