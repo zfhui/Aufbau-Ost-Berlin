@@ -18,7 +18,6 @@ gem 'jquery-ui-rails', '~> 6.0'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'turbolinks', '~> 5.0'
 gem 'jbuilder', '~> 2.0'
-gem 'devise', '~> 4.3'
 
 # generating sitemap
 gem 'sitemap_generator', '~> 5.3'
