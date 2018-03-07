@@ -29,7 +29,4 @@ Rails.application.routes.draw do
 
   resources :tours, only: [:index, :show]
   get 'literatures', to: 'literatures#index'
-
-  devise_for :users,
-    skip: :registrations
 end
