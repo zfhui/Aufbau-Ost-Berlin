@@ -6,9 +6,6 @@
     "GMAPS_API": {
       "required": true
     },
-    "GOOGLE_ANALYTICS": {
-      "required": true
-    },
     "LANG": {
       "required": true
     },
