@@ -25,6 +25,15 @@
     </div>
   </div>
 
+  <div class="chapter-text">
+    <% if @building.subtitle.present? %>
+      <h4><%= parse_markdown(@building.subtitle) %></h4>
+    <% end %>
+    <% if @building.teaser.present? %>
+      <p><%= parse_markdown(@building.teaser) %></p>
+    <% end %>
+  </div>
+
   <div class="section-container">
     <div class="section-text">
       <table class="table table-condensed">
