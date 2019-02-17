@@ -55,8 +55,9 @@ p{
 
 .byline{
   color: #666;
-  font-size: 10px;
-  text-align: right;
+  font-size: 12px;
+  text-align: left;
+  margin-top: 0.5em;
 }
 
 span.info{
