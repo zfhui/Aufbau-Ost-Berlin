@@ -30,15 +30,15 @@
       <table class="table table-condensed">
         <tbody>
           <tr>
-            <td><span class="info">Adresse:</span></td>
+            <td><span class="info">Adresse: </span></td>
             <td><%= @building.address %></td>
           </tr>
           <tr>
-            <td><span class="info">Architekt(en):</span></td>
+            <td><span class="info">Entwurf: </span></td>
             <td><%= architects_to_str(@building) %></td>
           </tr>
           <tr>
-            <td><span class="info">Bauzeit: </span></td>
+            <td><span class="info">Datierung: </span></td>
             <td><%= built_dates_to_str(@building) %></td>
           </tr>
           <% if @building.try(:status) %>
