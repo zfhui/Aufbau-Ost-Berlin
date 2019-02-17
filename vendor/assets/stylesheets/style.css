@@ -14,15 +14,7 @@ h1, h2, h3, h4, h5, h6, .byline, .info{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-h5, p{
-  font-size: 17px;
-}
-
-h6{
-  font-size: 14px;
-}
-
-h1, h2, h3, h4, h5{
+h1, h2, h3 {
   color: #000;
   font-weight: bold;
   background-color: #F8BD0C;
@@ -41,15 +33,24 @@ h3{
 }
 
 h4{
-  padding: 5px;
+  font-size: 22px;
+  font-weight: bold;
   display: inline;
-  line-height: 35px;
+  line-height: 2.5em;
 }
 
 h5{
-  padding: 5px;
+  font-size: 19px;
   display: inline;
   font-style: italic;
+}
+
+h6{
+  font-size: 14px;
+}
+
+p{
+  font-size: 19px;
 }
 
 .byline{
