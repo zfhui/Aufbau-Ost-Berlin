@@ -4,7 +4,7 @@
   </div>
 
   <div class="chapter-text">
-    <p><%= raw @tour.description %></p>
+    <p><%= parse_markdown(@tour.description) %></p>
   </div>
 </div>
 
