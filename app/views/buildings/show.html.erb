@@ -13,6 +13,9 @@
     <div class="col-xs-9 col-sm-10">
       <div class="chapter-head">
         <h3><%= @building.name %></h3>
+        <% if @building.try(:subtitle).try(:present?) %>
+          <h4><%= parse_markdown(@building.subtitle) %></h4>
+        <% end %>
       </div>
     </div>
 
@@ -24,14 +27,13 @@
   </div>
 
   <div class="chapter-text">
-    <% if @building.try(:subtitle).try(:present?) %>
-      <h4><%= parse_markdown(@building.subtitle) %></h4>
-    <% end %>
     <% if @building.try(:teaser).try(:present?) %>
       <p><%= parse_markdown(@building.teaser) %></p>
     <% end %>
   </div>
+</div>
 
+<div>
   <div class="section-container">
     <div class="section-text">
       <table class="table table-condensed">
