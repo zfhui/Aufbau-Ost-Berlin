@@ -14,7 +14,12 @@ module BuildingsHelper
   end
 
   def architects_to_str(building)
-    building.architects.present? ? building.architects.map(&:name).join(', ') : 'N.N.'
+    return 'N.N.' unless building.architects.present?
+    sentence = building.architects.map(&:name).join(', ')
+
+    sentence.sub!(", Kollektiv", " und Kollektiv") if building.architects.last.name == "Kollektiv"
+
+    sentence
   end
 
   def next_building(id)

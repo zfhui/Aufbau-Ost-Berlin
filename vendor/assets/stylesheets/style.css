@@ -14,15 +14,7 @@ h1, h2, h3, h4, h5, h6, .byline, .info{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
-h5, p{
-  font-size: 17px;
-}
-
-h6{
-  font-size: 14px;
-}
-
-h1, h2, h3, h4, h5{
+h1, h2, h3 {
   color: #000;
   font-weight: bold;
   background-color: #F8BD0C;
@@ -41,21 +33,31 @@ h3{
 }
 
 h4{
-  padding: 5px;
+  font-size: 22px;
+  font-weight: bold;
   display: inline;
-  line-height: 35px;
+  line-height: 2.5em;
 }
 
 h5{
-  padding: 5px;
+  font-size: 19px;
   display: inline;
   font-style: italic;
 }
 
+h6{
+  font-size: 14px;
+}
+
+p{
+  font-size: 19px;
+}
+
 .byline{
   color: #666;
-  font-size: 10px;
-  text-align: right;
+  font-size: 12px;
+  text-align: left;
+  margin-top: 0.5em;
 }
 
 span.info{
@@ -132,7 +134,7 @@ body a:focus{
 
 /*---- navigation bar ----*/
 nav.navbar-default{
-  margin-top: 5em;
+  padding-top: 0.5em;
   margin-bottom: 0.5em;
   border-radius: 0px;
   background: #FFF;
@@ -247,7 +249,7 @@ body a.codingdavinci:visited {
 
 /*---- chapter styles -----*/
 .chapter-container{
-  padding: 2.5em 25px 2.0em 25px;
+  padding: 2.5em 15% 2.0em 15%;
 }
 
 .chapter-head,
