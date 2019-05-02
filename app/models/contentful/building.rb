@@ -15,6 +15,10 @@ module Contentful
       photos.first.file.url
     end
 
+    def pdf_path
+      try(:pdfFile).try(:file).try(:url)
+    end
+
     def longitude
       location['lon']
     end
