@@ -10,7 +10,7 @@ html, body{
     background-color: #F8BD0C;
 }
 
-h1, h2, h3, h4, h5, h6, .byline, .info{
+h1, h2, h3, h4, h5, h6, .byline, .info, .chapter-pdf{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
@@ -228,7 +228,6 @@ footer > .container{
   padding: 10px 20px 10px 20px;
 }
 
-
 footer p,
 footer ul{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
@@ -256,6 +255,20 @@ body a.codingdavinci:visited {
 .chapter-text{
   margin-bottom: 1.5em;
   display: block;
+}
+
+.chapter-pdf{
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+}
+
+.chapter-pdf a, .chapter-pdf a:hover, .chapter-pdf a:focus{
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  background: #F8BD0C;
+  padding: 10px 15px;
 }
 
 .chapter-head{
