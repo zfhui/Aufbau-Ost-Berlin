@@ -80,7 +80,7 @@ GEM
       contentful-management (~> 1.0)
       redcarpet
       require_all
-    crass (1.0.3)
+    crass (1.0.5)
     debug_inspector (0.0.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
@@ -154,7 +154,7 @@ GEM
     kaminari-core (1.1.1)
     lockup (1.4)
       rails (>= 3, < 6)
-    loofah (2.1.1)
+    loofah (2.3.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.6)
@@ -166,7 +166,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multi_json (1.12.1)
-    nokogiri (1.10.4)
+    nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
     pg (0.21.0)
     pry (0.10.4)
