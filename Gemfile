@@ -48,7 +48,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'pry-byebug'
   gem 'spring'
   gem 'hirb'
   gem 'dotenv-rails', '~> 2.0', '>= 2.0.2'
