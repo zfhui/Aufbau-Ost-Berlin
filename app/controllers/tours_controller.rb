@@ -4,7 +4,6 @@ class ToursController < ApplicationController
   def index
     @tours_page = Contentful::ToursPage.first
     @intro      = @tours_page.intro
-    @outro      = @tours_page.outro
     @tours      = @tours_page.tours
   end
 
