@@ -1,7 +1,3 @@
-<div class="container">
-  <div id="building-map" style='width: 100%; height: 450px;'></div>
-</div>
-
 <div class="container chapter-container">
   <div class="row">
     <div class="col-xs-1 text-left">
@@ -64,9 +60,28 @@
       </table>
     </div>
   </div>
+</div>
 
+<div class="container">
+  <div id="building-map" style='width: 100%; height: 450px;'></div>
+</div>
+
+<div class="container chapter-container">
   <div class="chapter-text">
     <p><%= parse_markdown(@building.description) %></p>
+  </div>
+</div>
+
+<div class="container chapter-container">
+  <div class="chapter-text">
+    <div class="section-text chapter-pdf">
+      <% if @building.pdf_path.present? %>
+        <a href='<%= @building.pdf_path %>' target="_blank">
+          PDF öffnen <span class="glyphicon glyphicon-download-alt"/>
+        </a>
+      <% end %>
+    </div>
+
     <% if @building.try(:tour) %>
       <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour.id) %>.</p>
     <% end %>
@@ -107,18 +122,6 @@
     </div>
   </div>
 <% end %>
-
-<div class="container chapter-container">
-  <div class="section-container">
-    <div class="section-text chapter-pdf">
-      <% if @building.pdf_path.present? %>
-        <a href='<%= @building.pdf_path %>' target="_blank">
-          PDF öffnen <span class="glyphicon glyphicon-download-alt"/>
-        </a>
-      <% end %>
-    </div>
-  </div>
-</div>
 
 <div class="container chapter-container">
   <div class="section-container">
