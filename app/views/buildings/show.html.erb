@@ -81,10 +81,14 @@
         </a>
       <% end %>
     </div>
+  </div>
 
-    <% if @building.try(:tour) %>
-      <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour.id) %>.</p>
-    <% end %>
+  <div class="chapter-text">
+    <div class="section-text">
+      <% if @building.try(:tour) %>
+        <p>Dieses Gebäude gehört zur Tour <%= link_to @building.tour.name, tour_path(@building.tour.id) %>.</p>
+      <% end %>
+    </div>
   </div>
 </div>
 
