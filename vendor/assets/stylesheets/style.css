@@ -10,7 +10,7 @@ html, body{
     background-color: #F8BD0C;
 }
 
-h1, h2, h3, h4, h5, h6, .byline, .info, .chapter-pdf{
+h1, h2, h3, h4, h5, h6, .byline, .info, .chapter-pdf, .intro-container a {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
@@ -116,6 +116,16 @@ body a:focus{
 
 .container.intro-container p{
   font-size: 19px;
+}
+
+.intro-container a, .intro-container a:hover, .intro-container a:focus {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  background: #F8BD0C;
+  margin-top: 15px;
+  padding: 10px 15px;
+  text-shadow: 0px 0px 0px #000 !important;
 }
 
 .container.importer-container{
@@ -263,7 +273,7 @@ body a.codingdavinci:visited {
   text-align: center;
 }
 
-.chapter-pdf a, .chapter-pdf a:hover, .chapter-pdf a:focus{
+.chapter-pdf a, .chapter-pdf a:hover, .chapter-pdf a:focus {
   color: #000;
   text-decoration: none;
   font-weight: bold;
