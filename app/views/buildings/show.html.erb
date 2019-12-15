@@ -1,22 +1,20 @@
 <div class="container chapter-container">
   <div class="row">
-    <div class="col-xs-2 text-left">
+    <div class="col-xs-6 text-left">
       <%= link_to building_path(prev_building(@building.id).id), title: 'Zum vorherigen Gebäude' do%>
         <span class="glyphicon glyphicon-chevron-left chapter-prev"></span>
       <% end %>
     </div>
 
-    <div class="col-xs-8">
-      <div class="chapter-head">
-        <h3><%= @building.name %></h3>
-      </div>
-    </div>
-
-      <div class="col-xs-2 text-right">
+    <div class="col-xs-6 text-right">
       <%= link_to building_path(next_building(@building.id).id), title: 'Zum nächsten Gebäude' do %>
         <span class="glyphicon glyphicon-chevron-right chapter-next"></span>
       <% end %>
     </div>
+  </div>
+
+  <div class="chapter-head">
+    <h3><%= @building.name %></h3>
   </div>
 
   <% if @building.try(:subtitle).try(:present?) %>
