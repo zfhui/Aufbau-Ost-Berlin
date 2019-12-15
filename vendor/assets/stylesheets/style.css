@@ -10,7 +10,7 @@ html, body{
     background-color: #F8BD0C;
 }
 
-h1, h2, h3, h4, h5, h6, .byline, .info, .chapter-pdf, .intro-container a {
+h1, h2, h3, h4, h5, h6, .byline, .info, .chapter-subtitle, .chapter-pdf, .intro-container a {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
@@ -229,7 +229,12 @@ nav.navbar-default{
   color: #000;
   background: #F8BD0C;
 }
-/*---- footer ----*/
+
+/*---- intro ----*/
+
+.container .intro-container p {
+  margin: 20px 0 25px;
+}
 
 /* container for the footer */
 footer > .container{
@@ -262,6 +267,7 @@ body a.codingdavinci:visited {
 }
 
 .chapter-head,
+.chapter-subtitle,
 .chapter-text{
   margin-bottom: 1.5em;
   display: block;
@@ -281,14 +287,19 @@ body a.codingdavinci:visited {
   padding: 10px 15px;
 }
 
-.chapter-head{
+.chapter-head,
+.chapter-subtitle {
   text-align: center;
+}
+
+.chapter-subtitle {
+  font-weight: bold;
 }
 
 span.chapter-prev,
 span.chapter-next{
-  padding-top: 5px;
-  font-size: xx-large;
+  margin: 0 0 25px;
+  font-size: x-large;
 }
 
 /*---- section styles ----*/
