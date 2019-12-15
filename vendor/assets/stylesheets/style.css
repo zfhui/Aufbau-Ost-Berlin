@@ -10,7 +10,7 @@ html, body{
     background-color: #F8BD0C;
 }
 
-h1, h2, h3, h4, h5, h6, .byline, .info, .chapter-pdf, .intro-container a {
+h1, h2, h3, h4, h5, h6, .byline, .info, .chapter-subtitle, .chapter-pdf, .intro-container a {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
@@ -267,6 +267,7 @@ body a.codingdavinci:visited {
 }
 
 .chapter-head,
+.chapter-subtitle,
 .chapter-text{
   margin-bottom: 1.5em;
   display: block;
@@ -286,8 +287,13 @@ body a.codingdavinci:visited {
   padding: 10px 15px;
 }
 
-.chapter-head{
+.chapter-head,
+.chapter-subtitle {
   text-align: center;
+}
+
+.chapter-subtitle {
+  font-weight: bold;
 }
 
 span.chapter-prev,
