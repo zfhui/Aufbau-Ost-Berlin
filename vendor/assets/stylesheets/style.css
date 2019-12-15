@@ -229,7 +229,12 @@ nav.navbar-default{
   color: #000;
   background: #F8BD0C;
 }
-/*---- footer ----*/
+
+/*---- intro ----*/
+
+.container .intro-container p {
+  margin: 20px 0 25px;
+}
 
 /* container for the footer */
 footer > .container{
