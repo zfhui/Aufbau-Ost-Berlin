@@ -384,7 +384,7 @@ img{
 	padding:0;
 }
 .team-member-caption ul li a.t-twitter span{
-	background-position:0px 0px;
+	background-position: 0px 0px;
 }
 .team-member-caption ul li a.t-facebook span{
 	background-position: -48px 0px;
@@ -392,7 +392,7 @@ img{
 .team-member-caption ul li a.t-googleplus span{
 	background-position: -91px 0px;
 }
-.team-member-caption ul li a.t-wordpress span{
+.team-member-caption ul li a.t-website span{
 	background-position: -139px 0px;
 }
 .team-member-caption ul li a.t-github span{
