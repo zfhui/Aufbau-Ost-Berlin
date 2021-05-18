@@ -164,11 +164,13 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multi_json (1.12.1)
+    nio4r (2.5.7)
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     pg (0.21.0)
     public_suffix (3.0.2)
-    puma (3.12.2)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (1.6.12)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -279,7 +281,7 @@ DEPENDENCIES
   kaminari
   lockup (~> 1.4)
   pg (~> 0.21)
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (= 4.2.9)
   rails_12factor
   sass-rails (~> 5.0)
