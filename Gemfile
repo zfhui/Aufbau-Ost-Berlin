@@ -30,7 +30,7 @@ gem 'simple_form', '~> 3.5'
 gem "font-awesome-sass", '~> 4.7'
 gem 'bootstrap-sass', '~> 3.4'
 
-gem 'geocoder', '~> 1.4'
+gem 'geocoder', '~> 1.6'
 gem 'gmaps4rails', '~> 2.1'
 
 gem 'kaminari'
