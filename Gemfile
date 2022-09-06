@@ -39,7 +39,7 @@ gem 'swipebox', '~> 1.4'
 gem 'acts-as-taggable-on'
 
 group :production do
-  gem 'puma', '~> 3.12'
+  gem 'puma', '~> 4.3'
   gem 'rails_12factor' # Heroku gem
 end
 
